@@ -1190,7 +1190,51 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-secondary {
-    background-color: #fff;
+    background: linear-gradient(to bottom, #D2CCC1 0, #D2CCC1 49.99999%, #EEEAE2 50%, #EEEAE2 100%);
+}
+
+#menu-secondary-menu {
+    font-weight: 700;
+
+    a:hover, a:active, a:focus { text-decoration: none; }
+
+    & > li {
+        width: 49%;
+
+        & > a {
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 0.3rem;
+        }
+
+        &:first-child { border-right: 1px solid white; }
+    }
+
+    & > li > .sub-menu {
+        display: inline-block !important;
+        width: 100%;
+        position: relative;
+        left: 0;
+        opacity: 1;
+
+        & > li {
+            display: inline-block;
+
+            & > a {
+                background: none;
+                border: none;
+                width: auto;
+                padding-bottom: 11px;
+                border-bottom: 8px solid transparent;
+
+                &:hover, &:focus, &:active {
+                    color: inherit;
+                    background-color: #DBD6CB;
+                    border-bottom-color: #D3CDC2;
+                }
+            }
+        }
+    }
 }
 
 /* ## Tertiary Navigation
