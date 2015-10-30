@@ -44,6 +44,10 @@ function ora_add_web_font_loader() {
     </script>' . "\n";
 }
 
+//* Move primary menu to genesis_header_right
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header_right', 'genesis_do_nav' );
+
 //* Add tertiary menu
 add_action( 'init', 'ora_register_tertiary_menu' );
 function ora_register_tertiary_menu() {
