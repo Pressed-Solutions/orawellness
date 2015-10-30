@@ -1046,7 +1046,7 @@ img.alignright,
     color: #333;
     text-decoration: none;
     display: block;
-    padding: 30px 24px;
+    padding: 18px 16px;
 }
 
 .genesis-nav-menu a:hover,
@@ -1201,6 +1201,36 @@ img.alignright,
         text-decoration: none;
         border: none;
     }
+
+    #search-form {
+        background-color: transparent;
+        position: relative;
+        top: 1.2rem;
+        margin-top: -2rem;
+    }
+
+    .search-form {
+        display: inline-block;
+
+        input[name="s"] {
+            font-size: 1.4rem;
+            padding: 1rem;
+            background: transparent url('images/icons/search-white.svg') no-repeat center center;
+            width: 3rem;
+            border: none;
+            transition: all .3s ease;
+
+            &:active, &:focus {
+                background-color: white;
+                background-image: url('images/icons/search-dark.svg');
+                background-position: 95% center;
+                width: 20rem;
+            }
+        }
+
+        input[type="submit"] { @extend .screen-reader-text; }
+    }
+
 }
 
 /* # Content Area
