@@ -43,3 +43,15 @@ function ora_add_web_font_loader() {
        })(document);
     </script>' . "\n";
 }
+
+//* Add tertiary menu
+add_action( 'init', 'ora_register_tertiary_menu' );
+function ora_register_tertiary_menu() {
+    register_nav_menu( 'tertiary-menu', __( 'Tertiary Menu' ) );
+}
+
+//* Display tertiary menu
+add_action( 'genesis_before_header', 'ora_add_tertiary_menu' );
+function ora_add_tertiary_menu() {
+    wp_nav_menu( array( 'theme_location' => 'tertiary-menu' ) );
+}
