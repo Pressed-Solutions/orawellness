@@ -1067,6 +1067,7 @@ img.alignright,
 .genesis-nav-menu .sub-menu a {
     background-color: #fff;
     border: 1px solid #eee;
+    background-color: #FAF7F1;
     border-top: 0;
     font-size: 14px;
     font-size: 1.4rem;
@@ -1077,7 +1078,7 @@ img.alignright,
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
-    margin: -55px 0 0 199px;
+    margin-left: -39px;
 }
 
 .genesis-nav-menu .menu-item:hover {
@@ -1196,7 +1197,10 @@ img.alignright,
 #menu-secondary-menu {
     font-weight: 700;
 
-    a:hover, a:active, a:focus { text-decoration: none; }
+    a:hover, a:active, a:focus {
+        text-decoration: none;
+        color: inherit;
+    }
 
     & > li {
         width: 49%;
@@ -1220,18 +1224,32 @@ img.alignright,
         & > li {
             display: inline-block;
 
+            a { border: none; }
+
             & > a {
-                background: none;
-                border: none;
+                background-color: transparent;
                 width: auto;
                 padding-bottom: 11px;
                 border-bottom: 8px solid transparent;
+            }
 
-                &:hover, &:focus, &:active {
-                    color: inherit;
-                    background-color: #DBD6CB;
-                    border-bottom-color: #D3CDC2;
-                }
+            a:hover, a:focus, a:active, &.sfHover > a {
+                color: inherit;
+                background-color: #DBD6CB;
+                border-bottom-color: #D3CDC2;
+            }
+
+            &.menu-item-has-children > a {
+                background-image: url('images/icons/arrow-down.svg');
+                background-repeat: no-repeat;
+                background-position: right 5px center;
+                padding-right: 3.5rem;
+            }
+
+            & li:first-child {
+                border-top: 5px solid transparent;
+
+                a { border-top: 3px solid #DED9D0; }
             }
         }
     }
