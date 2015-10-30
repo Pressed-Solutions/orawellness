@@ -1204,9 +1204,7 @@ img.alignright,
 
     #search-form {
         background-color: transparent;
-        position: relative;
-        top: 1.2rem;
-        margin-top: -2rem;
+        margin-top: 0.7rem;
     }
 
     .search-form {
@@ -1215,15 +1213,15 @@ img.alignright,
         input[name="s"] {
             font-size: 1.4rem;
             padding: 1rem;
-            background: transparent url('images/icons/search-white.svg') no-repeat center center;
-            width: 3rem;
+            background: transparent url('images/icons/search-white.svg') no-repeat right 1rem center;
+            width: 3.5rem;
             border: none;
             transition: all .3s ease;
 
             &:active, &:focus {
                 background-color: white;
                 background-image: url('images/icons/search-dark.svg');
-                background-position: 95% center;
+                background-position: right 1rem center;
                 width: 20rem;
             }
         }
