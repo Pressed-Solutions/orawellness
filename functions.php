@@ -67,3 +67,9 @@ function ora_add_search_box_to_menu( $menu, $args ) {
     }
     return $menu;
 }
+
+//* Customize search form input box text
+add_filter( 'genesis_search_text', 'sp_search_text' );
+function sp_search_text( $text ) {
+	return NULL;
+}
