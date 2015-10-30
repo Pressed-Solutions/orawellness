@@ -7,14 +7,6 @@ define( 'CHILD_THEME_NAME', 'Ora Wellness' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
 define( 'CHILD_THEME_VERSION', '2.2.2' );
 
-//* Enqueue Google Fonts
-add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
-function genesis_sample_google_fonts() {
-
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), CHILD_THEME_VERSION );
-
-}
-
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
@@ -29,3 +21,19 @@ add_theme_support( 'custom-background' );
 
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+//* Add Typekit fonts
+add_action( 'genesis_after', 'add_web_font_loader' );
+function add_web_font_loader() {
+    echo '<script>
+       WebFontConfig = {
+          typekit: { id: \'agy8tbj\' }
+       };
+
+       (function(d) {
+          var wf = d.createElement(\'script\'), s = d.scripts[0];
+          wf.src = \'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js\';
+          s.parentNode.insertBefore(wf, s);
+       })(document);
+    </script>' . "\n";
+}
