@@ -8,7 +8,10 @@ module.exports = function (grunt) {
         },
     },
     sass: {
-        dev: {
+        dist: {
+            options: {
+                style: 'compressed'
+            },
             files: {
                 "orawellness.css" : "SCSS/orawellness.scss"
             }
