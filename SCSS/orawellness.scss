@@ -34,6 +34,7 @@
     - Site Header Navigation
     - Primary Navigation
     - Secondary Navigation
+    - Tertiary Navigation
     - Skip Links
 - Content Area
     - Entries
@@ -1185,6 +1186,15 @@ img.alignright,
 
 .nav-secondary {
     background-color: #fff;
+}
+
+/* ## Tertiary Navigation
+--------------------------------------------- */
+
+.menu-tertiary {
+    background-color: #414141;
+
+    a { color: white; }
 }
 
 /* # Content Area

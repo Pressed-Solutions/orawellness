@@ -53,7 +53,7 @@ function ora_register_tertiary_menu() {
 //* Display tertiary menu
 add_action( 'genesis_before_header', 'ora_add_tertiary_menu' );
 function ora_add_tertiary_menu() {
-    wp_nav_menu( array( 'theme_location' => 'tertiary-menu' ) );
+    wp_nav_menu( array( 'theme_location' => 'tertiary-menu', 'menu_class' => 'menu genesis-nav-menu menu-tertiary js-superfish sf-js-enabled sf-arrows' ) );
 }
 
 //* Add search form to tertiary menu
