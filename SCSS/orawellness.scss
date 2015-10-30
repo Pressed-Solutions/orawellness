@@ -1192,7 +1192,7 @@ img.alignright,
 --------------------------------------------- */
 
 .menu-tertiary {
-    background-color: #414141;
+    &-menu-container { background-color: #414141; }
 
     a { color: white; }
 }
