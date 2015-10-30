@@ -30,13 +30,13 @@ module.exports = function (grunt) {
             ]
         },
         dist: {
-            src: 'style.css',
+            src: 'orawellness.css',
         }
     },
     browserSync: {
         dev: {
             bsFiles: {
-                src : ['style.css', '**/*.php', '**/*.js'],
+                src : ['orawellness.css', '**/*.php', '**/*.js'],
             },
             options: {
                 watchTask: true,
