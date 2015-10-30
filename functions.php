@@ -55,3 +55,12 @@ add_action( 'genesis_before_header', 'ora_add_tertiary_menu' );
 function ora_add_tertiary_menu() {
     wp_nav_menu( array( 'theme_location' => 'tertiary-menu' ) );
 }
+
+//* Add search form to tertiary menu
+add_filter( 'wp_nav_menu_items','ora_add_search_box_to_menu', 10, 2 );
+function ora_add_search_box_to_menu( $menu, $args ) {
+    if( 'tertiary-menu' == $args->theme_location ) {
+        $menu .= sprintf( '<li id="search-form" class="menu-item">%s</li>', __( genesis_search_form() ) );
+    }
+    return $menu;
+}
