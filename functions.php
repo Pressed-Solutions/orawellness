@@ -22,9 +22,15 @@ add_theme_support( 'custom-background' );
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+//* Don’t need the full CSS header output on the page
+add_action( 'stylesheet_uri', 'ora_add_stylesheet', 10, 2 );
+function ora_add_stylesheet() {
+    return get_stylesheet_directory_uri() . '/orawellness.css';
+}
+
 //* Add Typekit fonts
-add_action( 'genesis_after', 'add_web_font_loader' );
-function add_web_font_loader() {
+add_action( 'genesis_after', 'ora_add_web_font_loader' );
+function ora_add_web_font_loader() {
     echo '<script>
        WebFontConfig = {
           typekit: { id: \'agy8tbj\' }
