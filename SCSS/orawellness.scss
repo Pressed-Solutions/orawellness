@@ -1155,17 +1155,23 @@ img.alignright,
         font-weight: 700;
         text-decoration: none;
         padding: 4.5rem 2.5rem;
+    }
+    a:hover,
+    a:focus,
+    .current-menu-item > a {
+        background-color: #E1EDF1;
+    }
 
-        &:hover,
-        &:focus,
-        .current-menu-item > & {
-            background-color: #E1EDF1;
-        }
+    a:active {
+        color: white;
+        background-color: #49A9D2;
+    }
 
-        &:active {
-            color: white;
-            background-color: #49A9D2;
-        }
+    .menu-item-has-children > a {
+        background-image: url('images/icons/arrow-down.svg');
+        background-repeat: no-repeat;
+        background-position: right 5px center;
+        padding-right: 3.5rem;
     }
 
     .sub-menu a {
