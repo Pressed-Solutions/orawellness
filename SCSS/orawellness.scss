@@ -1578,10 +1578,19 @@ li.comment {
         display: flex;
 
         @media only screen and (max-width: 800px) {
-            &-4 { order: 1; }
-            &-1 { order: 2; }
-            &-2 { order: 3; }
-            &-3 { order: 4; }
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .footer-widgets-4 {
+                order: 1;
+                width: 90%;
+                margin-bottom: 40px;
+            }
+            .footer-widgets-1 { order: 2; }
+            .footer-widgets-2 { order: 3; }
+            .footer-widgets-3 { order: 4; }
+
+            .footer-widgets-1, .footer-widgets-2, .footer-widgets-3 { text-align: center; }
         }
     }
 
@@ -1631,10 +1640,17 @@ li.comment {
     background-color: #EEE9E3;
     font-size: 1.4rem;
     line-height: 1;
-    padding: 40px 0;
+    padding: 2rem 0;
     text-align: left;
 
-    @media only screen and (max-width: 800px) { text-align: center; }
+    @media only screen and (max-width: 800px) {
+        text-align: center;
+
+        span {
+            display: block;
+            margin: 1em 0;
+        }
+    }
 
     @media only screen and (min-width: 801px) {
         span {
