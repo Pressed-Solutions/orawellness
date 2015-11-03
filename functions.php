@@ -96,3 +96,14 @@ function ora_custom_footer() { ?>
     <span class="designer"><a href="http://pautlerdesign.com/" target="_blank">Designed by Pautler Design</a></span>
     <?php
 }
+
+//* Add footer widget area 4
+add_action( 'widgets_init', 'ora_add_footer_sidebar_4' );
+function ora_add_footer_sidebar_4() {
+    genesis_register_sidebar( array (
+        'id'            => 'footer-4',
+        'name'          => 'Footer 4',
+        'description'   => __( 'Footer 4 widget area.', 'genesischild' )
+    ));
+}
+add_theme_support( 'genesis-footer-widgets', 4 );

@@ -1568,27 +1568,19 @@ li.comment {
 
     input { border: 1px solid $body-text-color; }
 
-    li {
-        border-bottom: 1px dotted #666;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-    }
+    li { padding-bottom: 10px; }
 
-    .widget {
-        margin-bottom: 40px;
-    }
+    .widget { margin-bottom: 40px; }
 
-    p:last-child {
-        margin-bottom: 0;
-    }
+    p:last-child { margin-bottom: 0; }
 
-    &-1, &-2, &-3 { width: 340px; }
+    &-1, &-2, &-3, &-4 { width: 270px; }
 
-    &-1 { margin-right: 60px; }
+    &-1, &-2 { margin-right: 30px; }
 
-    &-1, &-2 { float: left; }
+    &-1, &-2, &-3 { float: left; }
 
-    &-3 { float: right; }
+    &-4 { float: right; }
 
 }
 
