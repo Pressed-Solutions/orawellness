@@ -10,12 +10,13 @@ $color-red:               #DB605F;
 $color-orange-bright:     #FFA018;
 $color-orange-faded:      #FAC621;
 $color-yellow:            #F8D82E;
-$color-blue:              #39A2CF;
+$color-blue-light:        #39A2CF;
+$color-blue-dark:         #237CA3;
 $color-green-light:       #80B73D;
 $color-green-dark:        #349A4F;
 $color-dark:              #2C2C2C;
 
-$primary-color:           $color-blue;
+$primary-color:           $color-blue-light;
 $secondary-color:         #349A4F;
 $tertiary-color:          $color-red;
 $cta-color:               #FFA018;
@@ -1005,7 +1006,23 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-    background-color: #F8F7F6;
+    &:before {
+        content: ' ';
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXgAAAADBAMAAADb+HqhAAAAGFBMVEXbYGA0mk85o88jfaOBuD37xiD/oBj42S/uP135AAAANUlEQVR4AWMY6oAtjSAIJR2El+MHRUo0BsrGtACCdAAiLhQAh6GbEEcT72jiHRFgNPGOJl4A664nV9HFhbwAAAAASUVORK5CYII=) no-repeat top center / 100%;
+        background: linear-gradient(to right,
+            $color-red 0%, $color-red 27.5%,
+            $color-orange-bright 27.5%, $color-orange-bright 32.4%,
+            $color-orange-faded 32.4%, $color-orange-faded 39.8%,
+            $color-yellow 39.8%, $color-yellow 44.4%,
+            $color-blue-light 44.4%, $color-blue-light 58.2%,
+            $color-blue-dark 58.2%, $color-blue-dark 70.4%,
+            $color-green-dark 70.4%, $color-green-dark 84.8%,
+            $color-green-light 84.8%, $color-green-light 93.5%,
+            $color-red 93.5%, $color-red 100%);
+    }
 
     .wrap { padding: 0; }
 }
@@ -1305,12 +1322,9 @@ img.alignright,
 .menu-tertiary {
     display: flex;
     justify-content: flex-end;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXgAAAADBAMAAADb+HqhAAAAGFBMVEXbYGA0mk85o88jfaOBuD37xiD/oBj42S/uP135AAAANUlEQVR4AWMY6oAtjSAIJR2El+MHRUo0BsrGtACCdAAiLhQAh6GbEEcT72jiHRFgNPGOJl4A664nV9HFhbwAAAAASUVORK5CYII=) no-repeat bottom center;
-    margin-bottom: -3px;
 
     &-menu-container {
         background-color: #414141;
-        border-bottom: 3px solid #DB605F;
     }
 
     li {
