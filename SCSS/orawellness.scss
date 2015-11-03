@@ -1355,9 +1355,17 @@ img.alignright,
             border: none;
             transition: all .3s ease;
             color: transparent;
+            &::-webkit-input-placeholder { color: transparent; }
+            &::-moz-input-placeholder { color: transparent; }
+            &:-moz-input-placeholder { color: transparent; }
+            &:-ms-input-placeholder { color: transparent; }
 
             &:active, &:focus {
                 color: $body-text-color;
+                &::-webkit-input-placeholder { color: $body-text-color; }
+                &::-moz-input-placeholder { color: $body-text-color; }
+                &:-moz-input-placeholder { color: $body-text-color; }
+                &:-ms-input-placeholder { color: $body-text-color; }
                 background-color: white;
                 background-image: url('images/icons/search-dark.svg');
                 background-position: right 1rem center;
