@@ -803,8 +803,8 @@ th {
 }
 
 .widget-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .footer-widgets .widget-title {
@@ -1574,13 +1574,52 @@ li.comment {
 
     p:last-child { margin-bottom: 0; }
 
-    &-1, &-2, &-3, &-4 { width: 270px; }
+    .wrap {
+        display: flex;
 
-    &-1, &-2 { margin-right: 30px; }
+        @media only screen and (max-width: 800px) {
+            &-4 { order: 1; }
+            &-1 { order: 2; }
+            &-2 { order: 3; }
+            &-3 { order: 4; }
+        }
+    }
+
+    &-1, &-2, &-3 { width: 260px; }
+
+    &-1, &-2 { margin-right: 20px; }
 
     &-1, &-2, &-3 { float: left; }
 
-    &-4 { float: right; }
+    &-4 {
+        width: 310px;
+        float: right;
+        background: linear-gradient(to bottom, #57A747, $color-green-light);
+        padding: 2em;
+        color: white;
+        position: relative;
+        margin-top: -4em;
+        text-align: center;
+
+        .widget-title, .alternate, a { color: inherit; }
+
+        .widget-title { font-size: 2.4rem; }
+
+        p { font-size: 1.6rem; }
+
+        h3.alternate {
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            text-transform: none;
+        }
+
+        .contact {
+            font-family: $serif-font-stack;
+            font-size: 2.4rem;
+        }
+
+        .widget { margin-bottom: 0; }
+    }
 
 }
 
