@@ -1348,13 +1348,16 @@ img.alignright,
 
         input[name="s"] {
             font-size: 1.4rem;
+            font-weight: 700;
             padding: 1rem;
             background: transparent url('images/icons/search-white.svg') no-repeat right 1rem center;
             width: 3.5rem;
             border: none;
             transition: all .3s ease;
+            color: transparent;
 
             &:active, &:focus {
+                color: $body-text-color;
                 background-color: white;
                 background-image: url('images/icons/search-dark.svg');
                 background-position: right 1rem center;
