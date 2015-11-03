@@ -3,7 +3,7 @@ $body-text-color:         #3d3d3d;
 $link-color:              #39a3cf;
 $link-color-hover:        #217fa6;
 
-$sans-serif-font-stack:   aktive-grotesk, sans-serif;
+$sans-serif-font-stack:   aktiv-grotesk, 'Helvetica Neue', Helvetica, sans-serif;
 $serif-font-stack:        jubilat, Georgia, serif;
 
 $color-red:               #DB605F;
@@ -165,7 +165,7 @@ body > div {
 body {
     background-color: #f5f5f5;
     color: $body-text-color;
-    font-family: aktiv-grotesk, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: $sans-serif-font-stack;
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 1.77;
