@@ -21,6 +21,8 @@ $tertiary-color:          $color-red;
 $cta-color:               #FFA018;
 $dark-color:              $color-dark;
 $subtle-color:            #A0A0A0;
+$light-tan:               #EEEAE2;
+$dark-tan:                #D2CCC1;
 
 $buttons:   (primary, $primary-color),
             (secondary, $secondary-color),
@@ -163,7 +165,7 @@ body > div {
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #fff;
     color: $body-text-color;
     font-family: $sans-serif-font-stack;
     font-size: 1.8rem;
@@ -806,7 +808,7 @@ th {
 }
 
 .footer-widgets .widget-title {
-    color: #fff;
+    color: $body-text-color;
 }
 
 /* ## WordPress
@@ -1094,7 +1096,7 @@ img.alignright,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus  {
     color: $link-color;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1233,7 +1235,7 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-secondary {
-    background: linear-gradient(to bottom, #D2CCC1 0, #D2CCC1 49.99999%, #EEEAE2 50%, #EEEAE2 100%);
+    background: linear-gradient(to bottom, $dark-tan 0, $dark-tan 49.99999%, $light-tan 50%, $light-tan 100%);
 }
 
 #menu-secondary-menu {
@@ -1357,14 +1359,7 @@ img.alignright,
 /* ## Entries
 --------------------------------------------- */
 
-.entry {
-    margin-bottom: 40px;
-    padding: 50px 60px;
-}
-
-.content .entry {
-    background-color: #fff;
-}
+.entry { margin-bottom: 40px; }
 
 .entry-content {
     p {
@@ -1562,57 +1557,39 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-    background-color: $body-text-color;
+    background-color: #f6f4f0;
     clear: both;
     padding-top: 40px;
-}
 
-.footer-widgets,
-.footer-widgets a {
-    color: #aaa;
-}
+    a, a:hover {
+        color: $body-text-color;
+        font-weight: 300;
+    }
 
-.footer-widgets input {
-    border: 1px solid $body-text-color;
-}
+    input { border: 1px solid $body-text-color; }
 
-.footer-widgets a.button,
-.footer-widgets a:hover,
-.footer-widgets a:focus {
-    color: #fff;
-}
+    li {
+        border-bottom: 1px dotted #666;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
 
-.footer-widgets li {
-    border-bottom: 1px dotted #666;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
+    .widget {
+        margin-bottom: 40px;
+    }
 
-.footer-widgets .widget {
-    margin-bottom: 40px;
-}
+    p:last-child {
+        margin-bottom: 0;
+    }
 
-.footer-widgets p:last-child {
-    margin-bottom: 0;
-}
+    &-1, &-2, &-3 { width: 340px; }
 
-.footer-widgets-1,
-.footer-widgets-2,
-.footer-widgets-3 {
-    width: 340px;
-}
+    &-1 { margin-right: 60px; }
 
-.footer-widgets-1 {
-    margin-right: 60px;
-}
+    &-1, &-2 { float: left; }
 
-.footer-widgets-1,
-.footer-widgets-2 {
-    float: left;
-}
+    &-3 { float: right; }
 
-.footer-widgets-3 {
-    float: right;
 }
 
 
@@ -1620,16 +1597,38 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-    background-color: #fff;
-    font-size: 16px;
-    font-size: 1.6rem;
+    background-color: #EEE9E3;
+    font-size: 1.4rem;
     line-height: 1;
     padding: 40px 0;
-    text-align: center;
-}
+    text-align: left;
 
-.site-footer p {
-    margin-bottom: 0;
+    @media only screen and (max-width: 800px) { text-align: center; }
+
+    @media only screen and (min-width: 801px) {
+        span {
+            float: left;
+
+            &.designer { float: right; }
+        }
+    }
+
+    a {
+        font-weight: inherit;
+        color: inherit;
+    }
+
+    .genesis-nav-menu {
+        font-size: inherit;
+
+        a {
+            padding: 0 1em;
+            border-right: 1px solid $body-text-color;
+            text-decoration: underline;
+        }
+
+        li:last-child a { border-right: none; }
+    }
 }
 
 

@@ -77,3 +77,22 @@ add_filter( 'genesis_search_text', 'sp_search_text' );
 function sp_search_text( $text ) {
 	return NULL;
 }
+
+//* Add footer menu
+add_action( 'init', 'ora_register_footer_menu' );
+function ora_register_footer_menu() {
+    register_nav_menu( 'footer-menu', __( 'Footer Menu' ) );
+}
+
+//* Customize footer text and display menu
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'ora_custom_footer' );
+function ora_custom_footer() { ?>
+	<span>&copy; <?php echo date( 'Y' ); ?> OraWellness. All rights reserved.</span>
+	<span> <?php wp_nav_menu( array(
+        'theme_location' => 'footer-menu',
+        'menu_class' => 'menu genesis-nav-menu menu-footer js-superfish sf-js-enabled sf-arrows'
+    ) ); ?></span>
+    <span class="designer"><a href="http://pautlerdesign.com/" target="_blank">Designed by Pautler Design</a></span>
+    <?php
+}
