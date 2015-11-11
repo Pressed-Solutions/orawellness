@@ -1758,7 +1758,7 @@ li.comment {
 .site-footer {
     background-color: #EEE9E3;
     font-size: 1.4rem;
-    line-height: 1;
+    line-height: 1.3;
     padding: 2rem 0;
     text-align: left;
 
@@ -1789,6 +1789,7 @@ li.comment {
 
         a {
             padding: 0 1em;
+            line-height: 1.3;
             border-right: 1px solid $body-text-color;
             text-decoration: underline;
         }
