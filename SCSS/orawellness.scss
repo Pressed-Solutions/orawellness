@@ -32,6 +32,8 @@ $buttons:   (primary, $primary-color),
             (dark, $dark-color),
             (subtle, $subtle-color);
 
+$mobile-menu-width:    12em;
+
 /* # Table of Contents
 - HTML5 Reset
     - Baseline Normalize
@@ -1376,6 +1378,51 @@ img.alignright,
         input[type="submit"] { @extend .screen-reader-text; }
     }
 
+}
+
+/* ## Mobile Navigation
+--------------------------------------------- */
+
+@media screen and (max-width: 767px) {
+    .js .site-container {
+        position: relative;
+        overflow: hidden;
+        right: 0;
+        transition: all 0.3s ease;
+
+        &.active {
+            right: $mobile-menu-width;
+            overflow: visible;
+        }
+
+        .nav-primary, .nav-secondary, .menu-tertiary-menu-container { display: none; }
+    }
+}
+
+.mobile-menu {
+    .js & {
+        display: inherit;
+        width: $mobile-menu-width;
+        position: absolute;
+        top: 0;
+        right: -$mobile-menu-width;
+        bottom: 0;
+        background-color: #414141;
+    }
+
+    display: none; // for non-JS
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.menu-link {
+    float: right;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
 }
 
 /* # Content Area

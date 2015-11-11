@@ -44,6 +44,43 @@ function ora_add_web_font_loader() {
     </script>' . "\n";
 }
 
+//* Add Brad Frost-inspired mobile menu JS
+add_action( 'wp_enqueue_scripts', 'ora_add_mobile_menu_js' );
+function ora_add_mobile_menu_js() {
+    wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/mobile-menu.js', array( 'jquery' ) );
+}
+
+//* Add link for menu on mobile
+add_action( 'genesis_header', 'ora_add_mobile_menu_link' );
+function ora_add_mobile_menu_link() {
+    echo '<a class="menu-link">Menu</a>';
+}
+
+//* Add mobile menu
+add_action( 'genesis_before_header', 'ora_add_mobile_menu' );
+function ora_add_mobile_menu() {
+    echo '<div class="mobile-menu">';
+    // main navigation
+    wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'menu_class' => 'menu genesis-nav-menu menu-primary',
+        'menu_id' => 'mobile-menu-primary'
+    ) );
+    // secondary navigation
+    wp_nav_menu( array(
+        'theme_location' => 'secondary',
+        'menu_class' => 'menu genesis-nav-menu menu-secondary',
+        'menu_id' => 'mobile-menu-secondary'
+    ) );
+    // tertiary navigation
+    wp_nav_menu( array(
+        'theme_location' => 'tertiary-menu',
+        'menu_class' => 'menu genesis-nav-menu menu-tertiary',
+        'menu_id' => 'mobile-menu-tertiary'
+    ) );
+    echo '</div>';
+}
+
 //* Move primary menu to genesis_header_right
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header_right', 'genesis_do_nav' );
