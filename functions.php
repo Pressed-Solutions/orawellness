@@ -51,9 +51,9 @@ function ora_add_mobile_menu_js() {
 }
 
 //* Add link for menu on mobile
-add_action( 'genesis_header', 'ora_add_mobile_menu_link' );
+add_action( 'genesis_site_title', 'ora_add_mobile_menu_link', 8 );
 function ora_add_mobile_menu_link() {
-    echo '<a class="menu-link">Menu</a>';
+    echo '<a class="menu-link"><span>Menu</span></a>';
 }
 
 //* Add mobile menu
@@ -112,7 +112,7 @@ function ora_add_search_box_to_menu( $menu, $args ) {
 //* Customize search form input box text
 add_filter( 'genesis_search_text', 'sp_search_text' );
 function sp_search_text( $text ) {
-	return 'Search OraWellness.com';
+	return 'Search&hellip;';
 }
 
 //* Add footer menu

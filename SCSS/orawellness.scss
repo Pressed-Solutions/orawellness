@@ -1069,6 +1069,7 @@ img.alignright,
 .site-description,
 .site-title {
     margin-bottom: 0;
+    max-width: 85%;
 
     .header-image & {
         display: block;
@@ -1322,11 +1323,11 @@ img.alignright,
 --------------------------------------------- */
 
 .menu-tertiary {
-    display: flex;
-    justify-content: flex-end;
+    .site-container > & {
+        display: flex;
+        justify-content: flex-end;
 
-    &-menu-container {
-        background-color: #414141;
+        &-menu-container { background-color: #414141; }
     }
 
     li {
@@ -1353,25 +1354,36 @@ img.alignright,
             font-weight: 700;
             padding: 1rem;
             background: transparent url('images/icons/search-white.svg') no-repeat right 1rem center;
-            width: 3.5rem;
             border: none;
             transition: all .3s ease;
-            color: transparent;
-            &::-webkit-input-placeholder { color: transparent; }
-            &::-moz-input-placeholder { color: transparent; }
-            &:-moz-input-placeholder { color: transparent; }
-            &:-ms-input-placeholder { color: transparent; }
 
-            &:active, &:focus {
-                color: $body-text-color;
-                &::-webkit-input-placeholder { color: $body-text-color; }
-                &::-moz-input-placeholder { color: $body-text-color; }
-                &:-moz-input-placeholder { color: $body-text-color; }
-                &:-ms-input-placeholder { color: $body-text-color; }
-                background-color: white;
-                background-image: url('images/icons/search-dark.svg');
-                background-position: right 1rem center;
-                width: 20rem;
+            .site-container > & {
+                width: 3.5rem;
+                color: transparent;
+                &::-webkit-input-placeholder { color: transparent; }
+                &::-moz-input-placeholder { color: transparent; }
+                &:-moz-input-placeholder { color: transparent; }
+                &:-ms-input-placeholder { color: transparent; }
+
+                &:active, &:focus {
+                    color: $body-text-color;
+                    &::-webkit-input-placeholder { color: $body-text-color; }
+                    &::-moz-input-placeholder { color: $body-text-color; }
+                    &:-moz-input-placeholder { color: $body-text-color; }
+                    &:-ms-input-placeholder { color: $body-text-color; }
+                    background-color: white;
+                    background-image: url('images/icons/search-dark.svg');
+                    background-position: right 1rem center;
+                    width: 20rem;
+                }
+            }
+
+            .mobile-menu & {
+                display: block;
+                background-position: left 1rem center;
+                padding-left: 4rem;
+                color: white;
+                font-weight: 500;
             }
         }
 
@@ -1395,7 +1407,7 @@ img.alignright,
             overflow: visible;
         }
 
-        .nav-primary, .nav-secondary, .menu-tertiary-menu-container { display: none; }
+        .nav-primary, .nav-secondary, & > .menu-tertiary-menu-container { display: none; }
     }
 }
 
@@ -1408,6 +1420,33 @@ img.alignright,
         right: -$mobile-menu-width;
         bottom: 0;
         background-color: #414141;
+        text-align: left;
+        padding-top: 1em;
+
+        .menu-item { display: block; }
+
+        .sub-menu {
+            left: 0;
+            position: relative;
+            opacity: 1;
+            width: auto;
+            padding-left: 1em;
+
+            .sub-menu { margin: 0; }
+
+            a {
+                background-color: transparent;
+                border: 0;
+                font-weight: 500;
+                width: auto;
+            }
+        }
+
+        li a:active { background-color: #1B1B1B; }
+
+        .menu-primary-menu-container, .menu-secondary-menu-container { border-bottom: 1px solid black; }
+
+        a { color: white; }
     }
 
     display: none; // for non-JS
@@ -1419,6 +1458,14 @@ img.alignright,
 
 .menu-link {
     float: right;
+    margin-top: 3%;
+    height: 3rem;
+    width: 3rem;
+    background: url('images/icons/menu.svg') no-repeat center center;
+
+    &.active { background-image: url('images/icons/close.svg'); }
+
+    span { display: none; }
 
     @media screen and (min-width: 768px) {
         display: none;
