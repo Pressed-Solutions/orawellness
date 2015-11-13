@@ -73,4 +73,35 @@ function ora_testimonial_loop() {
     wp_reset_postdata();
 }
 
+// add loop for need help section
+add_action( 'genesis_before_footer', 'ora_need_help_loop', 7 );
+function ora_need_help_loop() {
+    // WP_Query arguments
+    $args = array (
+        'post_type'              => array( 'page' ),
+        'category_name'          => 'need-help',
+        'pagination'             => false,
+        'posts_per_page'         => '5',
+    );
+
+    // The Query
+    $need_help_query = new WP_Query( $args );
+
+    // The Loop
+    if ( $need_help_query->have_posts() ) {
+        echo '<section class="need-help">
+        <section class="need-help-inner wrap">';
+        while ( $need_help_query->have_posts() ) {
+            $need_help_query->the_post();
+            echo '<article>' . the_title() . the_excerpt() . '</article>';
+        }
+        echo '</section>
+        </section>';
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+}
+
+
 genesis();

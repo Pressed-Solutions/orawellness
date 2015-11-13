@@ -1817,7 +1817,7 @@ h2.home-header {
     }
 
     .post {
-        padding: 2rem;
+        padding: 3rem;
 
         @media screen and (min-width: 768px) { width: 33%; }
     }
@@ -1873,6 +1873,13 @@ h2.home-header {
             font-weight: 300;
             font-size: 1.8rem;
         }
+    }
+}
+
+.need-help {
+    &-inner {
+        padding: 3rem;
+        background: url('images/need-help-background.jpg') no-repeat top center / cover;
     }
 }
 
