@@ -538,6 +538,7 @@ th {
     clip: rect(0, 0, 0, 0);
     height: 1px;
     width: 1px;
+    min-width: 1px;
     border: 0;
     overflow: hidden;
 }
@@ -1763,7 +1764,7 @@ li.comment {
     padding: 2rem 0;
     text-align: left;
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 960px) {
         text-align: center;
 
         span {
@@ -1772,7 +1773,7 @@ li.comment {
         }
     }
 
-    @media only screen and (min-width: 801px) {
+    @media only screen and (min-width: 961px) {
         span {
             float: left;
 
