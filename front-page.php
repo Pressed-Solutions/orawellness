@@ -30,4 +30,7 @@ function ora_home_header() {
 add_filter( 'genesis_post_info', function() { return false; } );
 add_filter( 'genesis_post_meta', function() { return false; } );
 
+// remove pagination
+remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+
 genesis();
