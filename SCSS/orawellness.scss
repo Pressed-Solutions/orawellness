@@ -24,6 +24,7 @@ $dark-color:              $color-dark;
 $subtle-color:            #A0A0A0;
 $light-tan:               #EEEAE2;
 $dark-tan:                #D2CCC1;
+$alternate-color:         #6b6b6b;
 
 $buttons:   (primary, $primary-color),
             (secondary, $secondary-color),
@@ -269,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 
     &.alternate {
         font-family: $sans-serif-font-stack;
-        color: #6b6b6b;
+        color: $alternate-color;
         font-weight: 700;
         text-transform: uppercase;
     }
@@ -1834,6 +1835,44 @@ h2.home-header {
         float: right;
 
         @media screen and (min-width: 768px) and (max-width: 1199px) { width: 10rem; }
+    }
+}
+
+.testimonials {
+    background-color: $light-tan;
+    padding: 3rem;
+
+    &-inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .single {
+        padding: 1rem 2rem 1rem 1rem;
+        @media screen and (min-width: 768px) { width: 48%; }
+    }
+
+    .testimonial {
+        &-thumb {
+            float: left;
+            border-radius: 50%;
+        }
+
+        &-content-wrapper { margin-left: 100px; }
+
+        &-content {
+            font-family: $serif-font-stack;
+            font-style: italic;
+            color: $color-dark;
+            font-size: 2.4rem;
+        }
+
+        &-title {
+            font-family: $sans-serif-font-stack;
+            color: #7b7b7b;
+            font-weight: 300;
+            font-size: 1.8rem;
+        }
     }
 }
 
