@@ -1220,6 +1220,8 @@ img.alignright,
         font-weight: 700;
         text-decoration: none;
         padding: 4.5rem 2.5rem;
+
+        @media screen and (max-width: 1199px) { padding: 4.5rem 1.5rem; }
     }
     a:hover,
     a:focus,
@@ -1815,7 +1817,7 @@ li.comment {
 
     .content,
     .site-header .widget-area {
-        width: 620px;
+        width: 660px;
     }
 
     .sidebar-content-sidebar .content,
@@ -1848,6 +1850,16 @@ li.comment {
     .site-inner,
     .wrap {
         max-width: 800px;
+    }
+
+    .site-header .wrap {
+        max-width: 90%;
+
+        .wrap {
+            max-width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
 
     .content,
