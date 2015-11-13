@@ -144,3 +144,17 @@ function ora_add_footer_sidebar_4() {
     ));
 }
 add_theme_support( 'genesis-footer-widgets', 4 );
+
+//* restrict homepage to 6 posts
+add_action( 'pre_get_posts', 'ora_limit_homepage_posts' );
+function ora_limit_homepage_posts( $query ) {
+    if ( $query->is_main_query() && !is_admin() ) {
+        $query->set( 'posts_per_page', '6' );
+    }
+}
+
+//* Customize “read more” text
+add_filter( 'excerpt_more', 'ora_read_more_link' );
+function ora_read_more_link() {
+	return '&hellip;<a class="more-link" href="' . get_permalink() . '">Read More</a>';
+}

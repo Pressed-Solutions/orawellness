@@ -80,6 +80,7 @@ $mobile-menu-width:    12em;
 - Sidebars
 - Footer Widgets
 - Site Footer
+- Home page
 - Media Queries
     - Retina Display
     - Max-width: 1200px
@@ -578,7 +579,7 @@ th {
 
 .site-inner {
     clear: both;
-    padding-top: 40px;
+    padding-top: 5rem;
 }
 
 /* ## Column Widths and Positions
@@ -1795,6 +1796,43 @@ li.comment {
         }
 
         li:last-child a { border-right: none; }
+    }
+}
+
+
+/* # Home Page
+---------------------------------------------------------------------------------------------------- */
+
+h2.home-header {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.home {
+    main.content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .post {
+        padding: 2rem;
+
+        @media screen and (min-width: 768px) { width: 33%; }
+    }
+
+    .entry-title {
+        font-size: 2.8rem;
+
+        a {
+            color: $color-blue-light;
+            font-weight: 400;
+        }
+    }
+
+    .post-image {
+        float: right;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) { width: 10rem; }
     }
 }
 
