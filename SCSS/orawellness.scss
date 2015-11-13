@@ -1447,13 +1447,11 @@ img.alignright,
         .menu-primary-menu-container, .menu-secondary-menu-container { border-bottom: 1px solid black; }
 
         a { color: white; }
+
+        @media screen and (min-width: 768px) { display: none; } // for larger screens
     }
 
     display: none; // for non-JS
-
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
 }
 
 .menu-link {
