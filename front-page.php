@@ -89,6 +89,12 @@ function ora_need_help_loop() {
 
     // The Loop
     if ( $need_help_query->have_posts() ) {
+        // change length of excerpt
+        function custom_excerpt_length( $length ) {
+            return 15;
+        }
+        add_filter( 'excerpt_length', 'custom_excerpt_length' );
+
         // change “read more” text to buttons
         add_filter( 'excerpt_more', 'ora_quick_links_read_more_link' );
         function ora_quick_links_read_more_link() {
