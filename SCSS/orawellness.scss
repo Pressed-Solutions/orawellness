@@ -1100,11 +1100,18 @@ img.alignright,
     font-size: 1.6rem;
     line-height: 1;
     width: 100%;
+
+    .flexbox & {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .genesis-nav-menu .menu-item {
-    display: inline-block;
     text-align: left;
+    display: inline-block;
+
+    .flexbox & { display: block; }
 }
 
 .genesis-nav-menu a {
