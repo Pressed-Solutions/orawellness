@@ -31,7 +31,8 @@ $buttons:   (primary, $primary-color),
             (tertiary, $tertiary-color),
             (cta, $cta-color),
             (dark, $dark-color),
-            (subtle, $subtle-color);
+            (subtle, $subtle-color),
+            (white-color, #ffffff);
 
 $mobile-menu-width:    12em;
 
@@ -1876,10 +1877,49 @@ h2.home-header {
     }
 }
 
-.need-help {
+.quick-links {
+    background:
+        url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -9rem left -9rem,
+        url('images/quick-links-mountain-range.png') no-repeat top -15rem right -3rem,
+        url('images/quick-links-cinnamon.png') no-repeat bottom -13rem left -7rem,
+        url('images/quick-links-nutmeg.png') no-repeat bottom -23rem right -15rem,
+        url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
+    padding: 6rem 3rem 3rem;
+
+    .home-header.alternate { color: white; }
+
     &-inner {
         padding: 3rem;
-        background: url('images/need-help-background.jpg') no-repeat top center / cover;
+        display: flex;
+
+        @media screen and (max-width: 1199px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &-article {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: rgba(#39a3cf, 0.8);
+        color: white;
+        text-align: center;
+        font-size: 1.8rem;
+
+        @media screen and (min-width: 960px) and (max-width: 1199px) { width: 30%; }
+
+        h3 {
+            font-size: 2.4rem;
+            color: white;
+            margin-top: 1em;
+        }
+    }
+
+    .button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2rem;
+        max-width: 15rem;
     }
 }
 

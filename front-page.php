@@ -79,7 +79,7 @@ function ora_need_help_loop() {
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'page' ),
-        'category_name'          => 'need-help',
+        'category_name'          => 'quick-links',
         'pagination'             => false,
         'posts_per_page'         => '5',
     );
@@ -89,11 +89,19 @@ function ora_need_help_loop() {
 
     // The Loop
     if ( $need_help_query->have_posts() ) {
-        echo '<section class="need-help">
-        <section class="need-help-inner wrap">';
+        // change “read more” text to buttons
+        add_filter( 'excerpt_more', 'ora_quick_links_read_more_link' );
+        function ora_quick_links_read_more_link() {
+            return '&hellip;<a class="more-link button bordered white-color" href="' . get_permalink() . '">Read More</a>';
+        }
+
+        // output content
+        echo '<section class="quick-links">
+        <h2 class="home-header alternate">I Need Help With&hellip;</h2>
+        <section class="quick-links-inner wrap">';
         while ( $need_help_query->have_posts() ) {
             $need_help_query->the_post();
-            echo '<article>' . the_title() . the_excerpt() . '</article>';
+            echo '<article class="quick-links-article"><h3 class="title">' . get_the_title() . '</h3>' . get_the_excerpt() . '</article>';
         }
         echo '</section>
         </section>';
