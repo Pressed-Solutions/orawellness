@@ -1261,7 +1261,40 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-secondary {
-    background: linear-gradient(to bottom, $dark-tan 0, $dark-tan 49.99999%, $light-tan 50%, $light-tan 100%);
+    background: linear-gradient($dark-tan 5.2rem, $light-tan 5.2rem);
+
+    @media screen and (max-width: 959px) { background: linear-gradient($dark-tan 5.7rem, $light-tan 5.7rem); }
+
+    .sub-menu {
+        overflow: hidden;
+        max-height: 5.2rem;
+        padding-right: 5em;
+        vertical-align: top;
+        transition: all .3s ease;
+
+        &.open {
+            max-height: 50rem;
+        }
+
+        .more {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding-right: 3rem;
+            cursor: pointer;
+
+            a {
+                background: transparent url('images/icons/arrow-down.svg') no-repeat right 2rem top 1.8rem / 20%;
+                border: 8px solid transparent;
+                padding-right: 4rem;
+
+                &:hover {
+                    background-color: #DBD6CB;
+                    border-bottom-color: #D3CDC2;
+                }
+            }
+        }
+    }
 }
 
 #menu-secondary-menu {
@@ -1279,6 +1312,8 @@ img.alignright,
             text-transform: uppercase;
             color: white;
             letter-spacing: 0.3rem;
+
+            &:hover { color: white; }
         }
 
         &:first-child { border-right: 1px solid white; }
@@ -1307,19 +1342,6 @@ img.alignright,
                 color: inherit;
                 background-color: #DBD6CB;
                 border-bottom-color: #D3CDC2;
-            }
-
-            &.menu-item-has-children > a {
-                background-image: url('images/icons/arrow-down.svg');
-                background-repeat: no-repeat;
-                background-position: right 5px center;
-                padding-right: 3.5rem;
-            }
-
-            & li:first-child {
-                border-top: 5px solid transparent;
-
-                a { border-top: 3px solid #DED9D0; }
             }
         }
     }

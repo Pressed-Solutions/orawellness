@@ -47,7 +47,7 @@ function ora_add_web_font_loader() {
 //* Add Brad Frost-inspired mobile menu JS
 add_action( 'wp_enqueue_scripts', 'ora_add_mobile_menu_js' );
 function ora_add_mobile_menu_js() {
-    wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/mobile-menu.js', array( 'jquery' ) );
+    wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/navigation.js', array( 'jquery' ) );
 }
 
 //* Add link for menu on mobile
