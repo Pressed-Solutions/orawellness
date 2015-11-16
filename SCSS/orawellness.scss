@@ -1329,12 +1329,12 @@ img.alignright,
 --------------------------------------------- */
 
 .menu-tertiary {
-    .site-container > & {
+    .site-container > &-menu-container > & {
         display: flex;
         justify-content: flex-end;
-
-        &-menu-container { background-color: #414141; }
     }
+
+    &-menu-container { background-color: #414141; }
 
     li {
         &:hover, &:focus { background-color: #363636; }
@@ -1363,7 +1363,7 @@ img.alignright,
             border: none;
             transition: all .3s ease;
 
-            .site-container > & {
+            .site-container > .menu-tertiary-menu-container & {
                 width: 3.5rem;
                 color: transparent;
                 &::-webkit-input-placeholder { color: transparent; }
