@@ -1307,6 +1307,8 @@ img.alignright,
 #menu-secondary-menu {
     font-weight: 700;
 
+    .flexbox & { display: flex; }
+
     a:hover, a:active, a:focus {
         text-decoration: none;
         color: inherit;
@@ -1333,8 +1335,15 @@ img.alignright,
         left: 0;
         opacity: 1;
 
+        .flexbox & {
+            display: flex !important;
+            flex-wrap: wrap;
+        }
+
         & > li {
             display: inline-block;
+
+            .flexbox & { display: block !important; }
 
             a { border: none; }
 
