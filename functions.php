@@ -113,7 +113,7 @@ function ora_add_search_box_to_menu( $menu, $args ) {
 //* Customize search form input box text
 add_filter( 'genesis_search_text', 'sp_search_text' );
 function sp_search_text( $text ) {
-	return 'Search&hellip;';
+    return 'Search&hellip;';
 }
 
 //* Add footer menu
@@ -126,8 +126,8 @@ function ora_register_footer_menu() {
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'ora_custom_footer' );
 function ora_custom_footer() { ?>
-	<span>&copy; <?php echo date( 'Y' ); ?> OraWellness. All rights reserved.</span>
-	<span> <?php wp_nav_menu( array(
+    <span>&copy; <?php echo date( 'Y' ); ?> OraWellness. All rights reserved.</span>
+    <span> <?php wp_nav_menu( array(
         'theme_location' => 'footer-menu',
         'menu_class' => 'menu genesis-nav-menu menu-footer js-superfish sf-js-enabled sf-arrows'
     ) ); ?></span>
@@ -157,5 +157,5 @@ function ora_limit_homepage_posts( $query ) {
 //* Customize “read more” text
 add_filter( 'excerpt_more', 'ora_read_more_link' );
 function ora_read_more_link() {
-	return '&hellip;<a class="more-link" href="' . get_permalink() . '">Read More</a>';
+    return '&hellip;<a class="more-link" href="' . get_permalink() . '">Read More</a>';
 }
