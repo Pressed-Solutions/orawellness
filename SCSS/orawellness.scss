@@ -17,7 +17,7 @@ $color-green-dark:        #349A4F;
 $color-dark:              #2C2C2C;
 
 $primary-color:           $color-blue-light;
-$secondary-color:         #349A4F;
+$secondary-color:         $color-green-dark;
 $tertiary-color:          $color-red;
 $cta-color:               #FFA018;
 $dark-color:              $color-dark;
@@ -1844,6 +1844,28 @@ li.comment {
 
 /* # Home Page
 ---------------------------------------------------------------------------------------------------- */
+
+div.home-header {
+    background: url('images/home.jpg') no-repeat bottom center / cover;
+
+    .wrap {
+        background: url('images/people.png') no-repeat bottom right;
+    }
+
+    h1, p {
+        padding: 2rem;
+        color: white;
+        display: block;
+    }
+
+    h1 {
+        background-color: rgba($color-green-dark, 0.8);
+    }
+
+    .description {
+        background-color: rgba($color-green-light, 0.8);
+    }
+}
 
 h2.home-header {
     font-size: 2.4rem;

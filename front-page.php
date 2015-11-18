@@ -20,9 +20,20 @@ function ora_home_layout( $opt ) {
     return $opt;
 }
 
-// add “Recent Posts” header
-add_action( 'genesis_before_content', 'ora_home_header' );
+// add header photo/text
+add_action( 'genesis_after_header', 'ora_home_header', 5 );
 function ora_home_header() {
+    $frontpage_ID = get_page_by_title( 'home' )->ID;
+    echo '<div class="home-header"><div class="wrap">';
+    echo '<h1 class="title">' . get_field( 'title', $frontpage_ID ) . '</h1>';
+    echo '<h1 class="subtitle">' . get_field( 'subtitle', $frontpage_ID ) . '</h1>';
+    echo '<p class="description">' . get_field( 'description', $frontpage_ID ) . '</p>';
+    echo '</div></div>';
+}
+
+// add “Recent Posts” header
+add_action( 'genesis_before_content', 'ora_recent_posts_header' );
+function ora_recent_posts_header() {
     echo '<h2 class="home-header alternate">Recent Posts</h2>';
 }
 
@@ -116,6 +127,5 @@ function ora_need_help_loop() {
     // Restore original Post Data
     wp_reset_postdata();
 }
-
 
 genesis();
