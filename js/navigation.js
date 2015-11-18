@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
     $( '.site-container > .nav-secondary .sub-menu' ).append( '<li class="menu-item more"><a>More</a></li>' );
 
     // add open/close functionality to secondary more toggle
-    $( '.more a' ).on( 'click', function() {
+    $( '.more a' ).on( 'click, mouseenter, mouseleave', function() {
         $( this ).parents( '.sub-menu' ).toggleClass( 'open' );
     });
 });
