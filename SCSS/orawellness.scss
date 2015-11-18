@@ -2048,13 +2048,26 @@ h2.home-header {
 }
 
 .quick-links {
-    background:
-        url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -9rem left -9rem,
-        url('images/quick-links-mountain-range.png') no-repeat top -15rem right -3rem,
-        url('images/quick-links-cinnamon.png') no-repeat bottom -13rem left -7rem,
-        url('images/quick-links-nutmeg.png') no-repeat bottom -23rem right -15rem,
-        url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
-    padding: 6rem 3rem 3rem;
+    padding: 3rem;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 6rem;
+        background:
+            url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -9rem left -9rem,
+            url('images/quick-links-mountain-range.png') no-repeat top -15rem right -3rem,
+            url('images/quick-links-cinnamon.png') no-repeat bottom -13rem left -7rem,
+            url('images/quick-links-nutmeg.png') no-repeat bottom -23rem right -15rem,
+            url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
+    }
+    @media screen and (max-width: 767px) {
+        padding-top: 15rem;
+        background:
+            url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -15rem left -9rem,
+            url('images/quick-links-mountain-range.png') no-repeat top -15rem right -15rem,
+            url('images/quick-links-cinnamon.png') no-repeat bottom -15rem left -9rem,
+            url('images/quick-links-nutmeg.png') no-repeat bottom -30rem right -23rem,
+            url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
+    }
 
     .home-header.alternate { color: white; }
 
