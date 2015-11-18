@@ -1273,6 +1273,26 @@ img.alignright,
 
     @media screen and (max-width: 959px) { background: linear-gradient($dark-tan 5.7rem, $light-tan 5.7rem); }
 
+    .home & {
+        background: $light-tan;
+
+        @media screen and (max-width: 959px) { background: $light-tan; }
+
+        .menu-secondary > li > a {
+            padding: 0;
+            position: relative;
+
+            > span {
+                background-color: $color-blue-light;
+                padding: 1rem;
+                position: absolute;
+                top: -1.8em;
+                left: 1em;
+                z-index: 200;
+            }
+        }
+    }
+
     .sub-menu {
         overflow: hidden;
         max-height: 5.2rem;
