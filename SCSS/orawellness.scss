@@ -1866,9 +1866,11 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 div.home-header {
-    background: url('images/home.jpg') no-repeat bottom center / cover;
-    margin-top: -106px;
-    padding-top: 106px;
+    background:
+        linear-gradient(rgba(white,0.6) 5rem, rgba(white,0) 10.6rem),
+        url('images/home.jpg') no-repeat bottom center / cover;
+    margin-top: -10.6rem;
+    padding-top: 10.6rem;
 
     .wrap {
         background: url('images/people.png') no-repeat;
