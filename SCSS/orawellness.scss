@@ -1237,7 +1237,8 @@ img.alignright,
     }
     a:hover,
     a:focus,
-    .current-menu-item > a {
+    .current-menu-item > a,
+    .sfHover > a {
         background-color: #E1EDF1;
     }
 
@@ -1260,7 +1261,6 @@ img.alignright,
         &:focus,
         .current-menu-item > & {
             color: $link-color;
-            text-decoration: underline;
         }
     }
 }
