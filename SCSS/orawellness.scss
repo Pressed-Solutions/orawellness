@@ -2083,7 +2083,7 @@ h2.home-header {
 
     &-article {
         margin: 1.5rem;
-        padding: 1.5rem 1.5rem 7.5rem;
+        padding: 1.5rem;
         background: rgba(#39a3cf, 0.8);
         color: white;
         text-align: center;
@@ -2103,8 +2103,6 @@ h2.home-header {
         display: block;
         margin: 2rem auto;
         max-width: 15rem;
-        position: absolute;
-        bottom: 0;
 
         &.white-color.bordered:hover { color: $color-blue-light; }
     }
