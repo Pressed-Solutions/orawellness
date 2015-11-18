@@ -2023,6 +2023,8 @@ h2.home-header {
         margin: 0 auto;
         margin-top: 2rem;
         max-width: 15rem;
+
+        &.white-color.bordered:hover { color: $color-blue-light; }
     }
 }
 
