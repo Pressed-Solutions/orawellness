@@ -1850,20 +1850,42 @@ div.home-header {
 
     .wrap {
         background: url('images/people.png') no-repeat bottom right;
+        position: relative;
+        @media screen and (min-width: 960px) { min-height: 45rem; }
     }
 
     h1, p {
         padding: 2rem;
         color: white;
         display: block;
+        position: absolute;
     }
 
     h1 {
         background-color: rgba($color-green-dark, 0.8);
+        font-weight: 300;
+        font-style: italic;
+        font-size: 7rem;
+
+        &.title {
+            top: 2rem;
+            left: 0;
+        }
+
+        &.subtitle {
+            top: 2.1em;
+            left: 2em;
+            z-index: 100;
+        }
     }
 
     .description {
         background-color: rgba($color-green-light, 0.8);
+        font-size: 2.2rem;
+        top: 12em;
+        left: 3em;
+
+        @media screen and (min-width: 960px) { max-width: 50%; }
     }
 }
 
