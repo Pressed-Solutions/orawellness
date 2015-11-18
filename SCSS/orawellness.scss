@@ -1875,13 +1875,13 @@ div.home-header {
     }
 
     h1, p {
-        padding: 2rem;
         color: white;
         display: block;
         position: absolute;
     }
 
     h1 {
+        padding: 2rem;
         background-color: rgba($color-green-dark, 0.8);
         font-weight: 300;
         font-style: italic;
@@ -1900,6 +1900,7 @@ div.home-header {
     }
 
     .description {
+        padding: 3rem 2rem 2rem 3rem;
         background-color: rgba($color-green-light, 0.8);
         font-size: 2.2rem;
         top: 12em;
