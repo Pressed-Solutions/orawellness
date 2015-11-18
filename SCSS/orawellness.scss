@@ -2017,11 +2017,19 @@ h2.home-header {
 
     .testimonial {
         &-thumb {
-            float: left;
             border-radius: 50%;
+
+            @media screen and (min-width: 768px) { float: left; }
+            @media screen and (max-width: 767px) {
+                display: block;
+                margin: 0 auto;
+            }
         }
 
-        &-content-wrapper { margin-left: 100px; }
+        &-content-wrapper {
+            @media screen and (min-width: 768px) { margin-left: 100px; }
+            @media screen and (max-width: 767px) { text-align: center; }
+        }
 
         &-content {
             font-family: $serif-font-stack;
