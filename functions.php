@@ -146,6 +146,16 @@ function ora_add_footer_sidebar_4() {
 }
 add_theme_support( 'genesis-footer-widgets', 4 );
 
+//* Add floating call-to-action bar
+add_action( 'widgets_init', 'ora_add_cta_footer' );
+function ora_add_cta_footer() {
+    genesis_register_sidebar( array (
+        'id'            => 'floating-cta',
+        'name'          => 'Floating Call-to-Action',
+        'description'   => __( 'Call-to-Action bar on homepage.', 'genesischild' )
+    ));
+}
+
 //* restrict homepage to 6 posts
 add_action( 'pre_get_posts', 'ora_limit_homepage_posts' );
 function ora_limit_homepage_posts( $query ) {
