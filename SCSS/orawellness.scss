@@ -898,41 +898,38 @@ img.alignright,
 
 .widget {
     word-wrap: break-word;
-}
 
-.widget ol > li {
-    list-style-position: inside;
-    list-style-type: decimal;
-    padding-left: 20px;
-    text-indent: -20px;
-}
-
-.widget li li {
-    border: 0;
-    margin: 0 0 0 30px;
-    padding: 0;
-}
-
-.widget_calendar table {
-    width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-    text-align: center;
-}
-
-/* random testimonial */
-.widget .testimonial {
-    &-thumb {
-        display: block;
-        margin: 0 auto;
+    ol > li {
+        list-style-position: inside;
+        list-style-type: decimal;
+        padding-left: 20px;
+        text-indent: -20px;
     }
 
-    &-content, &-title {
-        font-size: 2rem;
-        text-align: center;
-        margin-top: 2.8rem;
+    li li {
+        border: 0;
+        margin: 0 0 0 30px;
+        padding: 0;
+    }
+
+    &_calendar table { width: 100%; }
+
+    &_calendar {
+        td, th { text-align: center; }
+    }
+
+    /* random testimonial */
+    .testimonial {
+        &-thumb {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &-content, &-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 2.8rem;
+        }
     }
 }
 
