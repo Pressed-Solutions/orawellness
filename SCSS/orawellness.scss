@@ -1151,9 +1151,9 @@ img.alignright,
     border-top: 0;
     font-size: 14px;
     font-size: 1.4rem;
-    padding: 20px;
+    padding: 2rem 1.7rem;
     position: relative;
-    width: 200px;
+    width: 20rem;
     word-wrap: break-word;
 }
 
@@ -1232,11 +1232,12 @@ img.alignright,
 
 .nav-primary .genesis-nav-menu {
 
+    > li > a { padding: 4.5rem 2.5rem; }
+
     a {
         color: #2c2c2c;
         font-weight: 700;
         text-decoration: none;
-        padding: 4.5rem 2.5rem;
 
         @media screen and (max-width: 1199px) { padding: 4.5rem 1.5rem; }
     }
@@ -1301,7 +1302,7 @@ img.alignright,
     .sub-menu {
         overflow: hidden;
         max-height: 5.2rem;
-        padding-right: 12.5rem;
+        padding-right: 10rem;
         vertical-align: top;
         transition: all .3s ease;
 
@@ -1313,17 +1314,22 @@ img.alignright,
             position: absolute;
             right: 0;
             top: 0;
-            padding-right: 3rem;
+            padding-right: 2rem;
             cursor: pointer;
 
             a {
-                background: transparent url('images/icons/arrow-down.svg') no-repeat right 2rem top 1.8rem / 20%;
+                background: transparent url('images/icons/arrow-down.svg') no-repeat right 1rem top 1.8rem / 20%;
                 border: 8px solid transparent;
-                padding-right: 4rem;
+                padding-right: 3rem;
 
                 &:hover {
                     background-color: #DBD6CB;
                     border-bottom-color: #D3CDC2;
+                }
+
+                &:active {
+                    background-color: #D6D0C6;
+                    border-bottom-color: #C3BCB1;
                 }
             }
         }
@@ -1380,10 +1386,15 @@ img.alignright,
                 border-bottom: 8px solid transparent;
             }
 
-            a:hover, a:focus, a:active, &.sfHover > a {
+            a:hover, a:focus, &.sfHover > a {
                 color: inherit;
                 background-color: #DBD6CB;
                 border-bottom-color: #D3CDC2;
+            }
+
+            a:active {
+                background-color: #D6D0C6;
+                border-bottom-color: #C3BCB1;
             }
         }
     }
@@ -1424,6 +1435,7 @@ img.alignright,
             font-weight: 700;
             padding: 1rem;
             background: transparent url('images/icons/search-white.svg') no-repeat right 1rem center;
+            background-size: 1.5rem;
             border: none;
             transition: all .3s ease;
 
