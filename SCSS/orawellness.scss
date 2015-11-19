@@ -207,7 +207,7 @@ a {
 }
 
 p {
-    margin: 0 0 28px;
+    margin: 0 0 2.8rem;
     padding: 0;
 }
 
@@ -920,6 +920,20 @@ img.alignright,
 .widget_calendar td,
 .widget_calendar th {
     text-align: center;
+}
+
+/* random testimonial */
+.widget .testimonial {
+    &-thumb {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &-content, &-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 2.8rem;
+    }
 }
 
 /* ## Featured Content
@@ -2034,8 +2048,6 @@ h2.home-header {
 
     .testimonial {
         &-thumb {
-            border-radius: 50%;
-
             @media screen and (min-width: 768px) { float: left; }
             @media screen and (max-width: 767px) {
                 display: block;
@@ -2048,19 +2060,26 @@ h2.home-header {
             @media screen and (max-width: 767px) { text-align: center; }
         }
 
-        &-content {
-            font-family: $serif-font-stack;
-            font-style: italic;
-            color: $color-dark;
-            font-size: 2.4rem;
-        }
+        &-content { font-size: 2.4rem; }
 
-        &-title {
-            font-family: $sans-serif-font-stack;
-            color: #7b7b7b;
-            font-weight: 300;
-            font-size: 1.8rem;
-        }
+        &-title { font-size: 1.8rem; }
+    }
+}
+
+/* generic styles also used in widget */
+.testimonial {
+    &-thumb { border-radius: 50%; }
+
+    &-content {
+        font-family: $serif-font-stack;
+        font-style: italic;
+        color: $color-dark;
+    }
+
+    &-title {
+        font-family: $sans-serif-font-stack;
+        color: #7b7b7b;
+        font-weight: 300;
     }
 }
 
