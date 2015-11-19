@@ -169,3 +169,9 @@ add_filter( 'excerpt_more', 'ora_read_more_link' );
 function ora_read_more_link() {
     return '&hellip;<a class="more-link" href="' . get_permalink() . '">Read More</a>';
 }
+
+//* Add custom thumbnail size for tagged content posts
+add_action( 'after_setup_theme', 'ora_tagged_content_thumb_size' );
+function ora_tagged_content_thumb_size() {
+    add_image_size( 'tagged-content-thumb', 180, 180, true );
+}
