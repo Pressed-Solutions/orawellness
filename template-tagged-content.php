@@ -44,10 +44,13 @@ function ora_tagged_posts_loop() {
         // output content
         echo '<section class="tagged-content">
         <h2 class="alternate">Recent Posts <em>about</em> ' . esc_attr( get_field( 'post_tag' )->name ) . '</h2>';
+
         while ( $tagged_posts_query->have_posts() ) {
             $tagged_posts_query->the_post();
-            echo '<article class="tagged-content-article"><h3 class="title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3><a href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), array( 160, 160 ), array( 'class' => 'alignright' ) ) . '</a>' . get_the_excerpt() . '</article>';
+            echo '<article class="tagged-content-article"><h3 class="title"><a href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), array( 160, 160 ), array( 'class' => 'alignright' ) ) . get_the_title() . '</a></h3>' . get_the_excerpt() . '</article>';
         }
+
+        custom_pagination( $tagged_posts_query->max_num_pages, "", $paged );
         echo '</section>';
     }
 

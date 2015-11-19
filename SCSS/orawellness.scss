@@ -15,6 +15,7 @@ $color-blue-dark:         #237CA3;
 $color-green-light:       #80B73D;
 $color-green-dark:        #349A4F;
 $color-dark:              #2C2C2C;
+$color-light-gray:        #A1A1A1;
 
 $primary-color:           $color-blue-light;
 $secondary-color:         $color-green-dark;
@@ -812,6 +813,42 @@ th {
     color: $link-color;
 }
 
+.entry-subtitle {
+    font-family: $sans-serif-font-stack;
+    color: $color-dark;
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.tagged-content {
+    margin-bottom: 6rem;
+
+    h2.alternate {
+        font-size: 2.4rem;
+        letter-spacing: 0.1em;
+        text-align: center;
+
+        em {
+            font-family: $serif-font-stack;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+    }
+
+    h3.title {
+        font-size: 2.8rem;
+
+        a { font-weight: 300; }
+    }
+
+    &-article {
+        padding: 3rem 0;
+
+        &:not(:last-of-type) { border-bottom: 1px solid $color-light-gray; }
+    }
+
+}
+
 .widget-title {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -852,7 +889,7 @@ a.alignright {
 img.centered,
 .aligncenter {
     display: block;
-    margin: 0 auto 24px;
+    margin: 0 auto 3rem;
 }
 
 img.alignnone,
@@ -863,17 +900,16 @@ img.alignnone,
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-    margin: 0 24px 24px 0;
+    margin: 0 3rem 3rem 0;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-    margin: 0 0 24px 24px;
+    margin: 0 0 3rem 3rem;
 }
 
 .wp-caption-text {
-    font-size: 14px;
     font-size: 1.4rem;
     font-weight: 800;
     text-align: center;
