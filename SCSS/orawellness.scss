@@ -847,6 +847,35 @@ th {
         &:not(:last-of-type) { border-bottom: 1px solid $color-light-gray; }
     }
 
+    .custom-pagination {
+        padding: 0 25%;
+        text-align: center;
+
+        .next { float: right; }
+        .prev { float: left; }
+        .next, .prev { width: auto; }
+
+        .page-numbers {
+            padding: 0.1em;
+            margin: 0 0.5em;
+        }
+
+        .current {
+            display: inline-block;
+            border-radius: 50%;
+            background-color: $color-blue-light;
+            color: white;
+            min-width: 2em;
+            height: 2em;
+
+            &:hover { cursor: default; }
+        }
+
+        a {
+            color: $color-light-gray;
+            font-weight: inherit;
+        }
+    }
 }
 
 .widget-title {

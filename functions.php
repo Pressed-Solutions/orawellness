@@ -175,3 +175,61 @@ add_action( 'after_setup_theme', 'ora_tagged_content_thumb_size' );
 function ora_tagged_content_thumb_size() {
     add_image_size( 'tagged-content-thumb', 180, 180, true );
 }
+
+//* Add custom pagination function for tagged-content pages
+//* Adapted from http://callmenick.com/post/custom-wordpress-loop-with-pagination
+function custom_pagination( $numpages = '', $pagerange = '', $paged='' ) {
+
+    if ( empty( $pagerange ) ) {
+        $pagerange = 2;
+    }
+
+    /**
+    * This first part of our function is a fallback
+    * for custom pagination inside a regular loop that
+    * uses the global $paged and global $wp_query variables.
+    *
+    * It's good because we can now override default pagination
+    * in our theme, and use this function in default quries
+    * and custom queries.
+    */
+    global $paged;
+    if ( empty( $paged ) ) {
+        $paged = 1;
+    }
+
+    if ( '' == $numpages ) {
+        global $wp_query;
+        $numpages = $wp_query->max_num_pages;
+        if( ! $numpages ) {
+            $numpages = 1;
+        }
+    }
+
+    /**
+    * We construct the pagination arguments to enter into our paginate_links
+    * function.
+    */
+    $pagination_args = array(
+        'base'                  => get_pagenum_link( 1 ) . '%_%',
+        'format'                => 'page/%#%',
+        'total'                 => $numpages,
+        'current'               => $paged,
+        'show_all'              => false,
+        'end_size'              => 1,
+        'mid_size'              => $pagerange,
+        'prev_next'             => True,
+        'prev_text'             => __( 'Previous page' ),
+        'next_text'             => __( 'Next page' ),
+        'type'                  => 'plain',
+        'add_args'              => false,
+    );
+
+    $paginate_links = paginate_links( $pagination_args );
+
+    if ( $paginate_links ) {
+        echo '<nav class="custom-pagination">';
+        echo $paginate_links;
+        echo '</nav>';
+    }
+}

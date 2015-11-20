@@ -26,6 +26,11 @@ function ora_show_thumbnail() {
 add_action( 'genesis_after_loop', 'ora_tagged_posts_loop', 7 );
 function ora_tagged_posts_loop() {
     $post_tag = esc_attr( get_field( 'post_tag' )->slug );
+    if ( get_query_var( 'paged' ) ) {
+        $paged = get_query_var( 'paged' );
+    } else {
+        $paged = 1;
+    }
 
     // WP_Query arguments
     $tagged_posts_args = array (
@@ -33,6 +38,7 @@ function ora_tagged_posts_loop() {
         'tag'                    => $post_tag,
         'pagination'             => true,
         'posts_per_page'         => '3',
+        'paged'                  => $paged,
     );
 
     // The Query
