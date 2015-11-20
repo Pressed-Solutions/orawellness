@@ -38,7 +38,7 @@ $buttons:   (primary, $primary-color),
 $mobile-menu-width:    12em;
 
 %gradient-background {
-    background: linear-gradient( 59deg, $color-blue-light 45%, mix($color-blue-light, $color-green-light, 50%) 55% );
+    background: linear-gradient( 59deg, $color-blue-light 30%, mix($color-blue-light, $color-green-light, 50%) 70% );
     color: white;
     padding: 1.5em;
 }
@@ -410,11 +410,12 @@ textarea {
     font-weight: 300;
     padding: 0.5em;
     width: 100%;
+    border-radius: 0.3rem;
 }
 
 input:focus,
 textarea:focus {
-    border: 1px solid #999;
+    border: 1px solid $color-dark;
     outline: none;
 }
 
@@ -455,12 +456,17 @@ input[type="submit"],
     min-width: 10em;
 
     &:hover, &:focus {
-        background-color: $color-dark;
+        background-color: $body-text-color;
         color: #fff;
         text-decoration: none;
     }
 
     &.bordered { border: 2px solid; }
+
+    &.center {
+        display: block;
+        margin: 0 auto;
+    }
 
     @each $button, $color in $buttons  {
         &.#{$button} {
@@ -987,6 +993,25 @@ img.alignright,
 
     &_calendar {
         td, th { text-align: center; }
+    }
+
+    .widget-title { font-size: 3.2rem; }
+
+    .sidebar-primary &:first-of-type {
+        @extend %gradient-background;
+
+        .widget-title { color: white; }
+
+        .widget-title, p { text-align: center; }
+
+        label { font-weight: 700; }
+
+        input { margin-bottom: 1rem; }
+    }
+
+    /* HealThyMouth Blend */
+    .sidebar-primary &:nth-of-type(2) {
+        border: 1px solid $color-light-gray;
     }
 
     /* random testimonial */
@@ -2232,14 +2257,7 @@ h2.home-header {
         font-weight: 700;
     }
 
-    input {
-        border-radius: .3rem;
-
-        &[type="submit"] {
-            border-radius: 3rem;
-            margin: 2em 1em 0 0;
-        }
-    }
+    input[type="submit"] { margin: 2em 1em 0 0; }
 
     @media screen and (max-width: 767px) {
         display: none;
