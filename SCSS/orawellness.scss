@@ -90,6 +90,7 @@ $mobile-menu-width:    12em;
 - Footer Widgets
 - Site Footer
 - Home page
+- Targeted Landing Pages
 - Media Queries
     - Retina Display
     - Max-width: 1200px
@@ -593,7 +594,7 @@ th {
 .site-inner,
 .wrap {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .site-inner {
@@ -624,14 +625,25 @@ th {
 /* ### Content */
 
 .content {
-    float: right;
-    width: 800px;
+    width: 960px;
+
+    .page-template-template-targeted-landing-page & {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+
+        .entry-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
 }
 
 .content-sidebar .content,
 .content-sidebar-sidebar .content,
 .sidebar-content-sidebar .content {
     float: left;
+    width: 800px;
 }
 
 .content-sidebar-sidebar .content,
@@ -1677,7 +1689,7 @@ img.alignright,
 
     & > p:first-child {
         font-size: 2rem;
-        line-height:  3.5rem;
+        line-height: 3.5rem;
     }
 
     ol, ul {
@@ -2138,26 +2150,39 @@ h2.home-header {
         padding: 1rem 2rem 1rem 1rem;
         @media screen and (min-width: 768px) { width: 48%; }
     }
-
-    .testimonial {
-        &-thumb {
-            @media screen and (min-width: 768px) { float: left; }
-            @media screen and (max-width: 767px) {
-                display: block;
-                margin: 0 auto;
-            }
-        }
-
-        &-content-wrapper {
-            @media screen and (min-width: 768px) { margin-left: 100px; }
-            @media screen and (max-width: 767px) { text-align: center; }
-        }
-
-        &-content { font-size: 2.4rem; }
-
-        &-title { font-size: 1.8rem; }
-    }
 }
+
+/* generic testimonials styles also used in shortcode */
+.testimonial {
+    &.shortcode {
+        width: 40%;
+        float: right;
+        margin-left: 2em;
+    }
+
+    &-thumb {
+        @media screen and (min-width: 768px) { float: left; }
+        @media screen and (max-width: 767px) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &-content-wrapper {
+        @media screen and (min-width: 768px) { margin-left: 100px; }
+        @media screen and (max-width: 767px) { text-align: center; }
+    }
+
+    &-content { font-size: 2.4rem; }
+
+    &.shortcode &-content {
+        font-family: $serif-font-stack;
+        font-weight: 500;
+    }
+
+    &-title { font-size: 1.8rem; }
+}
+
 
 /* generic styles also used in widget */
 .testimonial {
@@ -2263,6 +2288,44 @@ h2.home-header {
         display: none;
     }
 }
+
+/* # Targeted Landing Pages
+---------------------------------------------------------------------------------------------------- */
+.page-template-template-targeted-landing-page {
+    .site-inner { padding-top: 0; }
+
+    .entry-header {
+        text-align: center;
+        width: 100%;
+        display: block;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 35rem;
+        padding: 10rem;
+        margin-bottom: 5rem;
+
+        h1, h2 { color: white; }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) { padding: 8rem; }
+        @media screen and (max-width: 599px) { padding: 5rem; }
+    }
+
+    .introduction {
+        max-width: 960px;
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+
+    .entry-content > p:first-of-type {
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .sidebar { display: none; }
+}
+
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

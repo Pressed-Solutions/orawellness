@@ -170,15 +170,17 @@ function ora_read_more_link() {
     return '&hellip;<a class="more-link" href="' . get_permalink() . '">Read More</a>';
 }
 
-//* Add custom thumbnail size for tagged content posts
-add_action( 'after_setup_theme', 'ora_tagged_content_thumb_size' );
-function ora_tagged_content_thumb_size() {
+//* Add custom thumbnail sizes
+add_action( 'after_setup_theme', 'ora_custom_image_sizes' );
+function ora_custom_image_sizes() {
     add_image_size( 'tagged-content-thumb', 180, 180, true );
+    add_image_size( 'targeted-landing-page-banner', 1400, 350, true );
+    add_image_size( 'targeted-landing-page-featured', 339, 226, true );
 }
 
 //* Add custom pagination function for tagged-content pages
 //* Adapted from http://callmenick.com/post/custom-wordpress-loop-with-pagination
-function custom_pagination( $numpages = '', $pagerange = '', $paged='' ) {
+function custom_pagination( $numpages = '', $pagerange = '', $paged = '' ) {
 
     if ( empty( $pagerange ) ) {
         $pagerange = 2;
