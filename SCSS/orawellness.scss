@@ -1023,7 +1023,7 @@ img.alignright,
     }
 
     /* HealThyMouth Blend */
-    .sidebar-primary &:nth-of-type(2) {
+    .sidebar-primary &:nth-of-type(2).widget_text {
         border: 1px solid $color-light-gray;
     }
 
@@ -2215,19 +2215,6 @@ h2.home-header {
         margin-left: 2em;
     }
 
-    &-thumb {
-        @media screen and (min-width: 768px) { float: left; }
-        @media screen and (max-width: 767px) {
-            display: block;
-            margin: 0 auto;
-        }
-    }
-
-    &-content-wrapper {
-        @media screen and (min-width: 768px) { margin-left: 100px; }
-        @media screen and (max-width: 767px) { text-align: center; }
-    }
-
     &-content { font-size: 2.4rem; }
 
     &.shortcode &-content {
@@ -2238,6 +2225,20 @@ h2.home-header {
     &-title { font-size: 1.8rem; }
 }
 
+.testimonials, .shortcode {
+    .testimonial-thumb {
+        @media screen and (min-width: 768px) { float: left; }
+        @media screen and (max-width: 767px) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .testimonial-content-wrapper {
+        @media screen and (min-width: 768px) { margin-left: 100px; }
+        @media screen and (max-width: 767px) { text-align: center; }
+    }
+}
 
 /* generic styles also used in widget */
 .testimonial {
