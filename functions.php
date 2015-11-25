@@ -146,6 +146,17 @@ function ora_add_footer_sidebar_4() {
 }
 add_theme_support( 'genesis-footer-widgets', 4 );
 
+//* Add post footer widget
+add_action( 'widgets_init', 'ora_add_post_footer_sidebar' );
+function ora_add_post_footer_sidebar() {
+    genesis_register_sidebar( array (
+        'id'            => 'post-footer',
+        'name'          => 'Post Footer',
+        'description'   => __( 'Post Footer widget area.', 'genesischild' )
+    ));
+}
+add_theme_support( 'genesis-footer-widgets', 4 );
+
 //* Add floating call-to-action bar
 add_action( 'widgets_init', 'ora_add_cta_footer' );
 function ora_add_cta_footer() {
@@ -234,4 +245,70 @@ function custom_pagination( $numpages = '', $pagerange = '', $paged = '' ) {
         echo $paginate_links;
         echo '</nav>';
     }
+}
+
+//* Customize post info display
+add_filter( 'genesis_post_info', 'ora_post_info' );
+function ora_post_info( $post_info ) {
+    if ( is_single() ) {
+        $post_info = 'on [post_date] by [post_author] [post_edit]';
+    }
+
+    return $post_info;
+}
+
+//* Add thumbnail to blog posts
+add_action( 'genesis_entry_header', 'ora_show_single_thumbnail', 15 );
+function ora_show_single_thumbnail() {
+    if ( is_single() && has_post_thumbnail() ) {
+        the_post_thumbnail( 'medium', array( 'class' => 'alignright' ) );
+    }
+}
+
+//* Customize post meta display
+add_filter( 'genesis_post_meta', 'ora_post_meta' );
+function ora_post_meta( $post_meta ) {
+    $post_meta = '<section class="post-meta">
+        <section class="categories">
+            <h3 class="alternate">Categories</h3>
+            [post_categories before=""]
+        </section>
+        <section class="tags">
+            <h3 class="alternate">Tags</h3>
+            [post_tags before=""]
+        </section>
+    </section>';
+
+    return $post_meta;
+}
+
+//* Add post footer sidebar
+add_action( 'genesis_entry_footer', 'ora_post_footer_widgets' );
+function ora_post_footer_widgets() {
+    if ( is_single() ) {
+        echo '<section id="post-footer" class="post-footer">';
+        dynamic_sidebar( 'post-footer' );
+        echo '</section>';
+    }
+}
+
+//* Modify author box title
+add_filter( 'genesis_author_box_title', 'ora_author_box_title' );
+function ora_author_box_title() {
+    return get_the_author();
+}
+
+//* Modify the author avatar size
+add_filter( 'genesis_author_box_gravatar_size', 'ora_author_box_gravatar_size' );
+function ora_author_box_gravatar_size( $size ) {
+    return '100';
+}
+
+//* Modify the comment form button
+add_filter( 'comment_form_defaults', 'ora_comment_form_button' );
+function ora_comment_form_button( $defaults ) {
+    $defaults['label_submit'] = __( 'Submit Comment', 'orawellness' );
+    $defaults['class_submit'] = 'primary button bordered';
+
+    return $defaults;
 }

@@ -26,6 +26,7 @@ $subtle-color:            #A0A0A0;
 $light-tan:               #EEEAE2;
 $dark-tan:                #D2CCC1;
 $alternate-color:         #6b6b6b;
+$light-beige:             #f6f4f0;
 
 $buttons:   (primary, $primary-color),
             (secondary, $secondary-color),
@@ -41,6 +42,12 @@ $mobile-menu-width:    12em;
     background: linear-gradient( 59deg, $color-blue-light 30%, mix($color-blue-light, $color-green-light, 50%) 70% );
     color: white;
     padding: 1.5em;
+
+    .widget-title { color: white; }
+
+    label { font-weight: 700; }
+
+    input { margin-bottom: 1rem; }
 }
 
 /* # Table of Contents
@@ -643,7 +650,7 @@ th {
 .content-sidebar-sidebar .content,
 .sidebar-content-sidebar .content {
     float: left;
-    width: 800px;
+    width: 960px;
 }
 
 .content-sidebar-sidebar .content,
@@ -744,6 +751,8 @@ th {
 
 .avatar {
     float: left;
+    border-radius: 50%;
+    border: 1px solid #d6d6d6;
 }
 
 .alignleft .avatar,
@@ -763,21 +772,19 @@ th {
 --------------------------------------------- */
 
 .breadcrumb {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .archive-description,
 .author-box {
-    background-color: #fff;
-    font-size: 16px;
+    background-color: $light-beige;
     font-size: 1.6rem;
-    margin-bottom: 40px;
-    padding: 40px;
+    margin-bottom: 4rem;
+    padding: 4rem;
 }
 
 .author-box-title {
-    font-size: 16px;
-    font-size: 1.6rem;
+    font-size: 2.8rem;
     margin-bottom: 4px;
 }
 
@@ -1012,13 +1019,7 @@ img.alignright,
     .sidebar-primary &:first-of-type {
         @extend %gradient-background;
 
-        .widget-title { color: white; }
-
         .widget-title, p { text-align: center; }
-
-        label { font-weight: 700; }
-
-        input { margin-bottom: 1rem; }
     }
 
     /* HealThyMouth Blend */
@@ -1039,6 +1040,10 @@ img.alignright,
             margin-top: 2.8rem;
         }
     }
+}
+
+.post-footer .widget {
+    @extend %gradient-background;
 }
 
 /* ## Featured Content
@@ -1713,18 +1718,26 @@ img.alignright,
 --------------------------------------------- */
 
 p.entry-meta {
-    font-size: 16px;
     font-size: 1.6rem;
     margin-bottom: 0;
+    color: #acacac;
+
+    .entry-time, .entry-author { color: #6c6c6c; }
 }
 
-.entry-header .entry-meta {
-    margin-bottom: 24px;
-}
+.entry-header .entry-meta { margin-bottom: 1.6rem; }
 
-.entry-footer .entry-meta {
-    border-top: 2px solid #f5f5f5;
-    padding-top: 24px;
+.entry-footer {
+    padding-top: 3.7rem;
+
+    .post-meta {
+        display: flex;
+        font-size: 1.8rem;
+
+        .tags, .categories { width: 50%; }
+
+        h3 { font-size: 1.6rem; }
+    }
 }
 
 .entry-categories,
@@ -1735,6 +1748,31 @@ p.entry-meta {
 .entry-comments-link::before {
     content: "\2014";
     margin: 0 6px 0 2px;
+}
+
+.single-post {
+    .shareaholic-share-buttons-container ul.shareaholic-share-buttons {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .shareaholic-canvas:first-of-type .shareaholic-share-buttons-container ul.shareaholic-share-buttons {
+        margin-bottom: 0.8rem !important;
+    }
+}
+
+.shareaholic-canvas:last-of-type {
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 3.7rem 0;
+
+    &:before {
+        content: 'Share this post';
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #6b6b6b;
+        position: absolute;
+    }
 }
 
 /* ## Pagination
@@ -1815,15 +1853,32 @@ li.comment {
     margin-right: -32px;
 }
 
-.comment-respond input[type="email"],
-.comment-respond input[type="text"],
-.comment-respond input[type="url"] {
-    width: 50%;
-}
+.comment-respond {
+    .comment-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.comment-respond label {
-    display: block;
-    margin-right: 12px;
+    .comment-notes,
+    .comment-form-url,
+    .comment-form-comment,
+    .form-submit { width: 100%; }
+
+    .comment-form-author, .comment-form-email { width: 50%; }
+
+    .comment-form-author { padding-right: 2rem; }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="url"] {
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        margin-right: 12px;
+        font-weight: 700;
+    }
 }
 
 .entry-comments .comment-author {
@@ -1875,7 +1930,7 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-    background-color: #f6f4f0;
+    background-color: $light-beige;
     clear: both;
     padding-top: 40px;
 
@@ -2238,7 +2293,7 @@ h2.home-header {
     &-article {
         margin: 1.5rem;
         padding: 1.5rem;
-        background: rgba(#39a3cf, 0.8);
+        background: rgba($link-color, 0.8);
         color: white;
         text-align: center;
         font-size: 1.8rem;
