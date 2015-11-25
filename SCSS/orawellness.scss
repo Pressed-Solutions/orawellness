@@ -98,6 +98,7 @@ $mobile-menu-width:    12em;
 - Site Footer
 - Home page
 - Targeted Landing Pages
+- Products
 - Media Queries
     - Retina Display
     - Max-width: 1200px
@@ -1700,10 +1701,7 @@ img.alignright,
         line-height: 3.5rem;
     }
 
-    ol, ul {
-        margin-bottom: 28px;
-        margin-left: 40px;
-    }
+    ol, ul { margin: 0 0 2.8rem 4rem; }
 
     ol > li { list-style-type: decimal; }
 
@@ -2384,7 +2382,33 @@ h2.home-header {
     .sidebar { display: none; }
 }
 
+/* # Products
+---------------------------------------------------------------------------------------------------- */
+.woocommerce .site-inner {
+    @media screen and (min-width: 768px) {
+        #content div.product div.images { width: 30%; }
+        #content div.product div.summary { width: 65%; }
 
+        .woocommerce-tabs .entry-content {
+            columns: 2;
+
+            p, ol, ul { break-inside: avoid; }
+        }
+    }
+
+    .summary {
+        ol > li { list-style-type: decimal; }
+        ul > li { list-style-type: disc; }
+        ol, ul {
+            margin: 0 0 2.8rem 4rem;
+        }
+    }
+
+    button.button.alt {
+        @extend .button;
+        @extend .button.cta;
+    }
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

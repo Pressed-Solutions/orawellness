@@ -318,3 +318,18 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+//* Remove sidebars from product pages
+add_filter( 'genesis_site_layout', 'ora_remove_sidebars_woocommerce' );
+function ora_remove_sidebars_woocommerce() {
+    if( is_page ( array( 'cart', 'checkout' )) || is_shop() || 'product' == get_post_type() ) {
+        unregister_sidebar( 'sidebar' );
+        unregister_sidebar( 'sidebar-alt' );
+        genesis_unregister_layout( 'content-sidebar' );
+
+        return 'full-width-content';
+    }
+}
+
+//* Hide product description header
+add_filter( 'woocommerce_product_description_heading', function() { return false; } );
