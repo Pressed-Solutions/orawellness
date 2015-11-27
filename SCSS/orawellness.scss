@@ -887,35 +887,6 @@ th {
         &:not(:last-of-type) { border-bottom: 1px solid $color-light-gray; }
     }
 
-    .custom-pagination {
-        padding: 0 25%;
-        text-align: center;
-
-        .next { float: right; }
-        .prev { float: left; }
-        .next, .prev { width: auto; }
-
-        .page-numbers {
-            padding: 0.1em;
-            margin: 0 0.5em;
-        }
-
-        .current {
-            display: inline-block;
-            border-radius: 50%;
-            background-color: $color-blue-light;
-            color: white;
-            min-width: 2em;
-            height: 2em;
-
-            &:hover { cursor: default; }
-        }
-
-        a {
-            color: $color-light-gray;
-            font-weight: inherit;
-        }
-    }
 }
 
 .widget-title {
@@ -1795,25 +1766,54 @@ p.entry-meta {
 
 .archive-pagination li {
     display: inline;
+
+    a {
+        background-color: $body-text-color;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-size: 1.6rem;
+        padding: 8px 12px;
+        text-decoration: none;
+    }
+
+    &:hover, &:focus, & {
+        background-color: $link-color;
+        text-decoration: underline;
+    }
 }
 
-.archive-pagination li a {
-    background-color: $body-text-color;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    font-size: 1.6rem;
-    padding: 8px 12px;
-    text-decoration: none;
+.custom-pagination {
+    padding: 0 25%;
+    text-align: center;
+
+    .next { float: right; }
+    .prev { float: left; }
+    .next, .prev { width: auto; }
+
+    .page-numbers {
+        padding: 0.1em;
+        margin: 0 0.5em;
+    }
+
+    .current {
+        display: inline-block;
+        border-radius: 50%;
+        background-color: $color-blue-light;
+        color: white;
+        min-width: 2em;
+        height: 2em;
+
+        &:hover { cursor: default; }
+    }
+
+    a {
+        color: $color-light-gray;
+        font-weight: inherit;
+    }
 }
 
-.archive-pagination li a:hover,
-.archive-pagination li a:focus,
-.archive-pagination .active a {
-    background-color: $link-color;
-    text-decoration: underline;
-}
 
 /* ## Comments
 --------------------------------------------- */
