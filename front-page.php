@@ -72,7 +72,7 @@ function ora_testimonial_loop() {
             }
 
             // content
-            echo '<div class="testimonial-content-wrapper"><p class="testimonial-content">' . wptexturize( get_the_content() ) . '</p><p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</div>';
+            echo '<div class="testimonial-content-wrapper"><p class="testimonial-content">' . wptexturize( get_the_content() ) . '</p><p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</p></div>';
 
             echo '</article>';
         }
