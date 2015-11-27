@@ -2262,6 +2262,43 @@ h2.home-header {
         color: #7b7b7b;
         font-weight: 300;
     }
+
+    &-archive {
+        .single {
+            padding: 3rem 0;
+            border-bottom: 1px solid $border-color;
+
+            + .custom-pagination { margin-top: 3rem; }
+        }
+
+        .testimonial-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+
+            .alignleft { margin-bottom: 0; }
+
+        }
+    }
+
+    &.single.share {
+        text-align: center;
+
+        .wrapper {
+            background-color: #db6060;
+            padding: 2rem;
+        }
+
+        h3 { color: white; }
+
+        p { margin-bottom: 0; }
+
+        .button {
+            background-color: transparent;
+
+            &:hover { color: inherit; }
+        }
+    }
 }
 
 .quick-links {
