@@ -28,6 +28,9 @@ $dark-tan:                #D2CCC1;
 $alternate-color:         #6b6b6b;
 $light-beige:             #f6f4f0;
 
+$border-color:            #d6d6d6;
+$border-color-hover:      #999999;
+
 $buttons:   (primary, $primary-color),
             (secondary, $secondary-color),
             (tertiary, $tertiary-color),
@@ -115,7 +118,7 @@ $mobile-menu-width:    12em;
 --------------------------------------------- */
 /* normalize.css v3.0.1 | MIT License | git.io/normalize */
 
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:$body-text-color}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:$body-text-color}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid $border-color;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 /* ## Box Sizing
 --------------------------------------------- */
@@ -240,7 +243,7 @@ li {
 hr {
     border: 0;
     border-collapse: collapse;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $border-color;
     clear: both;
     margin: 1em 0;
 }
@@ -401,11 +404,11 @@ img {
 }
 
 .gallery img {
-    border: 1px solid #ddd;
+    border: 1px solid $border-color;
     height: auto;
     padding: 4px;
 
-    &:hover, &:focus { border: 1px solid #999; }
+    &:hover, &:focus { border: 1px solid $border-color-hover; }
 }
 
 /* ## Forms
@@ -415,7 +418,7 @@ input,
 select,
 textarea {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid $border-color;
     color: $body-text-color;
     font-size: 1.8rem;
     font-weight: 300;
@@ -540,7 +543,7 @@ table {
 }
 
 tbody {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $border-color;
 }
 
 td,
@@ -549,7 +552,7 @@ th {
 }
 
 td {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $border-color;
     padding: 6px 0;
 }
 
@@ -758,7 +761,7 @@ th {
 .avatar {
     float: left;
     border-radius: 50%;
-    border: 1px solid #d6d6d6;
+    border: 1px solid $border-color;
 }
 
 .alignleft .avatar,
@@ -1713,7 +1716,7 @@ img.alignright,
 
     code {
         background-color: $body-text-color;
-        color: #ddd;
+        color: $border-color;
     }
 }
 
@@ -1912,7 +1915,7 @@ li.comment {
 }
 
 .sidebar li {
-    border-bottom: 1px dotted #ddd;
+    border-bottom: 1px dotted $border-color;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
@@ -2645,7 +2648,7 @@ h2.home-header {
 
     blockquote,
     pre {
-        border: 1px solid #999;
+        border: 1px solid $border-color-hover;
         page-break-inside: avoid;
     }
 
