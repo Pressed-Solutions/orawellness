@@ -2218,7 +2218,7 @@ h2.home-header {
         margin-left: 2em;
     }
 
-    &-content { font-size: 2.4rem; }
+    &-content-wrapper { font-size: 2.4rem; }
 
     &.shortcode &-content {
         font-family: $serif-font-stack;
@@ -2247,7 +2247,7 @@ h2.home-header {
 .testimonial {
     &-thumb { border-radius: 50%; }
 
-    &-content {
+    &-content-wrapper {
         font-family: $serif-font-stack;
         font-style: italic;
         color: $color-dark;
@@ -2255,6 +2255,7 @@ h2.home-header {
 
     &-title {
         font-family: $sans-serif-font-stack;
+        font-style: normal;
         color: #7b7b7b;
         font-weight: 300;
     }
