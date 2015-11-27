@@ -47,7 +47,7 @@ function ora_testimonial_loop() {
             echo '</article>';
 
             // add “share” box
-            if ( ( $testimonial_query->current_post % 2 ) == 0 ) {
+            if ( ( ( $testimonial_query->current_post + 1 ) % 2 ) == 0 ) {
                 echo '<article class="testimonial single share">
                     <div class="wrapper">
                         <h3>Do you have an OraWellness success story to share with us?</h3>
