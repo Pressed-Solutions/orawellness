@@ -268,16 +268,19 @@ function ora_show_single_thumbnail() {
 //* Customize post meta display
 add_filter( 'genesis_post_meta', 'ora_post_meta' );
 function ora_post_meta( $post_meta ) {
-    $post_meta = '<section class="post-meta">
-        <section class="categories">
-            <h3 class="alternate">Categories</h3>
-            [post_categories before=""]
-        </section>
-        <section class="tags">
-            <h3 class="alternate">Tags</h3>
-            [post_tags before=""]
-        </section>
-    </section>';
+    global $post;
+    if ( 'post' == get_post_type( get_the_ID( $post ) ) ) {
+        $post_meta = '<section class="post-meta">
+            <section class="categories">
+                <h3 class="alternate">Categories</h3>
+                [post_categories before=""]
+            </section>
+            <section class="tags">
+                <h3 class="alternate">Tags</h3>
+                [post_tags before=""]
+            </section>
+        </section>';
+    }
 
     return $post_meta;
 }
