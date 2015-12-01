@@ -1621,7 +1621,10 @@ img.alignright,
         text-align: left;
         padding-top: 1em;
 
-        .menu-item { display: block; }
+        .menu-item {
+            display: block;
+            width: 100%;
+        }
 
         .sub-menu {
             left: 0;
