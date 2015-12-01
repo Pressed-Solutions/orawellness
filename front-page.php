@@ -40,6 +40,8 @@ function ora_recent_posts_header() {
 // hide post info and meta
 add_filter( 'genesis_post_info', function() { return false; } );
 add_filter( 'genesis_post_meta', function() { return false; } );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
 
 // remove pagination
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
