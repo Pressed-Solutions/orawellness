@@ -2195,6 +2195,8 @@ h2.home-header {
         padding: 3rem;
 
         @media screen and (min-width: 801px) { width: 33%; }
+
+        p { margin-bottom: 0; }
     }
 
     .entry-title {
