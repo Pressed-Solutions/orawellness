@@ -840,6 +840,8 @@ th {
     font-size: 6rem;
     font-family: $serif-font-stack;
     font-weight: 200;
+
+    @media screen and (max-width: 800px) { font-size: 4rem; }
 }
 
 .entry-title a,
@@ -857,6 +859,8 @@ th {
     color: $color-dark;
     font-size: 2.6rem;
     font-weight: 700;
+
+    @media screen and (max-width: 800px) { font-size: 2rem; }
 }
 
 .tagged-content {
