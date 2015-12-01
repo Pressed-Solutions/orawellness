@@ -197,9 +197,6 @@ body {
     font-weight: 300;
     line-height: 1.77;
     margin: 0;
-
-    @media screen and (min-width: 1200px) { padding-bottom: 12rem; }
-    @media screen and (min-width: 768px) and (max-width: 1199px) { padding-bottom: 13rem; }
 }
 
 a,
@@ -607,7 +604,11 @@ th {
 .site-inner,
 .wrap {
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: 90%;
+
+    @media screen and (min-width: 1500px) {
+        max-width: 1400px;
+    }
 }
 
 .site-inner {
@@ -638,8 +639,6 @@ th {
 /* ### Content */
 
 .content {
-    width: 960px;
-
     .page-template-template-targeted-landing-page & {
         display: block;
         margin: 0 auto;
@@ -655,13 +654,13 @@ th {
     .content-sidebar-sidebar &,
     .sidebar-content-sidebar & {
         float: left;
-        width: 960px;
+        width: 70%;
     }
 
     .content-sidebar-sidebar &,
     .sidebar-content-sidebar &,
     .sidebar-sidebar-content &{
-        width: 580px;
+        width: 45%;
     }
 
     .full-width-content & { width: 100%; }
@@ -669,14 +668,14 @@ th {
 
 .post-type-archive-product.content-sidebar #content {
     float: left;
-    width: 960px;
+    width: 70%;
 }
 
 /* ### Primary Sidebar */
 
 .sidebar-primary {
     float: right;
-    width: 360px;
+    width: 25%;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1137,7 +1136,11 @@ img.alignright,
             $color-red 93.5%, $color-red 100%);
     }
 
-    .wrap { padding: 0; }
+    .wrap {
+        padding: 0;
+
+        .wrap { max-width: 100%; }
+    }
 }
 
 /* ## Title Area
@@ -1146,7 +1149,8 @@ img.alignright,
 .title-area {
     float: left;
     padding: 22px 0;
-    width: 360px;
+    width: 25%;
+    max-width: 360px;
 }
 
 .header-full-width .title-area {
@@ -1154,7 +1158,6 @@ img.alignright,
 }
 
 .site-title {
-    font-size: 32px;
     font-size: 3.2rem;
     font-weight: 400;
     line-height: 1.2;
@@ -1171,7 +1174,6 @@ img.alignright,
 }
 
 .site-description {
-    font-size: 16px;
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 1.5;
@@ -1180,7 +1182,6 @@ img.alignright,
 .site-description,
 .site-title {
     margin-bottom: 0;
-    max-width: 85%;
 
     .header-image & {
         display: block;
@@ -1194,7 +1195,8 @@ img.alignright,
 .site-header .widget-area {
     float: right;
     text-align: right;
-    width: 800px;
+    width: 75%;
+    max-width: 800px;
 }
 
 
@@ -1211,9 +1213,13 @@ img.alignright,
     .flexbox & {
         display: flex;
         flex-wrap: wrap;
-    }
 
-    @media screen and (max-width: 959px) { justify-content: center; }
+        &.menu-primary { justify-content: flex-end; }
+
+        @media screen and (max-width: 959px) {
+            &, &.menu-primary { justify-content: center; }
+        }
+    }
 }
 
 .genesis-nav-menu .menu-item {
@@ -1336,14 +1342,16 @@ img.alignright,
 
 .nav-primary .genesis-nav-menu {
 
-    > li > a { padding: 4.5rem 2.5rem; }
+    > li > a {
+        padding: 4.5rem 2.5rem;
+
+        @media screen and (max-width: 1199px) { padding: 4.5rem 1.5rem; }
+    }
 
     a {
         color: #2c2c2c;
         font-weight: 700;
         text-decoration: none;
-
-        @media screen and (max-width: 1199px) { padding: 4.5rem 1.5rem; }
     }
     a:hover,
     a:focus,
@@ -1581,7 +1589,7 @@ img.alignright,
 /* ## Mobile Navigation
 --------------------------------------------- */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
     .js .site-container {
         position: relative;
         overflow: hidden;
@@ -1634,7 +1642,7 @@ img.alignright,
 
         a { color: white; }
 
-        @media screen and (min-width: 768px) { display: none; } // for larger screens
+        @media screen and (min-width: 801px) { display: none; } // for larger screens
     }
 
     display: none; // for non-JS
@@ -1651,7 +1659,7 @@ img.alignright,
 
     span { display: none; }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 801px) {
         display: none;
     }
 }
@@ -1909,15 +1917,12 @@ li.comment {
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
-.sidebar {
-    font-size: 16px;
-    font-size: 1.6rem;
-}
+.sidebar { font-size: 1.6rem; }
 
 .sidebar li {
     border-bottom: 1px dotted $border-color;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .sidebar p:last-child,
@@ -1927,8 +1932,11 @@ li.comment {
 
 .sidebar .widget {
     background-color: #fff;
-    margin-bottom: 40px;
-    padding: 40px;
+    margin-bottom: 4rem;
+    padding: 4rem;
+
+    @media screen and (min-width: 961px) and (max-width: 1200px) { padding: 3rem; }
+    @media screen and (max-width: 960px) { padding: 2rem; }
 }
 
 
@@ -2072,12 +2080,12 @@ div.home-header {
     .wrap {
         background: url('images/people.png') no-repeat;
         position: relative;
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 801px) {
             min-height: 45rem;
             background-position: bottom right;
             background-size: 45%;
         }
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 800px) {
             min-height: 55rem;
             background-position: bottom center;
             background-size: 20em;
@@ -2110,12 +2118,12 @@ div.home-header {
 
         @media screen and (min-width: 1200px) { font-size: 7rem; }
         @media screen and (min-width: 960px) and (max-width: 1199px) { font-size: 6rem; }
-        @media screen and (min-width: 768px) and (max-width: 959px) { font-size: 5rem; }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 801px) and (max-width: 959px) { font-size: 5rem; }
+        @media screen and (min-width: 801px) {
             &.title { left: 0; }
             &.subtitle { left: 2em; }
         }
-        @media screen and (min-width: 400px) and (max-width: 767px) {
+        @media screen and (min-width: 400px) and (max-width: 800px) {
             font-size: 4.1rem;
 
             &.title { left: 10%; }
@@ -2129,7 +2137,7 @@ div.home-header {
         background-color: rgba($color-green-light, 0.8);
         left: 3em;
 
-        @media screen and (min-width: 768px) { max-width: 50%; }
+        @media screen and (min-width: 801px) { max-width: 50%; }
         @media screen and (min-width: 1200px) {
             font-size: 2.2rem;
             top: 12em;
@@ -2138,11 +2146,11 @@ div.home-header {
             font-size: 2rem;
             top: 11.25em;
         }
-        @media screen and (min-width: 768px) and (max-width: 959px) {
+        @media screen and (min-width: 801px) and (max-width: 959px) {
             font-size: 1.8rem;
             top: 10.25em;
         }
-        @media screen and (min-width: 400px) and (max-width: 767px) {
+        @media screen and (min-width: 400px) and (max-width: 800px) {
             font-size: 1.8rem;
             width: 90%;
             margin: 0 auto;
@@ -2179,7 +2187,7 @@ h2.home-header {
     .post {
         padding: 3rem;
 
-        @media screen and (min-width: 768px) { width: 33%; }
+        @media screen and (min-width: 801px) { width: 33%; }
     }
 
     .entry-title {
@@ -2194,7 +2202,7 @@ h2.home-header {
     .post-image {
         float: right;
 
-        @media screen and (min-width: 768px) and (max-width: 1199px) { width: 10rem; }
+        @media screen and (min-width: 801px) and (max-width: 1199px) { width: 10rem; }
     }
 }
 
@@ -2209,7 +2217,7 @@ h2.home-header {
 
     .single {
         padding: 1rem 2rem 1rem 1rem;
-        @media screen and (min-width: 768px) { width: 48%; }
+        @media screen and (min-width: 801px) { width: 48%; }
     }
 }
 
@@ -2233,16 +2241,16 @@ h2.home-header {
 
 .testimonials, .shortcode {
     .testimonial-thumb {
-        @media screen and (min-width: 768px) { float: left; }
-        @media screen and (max-width: 767px) {
+        @media screen and (min-width: 801px) { float: left; }
+        @media screen and (max-width: 800px) {
             display: block;
             margin: 0 auto;
         }
     }
 
     .testimonial-content-wrapper {
-        @media screen and (min-width: 768px) { margin-left: 100px; }
-        @media screen and (max-width: 767px) { text-align: center; }
+        @media screen and (min-width: 801px) { margin-left: 100px; }
+        @media screen and (max-width: 800px) { text-align: center; }
     }
 }
 
@@ -2304,7 +2312,7 @@ h2.home-header {
 .quick-links {
     padding: 3rem;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 801px) {
         padding-top: 6rem;
         background:
             url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -9rem left -9rem,
@@ -2313,7 +2321,7 @@ h2.home-header {
             url('images/quick-links-nutmeg.png') no-repeat bottom -23rem right -15rem,
             url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 800px) {
         padding-top: 15rem;
         background:
             url('images/quick-links-nutmeg-in-bowl.png') no-repeat top -15rem left -9rem,
@@ -2384,7 +2392,7 @@ h2.home-header {
 
     input[type="submit"] { margin: 2em 1em 0 0; }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 800px) {
         display: none;
     }
 }
@@ -2428,7 +2436,7 @@ h2.home-header {
 /* # Products
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce .site-inner {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 801px) {
         #content div.product div.images { width: 30%; }
         #content div.product div.summary { width: 65%; }
 
@@ -2458,53 +2466,33 @@ h2.home-header {
 
 @media only screen and (max-width: 1200px) {
 
-    .site-inner,
-    .wrap {
-        max-width: 960px;
-    }
-
     .content-sidebar-sidebar .content-sidebar-wrap,
     .sidebar-content-sidebar .content-sidebar-wrap,
     .sidebar-sidebar-content .content-sidebar-wrap {
-        width: 740px;
+        width: 74rem;
     }
 
-    .content,
-    .site-header .widget-area {
-        width: 660px;
+    .content {
+        width: 66rem
     }
 
     .sidebar-content-sidebar .content,
     .sidebar-sidebar-content .content,
     .content-sidebar-sidebar .content {
-        width: 400px;
-    }
-
-    .sidebar-primary,
-    .title-area {
-        width: 300px;
+        width: 40rem;
     }
 
     .footer-widgets-1,
     .footer-widgets-2,
-    .footer-widgets-3,
-    .sidebar-primary,
-    .title-area {
-        width: 300px;
+    .footer-widgets-3 {
+        width: 30rem;
     }
 
-    .footer-widgets-1 {
-        margin-right: 30px;
-    }
+    .footer-widgets-1 { margin-right: 3rem; }
 
 }
 
 @media only screen and (max-width: 960px) {
-
-    .site-inner,
-    .wrap {
-        max-width: 800px;
-    }
 
     .site-header .wrap {
         max-width: 90%;
@@ -2521,11 +2509,6 @@ h2.home-header {
     .content-sidebar-sidebar .content-sidebar-wrap,
     .sidebar-content-sidebar .content,
     .sidebar-content-sidebar .content-sidebar-wrap,
-    .footer-widgets-1,
-    .footer-widgets-2,
-    .footer-widgets-3,
-    .sidebar-primary,
-    .sidebar-secondary,
     .sidebar-sidebar-content .content,
     .sidebar-sidebar-content .content-sidebar-wrap,
     .site-header .widget-area,
@@ -2533,8 +2516,13 @@ h2.home-header {
         width: 100%;
     }
 
+    .title-area {
+        float: none;
+        margin: 0 auto;
+    }
+
     .site-header .wrap {
-        padding: 20px 5%;
+        padding: 2rem;
     }
 
     .header-image .site-title > a {
@@ -2575,6 +2563,16 @@ h2.home-header {
 
 }
 
+@media only screen and (min-width: 801px) and (max-width: 960px) {
+    .content-sidebar-sidebar .content,
+    .content-sidebar .content,
+    .sidebar-content-sidebar .content {
+        width: 65%;
+    }
+
+    .sidebar-primary { width: 30%; }
+}
+
 @media only screen and (max-width: 800px) {
 
     body {
@@ -2583,10 +2581,15 @@ h2.home-header {
         font-size: 1.6rem;
     }
 
-    .site-inner,
-    .wrap {
-        padding-left: 5%;
-        padding-right: 5%;
+    .content-sidebar-sidebar .content,
+    .content-sidebar .content,
+    .sidebar-content-sidebar .content,
+    .footer-widgets-1,
+    .footer-widgets-2,
+    .footer-widgets-3,
+    .sidebar-primary,
+    .sidebar-secondary {
+        width: 100%;
     }
 
     .archive-description,
@@ -2595,7 +2598,6 @@ h2.home-header {
     .entry,
     .entry-comments,
     .entry-pings,
-    .sidebar .widget,
     .site-header {
         padding: 0;
     }
@@ -2623,6 +2625,9 @@ h2.home-header {
         padding: 40px;
     }
 
+    img {
+        &.alignright, &.alignleft { max-width: 50%; }
+    }
 }
 
 
