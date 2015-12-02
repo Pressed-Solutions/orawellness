@@ -2196,7 +2196,8 @@ h2.home-header {
     .post {
         padding: 3rem;
 
-        @media screen and (min-width: 801px) { width: 33%; }
+        @media screen and (min-width: 1001px) { width: 33%; }
+        @media screen and (min-width: 801px) and (max-width: 1000px) { width: 50%; }
 
         p { margin-bottom: 0; }
     }
