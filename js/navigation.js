@@ -25,4 +25,26 @@ jQuery(document).ready(function($) {
     $( '.more a' ).on( 'mouseout', function() {
         $( this ).parents( '.sub-menu' ).removeClass( 'open' );
     });
+
+    // move secondary-menu overflow items to a separate dropdown
+    jQuery( '#menu-secondary-menu .menu-item.more' ).append( '<ul class="dropdown"></ul>' );
+    jQuery( '#menu-secondary-menu .sub-menu li' ).each( function() {
+        // get info about this element
+        var $this = jQuery( this );
+        var $parent = $this.parent();
+        var elPosition = $this.position();
+        var elWidth = $this.width();
+        var elHeight = $this.height();
+
+        // get info about the parent element
+        var parentPosition = $parent.position();
+        var parentWidth = $parent.width();
+        var parentHeight = $parent.height();
+        var moreDropdown = $parent.find( '.more .dropdown' );
+
+        // if this is greater than the parent’s height, it needs to be moved
+        if ( elPosition.top > parentHeight ) {
+            $this.detach().appendTo( moreDropdown );
+        }
+    });
 });
