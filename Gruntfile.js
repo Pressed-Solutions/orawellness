@@ -6,6 +6,10 @@ module.exports = function (grunt) {
             files: "SCSS/*.scss",
             tasks: ['sass', 'postcss'],
         },
+        javascript: {
+            files: ["js/*.js", "!js/*.min.js"],
+            tasks: ['uglify'],
+        },
     },
     sass: {
         dist: {
@@ -33,6 +37,13 @@ module.exports = function (grunt) {
             src: 'orawellness.css',
         }
     },
+    uglify: {
+        custom: {
+            files: {
+                'js/navigation.min.js': ['js/navigation.js'],
+            },
+        },
+    },
     browserSync: {
         dev: {
             bsFiles: {
@@ -47,6 +58,7 @@ module.exports = function (grunt) {
   });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
