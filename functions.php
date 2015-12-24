@@ -343,3 +343,16 @@ function ora_login_page_styles() {
     ora_add_web_font_loader();
 }
 add_action( 'login_enqueue_scripts', 'ora_login_page_styles' );
+
+//* Add custom content to login page header
+function ora_add_login_page_header() {
+    echo '<section class="login-container">
+        <h1>Log in to your account</h1>';
+}
+add_filter( 'login_message', 'ora_add_login_page_header' );
+
+//* Add custom content to login page footer
+function ora_add_login_page_footer() {
+    echo '</section><!-- .login-container -->';
+}
+add_action( 'login_footer', 'ora_add_login_page_footer' );
