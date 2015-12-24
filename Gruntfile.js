@@ -17,7 +17,8 @@ module.exports = function (grunt) {
                 style: 'compressed'
             },
             files: {
-                "orawellness.css" : "SCSS/orawellness.scss"
+                "orawellness.css" : "SCSS/orawellness.scss",
+                "orawellness-login.css" : "SCSS/orawellness-login.scss"
             }
         }
     },
@@ -47,7 +48,7 @@ module.exports = function (grunt) {
     browserSync: {
         dev: {
             bsFiles: {
-                src : ['orawellness.css', '**/*.php', '**/*.js'],
+                src : ['*.css', '**/*.php', '**/*.js'],
             },
             options: {
                 watchTask: true,

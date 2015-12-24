@@ -336,3 +336,10 @@ function ora_remove_sidebars_woocommerce() {
 
 //* Hide product description header
 add_filter( 'woocommerce_product_description_heading', function() { return false; } );
+
+//* Add Ora Wellness logo to login page
+function ora_login_page_styles() {
+    echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/orawellness-login.css"/>';
+    ora_add_web_font_loader();
+}
+add_action( 'login_enqueue_scripts', 'ora_login_page_styles' );

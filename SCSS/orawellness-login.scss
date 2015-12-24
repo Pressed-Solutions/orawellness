@@ -1,0 +1,30 @@
+body, html {
+    background-color: #f6f4f0;
+    color: #2c2c2c;
+    font-family: $sans-serif-font-stack;
+}
+#login {
+    width: 80%;
+    max-width: 480px;
+    padding-bottom: 50px;
+}
+.login form {
+    margin-top: 0;
+}
+.login label {
+    font-weight: 700;
+    color: #2c2c2c;
+}
+.login input {
+    border-radius: 3px;
+    border: 1px solid #b0b0b0;
+    box-shadow: none;
+    background-color: white;
+    font-weight: 500;
+}
+.login h1 a {
+    background: url('images/logo.svg') no-repeat top center / contain;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 0;
+}
