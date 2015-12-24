@@ -2412,6 +2412,8 @@ h2.home-header {
 
     .widget:first-child { max-width: 33%; }
 
+    .widget + .widget { margin-left: 5%; }
+
     label {
         margin-right: 1em;
         font-weight: 700;
@@ -2419,9 +2421,10 @@ h2.home-header {
 
     input[type="submit"] { margin: 2em 1em 0 0; }
 
-    @media screen and (max-width: 800px) {
-        display: none;
+    @media screen and (min-width: 801px) {
+        ~ .site-footer { margin-bottom: 9em; }
     }
+    @media screen and (max-width: 800px) { display: none; }
 }
 
 /* # Targeted Landing Pages
