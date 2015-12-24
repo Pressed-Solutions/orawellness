@@ -1129,7 +1129,7 @@ img.alignright,
     &:before {
         content: ' ';
         display: block;
-        height: 3px;
+        height: 0.3rem;
         width: 100%;
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXgAAAADBAMAAADb+HqhAAAAGFBMVEXbYGA0mk85o88jfaOBuD37xiD/oBj42S/uP135AAAANUlEQVR4AWMY6oAtjSAIJR2El+MHRUo0BsrGtACCdAAiLhQAh6GbEEcT72jiHRFgNPGOJl4A664nV9HFhbwAAAAASUVORK5CYII=) no-repeat top center / 100%;
         background: linear-gradient(to right,
@@ -1463,7 +1463,7 @@ img.alignright,
             .dropdown {
                 border-top: 5px solid white;
 
-                li:first-child { border-top: 3px solid #DBD6CB; }
+                li:first-child { border-top: 0.3rem solid #DBD6CB; }
             }
         }
     }
