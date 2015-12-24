@@ -42,8 +42,8 @@ jQuery(document).ready(function($) {
         var parentHeight = $parent.height();
         var moreDropdown = $parent.find( '.more .dropdown' );
 
-        // if this is greater than the parent’s height, it needs to be moved
-        if ( elPosition.top > parentHeight ) {
+        // if top of this is greater than or equal to the parent’s height, it needs to be moved
+        if ( elPosition.top >= parentHeight ) {
             $this.detach().appendTo( moreDropdown );
         }
     });

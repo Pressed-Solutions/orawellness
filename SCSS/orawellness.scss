@@ -1419,14 +1419,14 @@ img.alignright,
 
     .sub-menu {
         overflow: hidden;
-        max-height: 5.2rem;
+        max-height: 5.3rem;
         padding-right: 10rem;
         vertical-align: top;
         transition: all .3s ease;
 
-        &.open {
-            max-height: 50rem;
-        }
+        .js & { overflow: visible; }
+
+        &.open { max-height: 50rem; }
 
         .more {
             position: absolute;
@@ -1435,10 +1435,12 @@ img.alignright,
             padding-right: 2rem;
             cursor: pointer;
 
-            a {
-                background: transparent url('images/icons/arrow-down.svg') no-repeat right 1rem top 1.8rem / 20%;
+            > a {
+                background: transparent url('images/icons/arrow-down.svg') no-repeat right 1rem top 1.8rem / 1.8rem;
                 border: 8px solid transparent;
                 padding-right: 3rem;
+                display: inline-block;
+                float: right;
 
                 &:hover {
                     background-color: #DBD6CB;
@@ -1449,6 +1451,17 @@ img.alignright,
                     background-color: #D6D0C6;
                     border-bottom-color: #C3BCB1;
                 }
+            }
+
+            &.sfHover > ul {
+                display: block !important;
+                clear: both;
+            }
+
+            .dropdown {
+                border-top: 5px solid white;
+
+                li:first-child { border-top: 3px solid #DBD6CB; }
             }
         }
     }
