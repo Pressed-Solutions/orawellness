@@ -1545,6 +1545,8 @@ img.alignright,
     li {
         &:hover, &:focus { background-color: #363636; }
         &:active { background-color: #1B1B1B; }
+
+        &:not(:nth-last-child(2)) a { font-weight: 400; }
     }
 
     a, a:hover, a:active, a:focus {
