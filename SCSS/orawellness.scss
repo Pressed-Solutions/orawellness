@@ -2411,7 +2411,7 @@ h2.home-header {
 
 /* # Login page
 ---------------------------------------------------------------------------------------------------- */
-.page-template-login {
+.page-template-login.logged-out {
     background-color: #f6f4f0;
     color: #2c2c2c;
 
@@ -2435,7 +2435,7 @@ h2.home-header {
         max-width: 27.5rem;
     }
 
-    form {
+    form.login, form.register {
         padding: 4.5rem;
         border-radius: 2px;
         border: 1px solid #EEEAE2;
