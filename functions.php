@@ -336,3 +336,24 @@ function ora_remove_sidebars_woocommerce() {
 
 //* Hide product description header
 add_filter( 'woocommerce_product_description_heading', function() { return false; } );
+
+//* Change default WP login/out/password URLs
+add_filter( 'login_url', 'ora_login_url' );
+function ora_login_url() {
+    return site_url( '/login/', 'login' );
+}
+
+add_filter( 'logout_url', 'ora_logout_url' );
+function ora_logout_url() {
+    return site_url( '/wp-login.php?action=logout', 'login', '/login/?action=logout' );
+}
+
+add_filter( 'register_url', 'ora_register_url' );
+function ora_register_url() {
+    return site_url( '/login/?action=register', 'login', '/login/' );
+}
+
+add_filter( 'lostpassword_url', 'ora_lostpassword_url' );
+function ora_lostpassword_url() {
+    return site_url( '/login/?action=resetpassword', 'login', '/login/' );
+}
