@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+    // Show Ora Wellness logo
+    echo '<img class="logo" src="' . get_stylesheet_directory_uri() . '/images/logo.svg" alt="Ora Wellness" />';
 ?>
 
 <?php wc_print_notices(); ?>
@@ -25,9 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php endif; ?>
 
-        <h2><?php _e( 'Login', 'woocommerce' ); ?></h2>
-
         <form method="post" class="login">
+            <h2>Login</h2>
 
             <?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -45,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <p class="form-row">
                 <?php wp_nonce_field( 'woocommerce-login' ); ?>
                 <input type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
-                <label for="rememberme" class="inline">
+                <label for="rememberme">
                     <input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
                 </label>
             </p>
@@ -63,9 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="col-2">
 
-        <h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
-
         <form method="post" class="register">
+            <h2>Register</h2>
 
             <?php do_action( 'woocommerce_register_form_start' ); ?>
 
