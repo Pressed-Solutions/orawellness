@@ -2503,6 +2503,20 @@ h2.home-header {
         }
     }
 
+    .message {
+        display: block;
+        width: 100%;
+        border-radius: .3rem;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+        font-weight: 700;
+
+        &.reset-password, &.check-email { background-color: $color-blue-dark; }
+        &.logged-out { background-color: $color-red; }
+        &.register { background-color: $color-green-dark; }
+    }
+
     #loginform {
         margin-top: 0;
 
@@ -2513,11 +2527,8 @@ h2.home-header {
 
         input[type="text"],
         input[type="password"] {
-            border-radius: 3px;
-            border: 1px solid #b0b0b0;
             box-shadow: none;
             background-color: white;
-            font-weight: 500;
         }
 
         .forgot-password {
@@ -2534,10 +2545,10 @@ h2.home-header {
         .login-submit {
             float: right;
             margin: 0;
-
-            input { margin: 0; }
         }
     }
+
+    input[type="submit"] { float: right; }
 }
 
 /* # Products
