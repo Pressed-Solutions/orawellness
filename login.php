@@ -9,19 +9,47 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 //* Add custom login form to page content
 function ora_do_login_form() {
     $loggedin = is_user_logged_in();
-    $user = wp_get_current_user();
-    if ( $loggedin ) { ?>
 
-        <h3>You are already logged in!</h3>
-        <p>Hello, <?php echo $user->user_firstname; ?>! Looks like you are already signed in. Thanks for being a part of this website!</p>
-        <p><a href="/">Go to Homepage</a> or <a href="<?php echo wp_logout_url( get_permalink() ); ?>">Log Out</a></p>
+    echo '<a href="' . get_home_url() . '"><img class="logo" src="' . get_stylesheet_directory_uri() . '/images/logo.svg" alt="Ora Wellness" /></a>
+    <section class="login">';
 
-    <?php
+    if ( $_GET ) {
+        if ( 'register' == $_GET['action'] ) {
+            echo '<h1>Register for an account</h1>
+            <p class="message register" id="reg_passmail">Registration confirmation will be emailed to you.</p>
+            <form name="registerform" class="clearfix" id="registerform" action="' . wp_registration_url() . '" method="post" novalidate="novalidate">
+            <p>
+                <label for="user_login">Username<br>
+                <input type="text" name="user_login" id="user_login" class="input" value="" size="20"></label>
+            </p>
+            <p>
+                <label for="user_email">Email<br>
+                <input type="email" name="user_email" id="user_email" class="input" value="" size="25"></label>
+            </p>
+            <input type="hidden" name="redirect_to" value="">
+            <p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary light-blue" value="Register"></p>
+        </form>';
+        } else if ( 'resetpassword' == $_GET['action'] ) {
+            echo '<h1>Reset your password</h1>
+            <p class="message reset-password">Enter your username or email below, then press &ldquo;Get New Password&rdquo; to receive a new password via email.</p>
+            <form name="lostpasswordform" class="clearfix" id="lostpasswordform" action="' . wp_login_url() . '" method="post">
+                <p>
+                    <label for="user_login">Username or E-mail:<br>
+                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20"></label>
+                </p>
+                    <input type="hidden" name="redirect_to" value="">
+                <p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button-primary button light-blue" value="Get New Password"></p>
+            </form>';
+        }
     } else {
-        echo '<a href="' . get_home_url() . '"><img class="logo" src="' . get_stylesheet_directory_uri() . '/images/logo.svg" alt="Ora Wellness" /></a>
-        <section class="login">
-        <h1>Log in to your account</h1>
-        <form name="loginform" class="clearfix" id="loginform" action="' . esc_url( wp_login_url() ) . '" method="post">
+        echo '<h1>Log in to your account</h1>';
+
+        // show logged-out message
+        if ( $_GET && 'logout' == $_GET['action'] ) {
+            echo '<p class="message logged-out">You have successfully logged out of your account.</p>';
+        }
+
+        echo '<form name="loginform" class="clearfix" id="loginform" action="' . site_url( '/wp-login.php' ) . '" method="post">
             <p class="login-username">
                     <label for="user_login">Username</label>
                     <input type="text" name="log" id="use_login" class="input" size="20" />
@@ -38,9 +66,10 @@ function ora_do_login_form() {
                 <input type="submit" name="wp-submit" id="wp-submit" class="button-primary button light-blue clearfix" value="Log In" />
                 <input type="hidden" name="redirect_to" value="/account/" />
             </p>
-        </form>
-        </section>';
+        </form>';
     }
+
+    echo '</section>';
 }
 add_action( 'genesis_entry_content', 'ora_do_login_form' );
 
