@@ -356,3 +356,10 @@ function ora_add_login_page_footer() {
     echo '</section><!-- .login-container -->';
 }
 add_action( 'login_footer', 'ora_add_login_page_footer' );
+
+//* Remove default login page CSS and include custom fonts
+function login_remove_scripts() {
+    add_filter( 'style_loader_tag', '__return_null' );
+    ora_add_web_font_loader();
+}
+add_action( 'login_init', 'login_remove_scripts', 15 );
