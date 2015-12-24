@@ -1,0 +1,68 @@
+/* Variables */
+$body-text-color:         #3d3d3d;
+$link-color:              #39a3cf;
+$link-color-hover:        #217fa6;
+
+$sans-serif-font-stack:   aktiv-grotesk, 'Helvetica Neue', Helvetica, sans-serif;
+$serif-font-stack:        jubilat, Georgia, serif;
+
+$color-red:               #DB605F;
+$color-orange-bright:     #FFA018;
+$color-orange-faded:      #FAC621;
+$color-yellow:            #F8D82E;
+$color-blue-light:        #39A2CF;
+$color-blue-dark:         #237CA3;
+$color-green-light:       #80B73D;
+$color-green-dark:        #349A4F;
+$color-dark:              #2C2C2C;
+$color-light-gray:        #A1A1A1;
+
+$primary-color:           $color-blue-light;
+$secondary-color:         $color-green-dark;
+$tertiary-color:          $color-red;
+$cta-color:               #FFA018;
+$dark-color:              $color-dark;
+$subtle-color:            #A0A0A0;
+$light-tan:               #EEEAE2;
+$dark-tan:                #D2CCC1;
+$alternate-color:         #6b6b6b;
+$light-beige:             #f6f4f0;
+
+$border-color:            #d6d6d6;
+$border-color-hover:      #999999;
+
+$buttons:   (primary, $primary-color),
+            (secondary, $secondary-color),
+            (tertiary, $tertiary-color),
+            (cta, $cta-color),
+            (dark, $dark-color),
+            (subtle, $subtle-color),
+            (white-color, #ffffff);
+
+$mobile-menu-width:    12em;
+
+%gradient-background {
+    background: linear-gradient( 59deg, $color-blue-light 30%, mix($color-blue-light, $color-green-light, 50%) 70% );
+    color: white;
+    padding: 1.5em;
+
+    .widget-title { color: white; }
+
+    label { font-weight: 700; }
+
+    input { margin-bottom: 1rem; }
+}
+
+%rainbow-gradient {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXgAAAADBAMAAADb+HqhAAAAGFBMVEXbYGA0mk85o88jfaOBuD37xiD/oBj42S/uP135AAAANUlEQVR4AWMY6oAtjSAIJR2El+MHRUo0BsrGtACCdAAiLhQAh6GbEEcT72jiHRFgNPGOJl4A664nV9HFhbwAAAAASUVORK5CYII=) no-repeat top center / 100%;
+    background: linear-gradient(to right,
+        $color-red 0%, $color-red 27.5%,
+        $color-orange-bright 27.5%, $color-orange-bright 32.4%,
+        $color-orange-faded 32.4%, $color-orange-faded 39.8%,
+        $color-yellow 39.8%, $color-yellow 44.4%,
+        $color-blue-light 44.4%, $color-blue-light 58.2%,
+        $color-blue-dark 58.2%, $color-blue-dark 70.4%,
+        $color-green-dark 70.4%, $color-green-dark 84.8%,
+        $color-green-light 84.8%, $color-green-light 93.5%,
+        $color-red 93.5%, $color-red 100%);
+}
