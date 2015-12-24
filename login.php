@@ -18,19 +18,28 @@ function ora_do_login_form() {
 
     <?php
     } else {
-        $args = array(
-            'form_id'			=> 'loginform',
-            'redirect'			=> get_bloginfo( 'url' ),
-            'id_username'		=> 'user_login',
-            'id_password'		=> 'user_pass',
-            'id_remember'		=> 'rememberme',
-            'id_submit'			=> 'wp-submit',
-            'label_username'	=> __( 'Username' ),
-            'label_password'	=> __( 'Password' ),
-            'label_remember'	=> __( 'Remember Me' ),
-            'label_log_in'		=> __( 'Log In' ),
-        );
-        wp_login_form( $args );
+        echo '<a href="' . get_home_url() . '"><img class="logo" src="' . get_stylesheet_directory_uri() . '/images/logo.svg" alt="Ora Wellness" /></a>
+        <section class="login">
+        <h1>Log in to your account</h1>
+        <form name="loginform" class="clearfix" id="loginform" action="' . esc_url( wp_login_url() ) . '" method="post">
+            <p class="login-username">
+                    <label for="user_login">Username</label>
+                    <input type="text" name="log" id="use_login" class="input" size="20" />
+            </p>
+            <p class="login-password">
+                    <label for="user_pass">Password</label>
+                    <a href="' . wp_lostpassword_url() .'" class="forgot-password">Forgot Password?</a>
+                    <input type="password" name="pwd" id="user_pass" class="input" size="20" />
+            </p>
+            <p class="login-remember">
+                <label><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> Remember Me</label>
+            </p>
+            <p class="login-submit">
+                <input type="submit" name="wp-submit" id="wp-submit" class="button-primary button light-blue clearfix" value="Log In" />
+                <input type="hidden" name="redirect_to" value="/account/" />
+            </p>
+        </form>
+        </section>';
     }
 }
 add_action( 'genesis_entry_content', 'ora_do_login_form' );

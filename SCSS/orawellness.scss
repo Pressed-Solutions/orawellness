@@ -37,6 +37,7 @@ $buttons:   (primary, $primary-color),
             (cta, $cta-color),
             (dark, $dark-color),
             (subtle, $subtle-color),
+            (light-blue, $color-blue-light),
             (white-color, #ffffff);
 
 $mobile-menu-width:    12em;
@@ -101,6 +102,7 @@ $mobile-menu-width:    12em;
 - Site Footer
 - Home page
 - Targeted Landing Pages
+- Login page
 - Products
 - Media Queries
     - Retina Display
@@ -2461,6 +2463,81 @@ h2.home-header {
     }
 
     .sidebar { display: none; }
+}
+
+/* # Login page
+---------------------------------------------------------------------------------------------------- */
+.page-template-login {
+    background-color: #f6f4f0;
+    color: #2c2c2c;
+
+    .content {
+        width: 100% !important;
+        float: none;
+    }
+
+    .entry-content {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto 4rem;
+        width: 80%;
+        max-width: 27.5rem;
+    }
+
+    .login {
+        padding: 4.5rem;
+        border-radius: 2px;
+        border: 1px solid #EEEAE2;
+        background-color: white;
+        margin-bottom: 5rem;
+
+        h1 {
+            font-weight: 400;
+            text-align: center;
+            margin: 0 auto 5.5rem;
+        }
+    }
+
+    #loginform {
+        margin-top: 0;
+
+        label {
+            font-weight: 700;
+            color: #2c2c2c;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            border-radius: 3px;
+            border: 1px solid #b0b0b0;
+            box-shadow: none;
+            background-color: white;
+            font-weight: 500;
+        }
+
+        .forgot-password {
+            float: right;
+            font-size: smaller;
+        }
+
+        .login-remember {
+            float: left;
+
+            label { font-weight: 400; }
+        }
+
+        .login-submit {
+            float: right;
+            margin: 0;
+
+            input { margin: 0; }
+        }
+    }
 }
 
 /* # Products
