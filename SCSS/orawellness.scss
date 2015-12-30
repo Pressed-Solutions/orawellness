@@ -47,7 +47,7 @@
 - Footer Widgets
 - Site Footer
 - Home page
-- Targeted Landing Pages
+- Targeted Landing Pages and Membership Promo
 - Login page
 - Products
 - Media Queries
@@ -209,7 +209,7 @@ i {
 
 .entry-content blockquote {
     margin: 40px;
-    color: #81b83d;
+    color: $color-green-light;
 
     p {
         font-family: $serif-font-stack;
@@ -220,7 +220,7 @@ i {
     }
 
     &:before, &:after {
-        border: 2px solid #81b83d;
+        border: 2px solid $color-green-light;
         display: block;
         content: ' ';
         width: 50%;
@@ -597,7 +597,8 @@ th {
 /* ### Content */
 
 .content {
-    .page-template-template-targeted-landing-page & {
+    .page-template-template-targeted-landing-page &,
+    .page-template-template-membership-promo {
         display: block;
         margin: 0 auto;
         width: 100%;
@@ -2373,9 +2374,10 @@ h2.home-header {
     @media screen and (max-width: 800px) { display: none; }
 }
 
-/* # Targeted Landing Pages
+/* # Targeted Landing Pages and Membership Promo pages
 ---------------------------------------------------------------------------------------------------- */
-.page-template-template-targeted-landing-page {
+.page-template-template-targeted-landing-page,
+.page-template-template-membership-promo {
     .site-inner { padding-top: 0; }
 
     .entry-header {
@@ -2407,6 +2409,21 @@ h2.home-header {
     }
 
     .sidebar { display: none; }
+}
+
+.page-template-template-membership-promo .entry-content {
+    ul { margin-left: 0; }
+
+    li {
+        list-style-type: none;
+        padding-left: 2rem;
+
+        &:before {
+            padding-right: 2rem;
+            content: '✓';
+            color: $color-green-light;
+        }
+    }
 }
 
 /* # Login page
