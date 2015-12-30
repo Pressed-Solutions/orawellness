@@ -16,6 +16,10 @@ function ora_tagged_content_subheading( $title ) {
     return $title;
 }
 
+// Add testimonials
+add_action( 'genesis_before_footer', 'ora_membership_footer_testimonials', 5 );
+function ora_membership_footer_testimonials() {
+    ora_show_testimonials( 3 );
 }
 
 // Remove sidebar

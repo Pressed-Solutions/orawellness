@@ -372,3 +372,46 @@ function ora_add_logged_out_class( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'ora_add_logged_out_class' );
+
+//* Add function for outputting testimonials
+function ora_show_testimonials( $number_of_posts ) {
+    // WP_Query arguments
+    $args = array (
+        'post_type'              => array( 'testimonial' ),
+        'pagination'             => false,
+        'posts_per_page'         => $number_of_posts,
+    );
+
+    // The Query
+    $testimonial_query = new WP_Query( $args );
+
+    // The Loop
+    if ( $testimonial_query->have_posts() ) {
+        echo '<section class="testimonials">
+        <section class="testimonials-inner wrap">';
+
+        while ( $testimonial_query->have_posts() ) {
+            $testimonial_query->the_post();
+            ob_start();
+            the_content();
+            $content = ob_get_clean();
+
+            echo '<article class="testimonial single">';
+            // post thumbnail
+            if ( has_post_thumbnail() ) {
+                the_post_thumbnail( array( 80, 80 ), array( 'class' => 'testimonial-thumb' ) );
+            }
+
+            // content
+            echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
+            <p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</p></div>';
+
+            echo '</article>';
+        }
+        echo '</section>
+        </section>';
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+}
