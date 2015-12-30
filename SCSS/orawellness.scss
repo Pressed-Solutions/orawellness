@@ -632,13 +632,16 @@ th {
 
 /* ### Primary Sidebar */
 
-.sidebar-primary {
+.sidebar-primary,
+.sidebar-membership {
     float: right;
     width: 25%;
 }
 
 .sidebar-content .sidebar-primary,
-.sidebar-sidebar-content .sidebar-primary {
+.sidebar-sidebar-content .sidebar-primary,
+.sidebar-content .sidebar-membership,
+.sidebar-sidebar-content .sidebar-membership {
     float: left;
 }
 
@@ -2381,7 +2384,8 @@ h2.home-header {
 /* # Targeted Landing Pages and Membership Promo pages
 ---------------------------------------------------------------------------------------------------- */
 .page-template-template-targeted-landing-page,
-.page-template-template-membership-promo {
+.page-template-template-membership-promo,
+.page-template-template-membership-pages {
     .site-inner { padding-top: 0; }
 
     .entry-header {

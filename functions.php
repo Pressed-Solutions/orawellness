@@ -157,13 +157,21 @@ function ora_add_post_footer_sidebar() {
 }
 add_theme_support( 'genesis-footer-widgets', 4 );
 
-//* Add floating call-to-action bar
-add_action( 'widgets_init', 'ora_add_cta_footer' );
-function ora_add_cta_footer() {
+//* Add additional sidebars
+add_action( 'widgets_init', 'ora_add_sidebars' );
+function ora_add_sidebars() {
+    // Floating CTA
     genesis_register_sidebar( array (
         'id'            => 'floating-cta',
         'name'          => 'Floating Call-to-Action',
         'description'   => __( 'Call-to-Action bar on homepage.', 'genesischild' )
+    ));
+
+    // Membership Pages
+    genesis_register_sidebar( array(
+        'id'            => 'membership',
+        'name'          => __( 'Membership Pages', 'genesischild' ),
+        'description'   => __( 'This is a sidebar for membership pages', 'genesischild' ),
     ));
 }
 
