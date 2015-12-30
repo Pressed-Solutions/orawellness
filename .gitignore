@@ -6,3 +6,4 @@
 .sass-cache/
 *.css*
 /js/navigation.min.js
+*.xz
