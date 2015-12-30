@@ -52,7 +52,7 @@ module.exports = function (grunt) {
             },
             options: {
                 watchTask: true,
-                proxy: "http://orawellness.wordpress.dev",
+                proxy: "http://orawellness.dev",
             },
         },
     },
