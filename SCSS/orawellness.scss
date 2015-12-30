@@ -2192,6 +2192,10 @@ h2.home-header {
     .single {
         padding: 1rem 2rem 1rem 1rem;
         @media screen and (min-width: 801px) { width: calc(48% - 2rem); }
+
+        .page-template-template-membership-promo & {
+            @media screen and (min-width: 1001px) { width: calc(33% - 2rem); }
+        }
     }
 }
 
