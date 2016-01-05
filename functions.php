@@ -265,14 +265,6 @@ function ora_post_info( $post_info ) {
     return $post_info;
 }
 
-//* Add thumbnail to blog posts
-add_action( 'genesis_entry_header', 'ora_show_single_thumbnail', 15 );
-function ora_show_single_thumbnail() {
-    if ( is_single() && has_post_thumbnail() ) {
-        the_post_thumbnail( 'medium', array( 'class' => 'alignright' ) );
-    }
-}
-
 //* Customize post meta display
 add_filter( 'genesis_post_meta', 'ora_post_meta' );
 function ora_post_meta( $post_meta ) {
