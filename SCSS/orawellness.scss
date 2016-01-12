@@ -228,6 +228,8 @@ i {
     }
 }
 
+.alternate { color: $alternate-color; }
+
 .required { color: $color-red; }
 
 /* ## Headings
@@ -984,6 +986,26 @@ img.alignright,
             text-align: center;
             margin-top: 2.8rem;
         }
+    }
+
+    /* member info */
+    &.member-info {
+        margin-top: 4rem;
+        border: 1px solid $border-color;
+        background-color: $light-beige;
+        text-align: center;
+
+        .avatar {
+            float: none;
+            display: block;
+            margin: 0 auto 1rem;
+            max-width: 75px;
+            height: auto;
+        }
+
+        h3 { font-size: 2.4rem; }
+
+        p { margin-bottom: 1rem; }
     }
 }
 
@@ -1905,7 +1927,6 @@ li.comment {
 }
 
 .sidebar .widget {
-    background-color: #fff;
     margin-bottom: 4rem;
     padding: 4rem;
 

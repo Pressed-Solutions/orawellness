@@ -20,6 +20,15 @@ function ora_tagged_content_subheading( $title ) {
 add_action( 'genesis_after_content', 'ora_show_membership_sidebar' );
 function ora_show_membership_sidebar() {
     echo '<aside class="sidebar sidebar-membership widget-area" role="complementary" aria-label="Membership Pages Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-membership-pages">';
+    global $current_user;
+    echo '<section id="member-info" class="widget member-info">
+        <div class="widget-wrap">
+            ' . get_avatar( $current_user->data->ID, 150 ) . '
+            <h3>' . $current_user->data->display_name . '</h3>
+            <p class="alternate">' . $current_user->user_email . '</p>
+            <p><strong><a href="' . home_url( '/my-account/' ) . '">My Account</a></strong></p>
+		</div>
+    </section>';
     dynamic_sidebar( 'membership' );
     echo '</aside>';
 }
