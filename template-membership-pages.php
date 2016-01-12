@@ -4,6 +4,16 @@
 * Description: Used as a page template for all the membership pages and subpages
 */
 
+// Add body class for main membership page
+global $post;
+if ( get_post( $post )->post_name == 'membership-home' ) {
+    add_filter( 'body_class', 'ora_membership_home_body_class' );
+}
+function ora_membership_home_body_class( $classes ) {
+    $classes[] = 'membership-home';
+    return $classes;
+}
+
 // Add page subtitle and banner
 add_filter( 'genesis_post_title_text', 'ora_tagged_content_subheading' );
 function ora_tagged_content_subheading( $title ) {
@@ -11,7 +21,9 @@ function ora_tagged_content_subheading( $title ) {
         $title = '<h1 class="entry-title">' . get_field( 'page_subtitle' ) . '</h1>';
     }
 
-    $title .= '<style>.entry-header { background-image: url(\'' . get_field( 'header_image' ) . '\'); } </style>';
+    if ( get_field( 'header_image' ) ) {
+        $title .= '<style>.entry-header { background-image: url(\'' . get_field( 'header_image' ) . '\'); } </style>';
+    }
 
     return $title;
 }

@@ -2419,7 +2419,7 @@ h2.home-header {
 ---------------------------------------------------------------------------------------------------- */
 .page-template-template-targeted-landing-page,
 .page-template-template-membership-promo,
-.page-template-template-membership-pages {
+.membership-home {
     .site-inner { padding-top: 0; }
 
     .entry-header {
@@ -2449,7 +2449,12 @@ h2.home-header {
         font-size: inherit;
         line-height: inherit;
     }
+}
 
+.page-template-template-targeted-landing-page,
+.page-template-template-membership-promo,
+.page-template-template-membership-pages,
+.page-template-login {
     .sidebar-primary { display: none; }
 }
 
