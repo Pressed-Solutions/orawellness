@@ -942,6 +942,8 @@ img.alignright,
 .widget {
     word-wrap: break-word;
 
+    .sidebar & { border: 1px solid $border-color; }
+
     ol > li {
         list-style-position: inside;
         list-style-type: decimal;
@@ -965,13 +967,9 @@ img.alignright,
 
     .sidebar-primary &:first-of-type {
         @extend %gradient-background;
+        border: none;
 
         .widget-title, p { text-align: center; }
-    }
-
-    /* HealThyMouth Blend */
-    .sidebar-primary &:nth-of-type(2).widget_text {
-        border: 1px solid $color-light-gray;
     }
 
     /* random testimonial */
@@ -991,7 +989,6 @@ img.alignright,
     /* member info */
     &.member-info {
         margin-top: 4rem;
-        border: 1px solid $border-color;
         background-color: $light-beige;
         text-align: center;
 
