@@ -1004,6 +1004,22 @@ img.alignright,
 
         p { margin-bottom: 1rem; }
     }
+
+    /* membership menu */
+    .sidebar-membership &.widget_nav_menu {
+        padding: 2rem 4rem;
+
+        li {
+            padding: 1rem 2rem;
+            border-bottom: none;
+
+            &.current-menu-item {
+                background-color: $color-blue-light;
+
+                a { color: white; }
+            }
+        }
+    }
 }
 
 .post-footer .widget {
