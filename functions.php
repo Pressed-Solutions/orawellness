@@ -415,3 +415,27 @@ function ora_show_testimonials( $number_of_posts ) {
     // Restore original Post Data
     wp_reset_postdata();
 }
+
+//* Add member info widget
+class MemberInfoWidget extends WP_Widget {
+    function __construct() {
+        // instantiate the parent object
+        parent::__construct( false, 'Member Info Widget' );
+    }
+    function widget( $args, $instance ) {
+        // widget output
+        global $current_user;
+        echo '<section id="member-info" class="widget member-info">
+            <div class="widget-wrap">
+                ' . get_avatar( $current_user->data->ID, 150 ) . '
+                <h3>' . $current_user->data->display_name . '</h3>
+                <p class="alternate">' . $current_user->user_email . '</p>
+                <p><strong><a href="' . home_url( '/my-account/' ) . '">My Account</a></strong></p>
+            </div>
+        </section>';
+    }
+}
+function ora_member_info_widget() {
+    register_widget( 'MemberInfoWidget' );
+}
+add_action( 'widgets_init', 'ora_member_info_widget' );
