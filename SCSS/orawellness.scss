@@ -965,7 +965,7 @@ img.alignright,
 
     .widget-title { font-size: 3.2rem; }
 
-    .sidebar-primary &:first-of-type {
+    .sidebar-primary &.page-customized-offer {
         @extend %gradient-background;
         border: none;
 

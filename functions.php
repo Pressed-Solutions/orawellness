@@ -439,3 +439,19 @@ function ora_member_info_widget() {
     register_widget( 'MemberInfoWidget' );
 }
 add_action( 'widgets_init', 'ora_member_info_widget' );
+
+//* Show custom page widgets
+function ora_show_custom_widget() {
+    if ( get_field( 'title' ) && get_field( 'subtitle' ) && get_field( 'form_html' ) ) { ?>
+        <section class="widget page-customized-offer">
+            <div class="widget-wrap">
+                <h3 class="widgettitle widget-title"><?php the_field( 'title' ); ?></h3>
+                <div class="textwidget">
+                    <?php the_field( 'subtitle' ); ?>
+                    <?php the_field( 'form_html' ); ?>
+                </div>
+            </div>
+        </section>
+    <?php }
+}
+add_action( 'genesis_before_sidebar_widget_area', 'ora_show_custom_widget' );
