@@ -1590,6 +1590,8 @@ img.alignright,
         input[type="submit"] { @extend .screen-reader-text; }
     }
 
+    /* hide my account menu link when logged in */
+    .logged-in & .menu-item-2608 { display: none; }
 }
 
 /* ## Mobile Navigation
