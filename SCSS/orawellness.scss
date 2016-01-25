@@ -2475,6 +2475,16 @@ h2.home-header {
     }
 }
 
+.page-template-template-ebooks {
+    .content .search-form input {
+        padding: 1rem;
+        background: transparent url('images/icons/search-dark.svg') no-repeat right 1rem center;
+        background-size: 1.5rem;
+
+        &[type="submit"] { @extend .screen-reader-text; }
+    }
+}
+
 .custom-archive {
     .single {
         padding: 3rem 0;
