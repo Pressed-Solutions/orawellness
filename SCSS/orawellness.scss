@@ -1991,7 +1991,7 @@ li.comment {
         }
     }
 
-    &-1, &-2, &-3 { width: 260px; }
+    &-1, &-2, &-3 { width: calc(25% - 20px); }
 
     &-1, &-2 { margin-right: 20px; }
 
@@ -2389,6 +2389,7 @@ h2.home-header {
 
 .floating-cta {
     @extend %gradient-background;
+    padding: 1em;
     font-size: 1.6rem;
     position: fixed;
     bottom: 0;
@@ -2400,7 +2401,7 @@ h2.home-header {
         align-items: center;
     }
 
-    .widget:first-child { max-width: 33%; }
+    .widget:first-child { max-width: 50%; }
 
     .widget + .widget { margin-left: 5%; }
 
