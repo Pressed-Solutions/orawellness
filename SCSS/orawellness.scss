@@ -780,6 +780,8 @@ th {
 .entry-content .search-form,
 .site-header .search-form {
     width: 50%;
+
+    input[type="search"] { margin-bottom: 2rem; }
 }
 
 .genesis-nav-menu .search input[type="submit"],
