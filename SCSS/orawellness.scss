@@ -1696,7 +1696,8 @@ img.alignright,
         line-height: 3.2rem;
     }
 
-    & > p:first-child {
+    & > p:first-child,
+    .author-info + p {
         font-size: 2rem;
         line-height: 3.5rem;
     }
@@ -2484,6 +2485,38 @@ h2.home-header {
         background-size: 1.5rem;
 
         &[type="submit"] { @extend .screen-reader-text; }
+    }
+}
+
+.expert_interview {
+    .author-info {
+        background-color: $light-beige;
+        padding: 2rem;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            width: 33%;
+            float: right;
+            margin: 0 0 2rem 2rem;
+        }
+
+        .avatar {
+            float: none;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+
+        h2 { font-size: 2.8rem; }
+        h3, p { font-size: 1.6rem; }
+        p { margin-bottom: 0; }
+    }
+
+    .transcript-link {
+        @media screen and (min-width: 500px) { margin: -4.5rem 0 0; }
+        @media screen and (max-width: 499px) {
+            float: none;
+            margin-left: 0;
+        }
     }
 }
 
