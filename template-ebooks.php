@@ -4,7 +4,6 @@
  * Description: The page used for the ebooks archive
  */
 
-
 // add loop for testimonials
 add_action( 'genesis_after_entry', 'ora_ebook_loop', 5 );
 function ora_ebook_loop() {
@@ -17,7 +16,7 @@ function ora_ebook_loop() {
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'ebook' ),
-        'posts_per_page'         => '2',
+        'posts_per_page'         => '4',
         'pagination'             => true,
         'paged'                  => $paged,
         'orderby'                => 'post_name',
@@ -26,6 +25,20 @@ function ora_ebook_loop() {
 
     // The Query
     $testimonial_query = new WP_Query( $args );
+
+    // Search form
+    add_filter( 'genesis_search_form', 'ora_ebooks_search' );
+    function ora_ebooks_search( $form, $search_text, $button_text ) {
+
+		$ebook_form = '<form method="get" action="' . get_option( 'home' ) . '/" class="search-form" >
+            <input type="text" value="'. $search_text .'" name="s" placeholder="Search the eBooks" />
+            <input type="hidden" name="post_type" value="ebook" />
+            <input type="submit" value="Search ebooks" />
+            </form>
+        ';
+        return $ebook_form;
+    }
+    get_search_form();
 
     // The Loop
     if ( $testimonial_query->have_posts() ) {
