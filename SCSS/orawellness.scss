@@ -1962,7 +1962,8 @@ li.comment {
 .footer-widgets {
     background-color: $light-beige;
     clear: both;
-    padding-top: 40px;
+    padding-top: 4rem;
+    margin-top: 1rem;
 
     a, a:hover {
         color: $body-text-color;
@@ -1971,9 +1972,9 @@ li.comment {
 
     input { border: 1px solid $body-text-color; }
 
-    li { padding-bottom: 10px; }
+    li { padding-bottom: 1rem; }
 
-    .widget { margin-bottom: 40px; }
+    .widget { margin-bottom: 4rem; }
 
     p:last-child { margin-bottom: 0; }
 
