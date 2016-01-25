@@ -50,7 +50,7 @@ function ora_testimonial_loop() {
             if ( ( ( $testimonial_query->current_post + 1 ) % 2 ) == 0 ) {
                 echo '<article class="testimonial single share">
                     <div class="wrapper">
-                        <h3>Do you have an OraWellness success story to share with us?</h3>
+                        <h3>Do you have an OraWellness success story to share with&nbsp;us?</h3>
                         <p><a href="/testimonial-submit/" class="button bordered">Share Your Story</a></p>
                     </div>
                 </article>';
