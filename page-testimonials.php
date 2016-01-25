@@ -26,7 +26,7 @@ function ora_testimonial_loop() {
 
     // The Loop
     if ( $testimonial_query->have_posts() ) {
-        echo '<section class="testimonial-archive">';
+        echo '<section class="custom-archive testimonial">';
         while ( $testimonial_query->have_posts() ) {
             $testimonial_query->the_post();
 
@@ -57,7 +57,7 @@ function ora_testimonial_loop() {
             }
         }
         custom_pagination( $testimonial_query->max_num_pages, "", $paged );
-        echo '</section><!-- .testimonial-archive -->';
+        echo '</section><!-- .custom-archive.testimonial -->';
     }
 
     // Restore original Post Data

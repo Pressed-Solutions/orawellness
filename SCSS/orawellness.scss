@@ -2295,21 +2295,13 @@ h2.home-header {
         font-weight: 300;
     }
 
-    &-archive {
-        .single {
-            padding: 3rem 0;
-            border-bottom: 1px solid $border-color;
-
-            + .custom-pagination { margin-top: 3rem; }
-        }
-
+    &.custom-archive {
         .testimonial-title {
             display: flex;
             align-items: center;
             margin-bottom: 0;
 
             .alignleft { margin-bottom: 0; }
-
         }
     }
 
@@ -2482,6 +2474,18 @@ h2.home-header {
         }
     }
 }
+
+.custom-archive {
+    .single {
+        padding: 3rem 0;
+        border-bottom: 1px solid $border-color;
+
+        p { margin-bottom: 0; }
+
+        + .custom-pagination { margin-top: 3rem; }
+    }
+}
+
 
 /* # Login page
 ---------------------------------------------------------------------------------------------------- */
