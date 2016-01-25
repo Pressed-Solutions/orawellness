@@ -970,6 +970,11 @@ img.alignright,
         border: none;
 
         .widget-title, p { text-align: center; }
+
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     /* random testimonial */
