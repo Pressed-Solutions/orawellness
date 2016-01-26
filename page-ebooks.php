@@ -15,7 +15,7 @@ function ora_ebook_loop() {
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'ebook' ),
-        'posts_per_page'         => '4',
+        'posts_per_page'         => '5',
         'pagination'             => true,
         'paged'                  => $paged,
         'orderby'                => 'post_name',
@@ -23,7 +23,7 @@ function ora_ebook_loop() {
     );
 
     // The Query
-    $testimonial_query = new WP_Query( $args );
+    $ebook_query = new WP_Query( $args );
 
     // Search form
     add_filter( 'genesis_search_form', 'ora_ebooks_search' );
@@ -40,10 +40,10 @@ function ora_ebook_loop() {
     get_search_form();
 
     // The Loop
-    if ( $testimonial_query->have_posts() ) {
+    if ( $ebook_query->have_posts() ) {
         echo '<section class="custom-archive ebook">';
-        while ( $testimonial_query->have_posts() ) {
-            $testimonial_query->the_post();
+        while ( $ebook_query->have_posts() ) {
+            $ebook_query->the_post();
 
             echo '<article class="ebook single clearfix">';
                 // post thumbnail
@@ -57,7 +57,7 @@ function ora_ebook_loop() {
                 echo '<p class="ebook-content">' . get_the_excerpt() . '</p>';
             echo '</article>';
         }
-        custom_pagination( $testimonial_query->max_num_pages, "", $paged );
+        custom_pagination( $ebook_query->max_num_pages, "", $paged );
         echo '</section><!-- .custom-archive.ebook -->';
     }
 
