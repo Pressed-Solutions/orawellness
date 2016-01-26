@@ -1,6 +1,5 @@
 <?php
 /**
- *Template Name: Membership ebooks
  * Description: The page used for the ebooks archive
  */
 
