@@ -778,7 +778,8 @@ th {
 }
 
 .entry-content .search-form,
-.site-header .search-form {
+.site-header .search-form,
+.content .search-form {
     width: 50%;
 
     input[type="search"] { margin-bottom: 2rem; }
