@@ -2457,16 +2457,6 @@ h2.home-header {
     }
 }
 
-// hide primary sidebar from membership pages
-.page-template-template-targeted-landing-page,
-.page-template-template-membership-promo,
-.page-template-template-membership-pages,
-.parent-pageid-2448,
-.single-expert_interview,
-.page-template-login {
-    .sidebar-primary { display: none; }
-}
-
 .page-template-template-membership-promo .entry-content {
     ul { margin-left: 0; }
 

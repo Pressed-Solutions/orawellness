@@ -23,7 +23,7 @@ function ora_membership_footer_testimonials() {
 }
 
 // Remove sidebar
-unregister_sidebar( 'sidebar' );
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 genesis_unregister_layout( 'content-sidebar' );
 

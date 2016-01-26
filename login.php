@@ -21,7 +21,7 @@ if ( ! is_user_logged_in() ) {
     }
 
     // Remove default sidebars
-    unregister_sidebar( 'sidebar' );
+    remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
     unregister_sidebar( 'sidebar-alt' );
     unregister_sidebar( 'sidebar-primary' );
 }

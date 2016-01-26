@@ -55,7 +55,7 @@ function ora_show_membership_sidebar() {
 }
 
 // Remove default sidebars
-unregister_sidebar( 'sidebar' );
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 unregister_sidebar( 'sidebar-primary' );
 

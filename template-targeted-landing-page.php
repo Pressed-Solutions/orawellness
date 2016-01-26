@@ -75,7 +75,7 @@ function ora_tagged_posts_loop() {
 }
 
 // Remove sidebar
-unregister_sidebar( 'sidebar' );
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 genesis_unregister_layout( 'content-sidebar' );
 

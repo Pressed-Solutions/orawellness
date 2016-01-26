@@ -326,7 +326,7 @@ function woocommerce_support() {
 add_filter( 'genesis_site_layout', 'ora_remove_sidebars_woocommerce' );
 function ora_remove_sidebars_woocommerce() {
     if( is_page ( array( 'cart', 'checkout' )) || is_shop() || 'product' == get_post_type() ) {
-        unregister_sidebar( 'sidebar' );
+        remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
         unregister_sidebar( 'sidebar-alt' );
         genesis_unregister_layout( 'content-sidebar' );
 
