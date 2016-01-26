@@ -2002,11 +2002,12 @@ li.comment {
         }
     }
 
-    &-1, &-2, &-3 { width: calc(25% - 20px); }
+    &-1, &-2, &-3 { width: calc(25% - 2rem); }
 
-    &-1, &-2 { margin-right: 20px; }
-
-    &-1, &-2, &-3 { float: left; }
+    &-1, &-2, &-3 {
+        float: left;
+        margin-right: 2rem;
+    }
 
     &-4 {
         width: 310px;
@@ -2623,7 +2624,7 @@ h2.home-header {
     }
 
     .content {
-        width: 66rem
+        width: 66rem;
     }
 
     .sidebar-content-sidebar .content,
