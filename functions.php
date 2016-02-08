@@ -456,7 +456,7 @@ function ora_show_custom_widget() {
     <?php }
 
     // customized product
-    if ( get_field( 'featured_product_id' ) ) {
+    if ( get_field( 'show_featured_product' ) && get_field( 'featured_product_id' ) ) {
         $custom_title = get_field( 'featured_product_title' );
         $featured_product = get_field( 'featured_product_id' );
         setup_postdata( $featured_product );
@@ -489,7 +489,7 @@ function ora_show_custom_widget() {
     }
 
     // customized testimonial
-    if ( get_field( 'featured_testimonial' ) ) {
+    if ( get_field( 'show_featured_testimonial' ) && get_field( 'featured_testimonial' ) ) {
         $this_testimonial = get_field( 'featured_testimonial' );
         ?>
         <section class="widget testimonial">
