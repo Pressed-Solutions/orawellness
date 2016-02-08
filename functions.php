@@ -487,5 +487,18 @@ function ora_show_custom_widget() {
         </section>
     <?php wp_reset_postdata();
     }
+
+    // customized testimonial
+    if ( get_field( 'featured_testimonial' ) ) {
+        $this_testimonial = get_field( 'featured_testimonial' );
+        ?>
+        <section class="widget testimonial">
+            <div class="widget-wrap">
+                <div class="textwidget">
+                <?php echo do_shortcode( '[testimonial id="' . $this_testimonial->ID . '" content_only="true"]' ); ?>
+                </div>
+            </div>
+        </section>
+    <?php }
 }
 add_action( 'genesis_before_sidebar_widget_area', 'ora_show_custom_widget' );
