@@ -454,5 +454,38 @@ function ora_show_custom_widget() {
             </div>
         </section>
     <?php }
+
+    // customized product
+    if ( get_field( 'featured_product_id' ) ) {
+        $custom_title = get_field( 'featured_product_title' );
+        $featured_product = get_field( 'featured_product_id' );
+        setup_postdata( $featured_product );
+        $product_factory = new WC_Product_Factory();
+        $this_product = $product_factory->get_product( $featured_product->ID );
+    ?>
+        <section class="widget page-customized-product">
+            <div class="widget-wrap">
+                <h3 class="widgettitle widget-title"><?php
+                    if ( $custom_title ) {
+                       echo $custom_title;
+                    } else {
+                        echo $this_product->get_title();
+                    }
+                    ?></h3>
+                <div class="textwidget">
+                    <?php
+                        echo $this_product->get_image( 'shop_thumbnail', array( 'class' => 'alignright' ) );
+                        if ( get_field( 'featured_product_description' ) ) {
+                            the_field( 'featured_product_description' );
+                        } else {
+                            the_excerpt( $featured_product->ID );
+                        }
+                        echo '<a href="' . $this_product->get_permalink() . '" class="clear button bordered cta center">Learn More</a>';
+                    ?>
+                </div>
+            </div>
+        </section>
+    <?php wp_reset_postdata();
+    }
 }
 add_action( 'genesis_before_sidebar_widget_area', 'ora_show_custom_widget' );
