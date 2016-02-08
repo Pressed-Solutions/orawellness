@@ -25,9 +25,15 @@ add_action( 'genesis_after_header', 'ora_home_header', 5 );
 function ora_home_header() {
     $frontpage_ID = get_page_by_title( 'home' )->ID;
     echo '<div class="home-header"><div class="wrap">';
-    echo '<h1 class="title">' . get_field( 'title', $frontpage_ID ) . '</h1>';
-    echo '<h1 class="subtitle">' . get_field( 'subtitle', $frontpage_ID ) . '</h1>';
-    echo '<p class="description">' . get_field( 'description', $frontpage_ID ) . '</p>';
+    if ( get_field( 'title', $frontpage_ID ) ) {
+        echo '<h1 class="title">' . get_field( 'title', $frontpage_ID ) . '</h1>';
+    }
+    if ( get_field( 'subtitle', $frontpage_ID ) ) {
+        echo '<h1 class="subtitle">' . get_field( 'subtitle', $frontpage_ID ) . '</h1>';
+    }
+    if ( get_field( 'description', $frontpage_ID ) ) {
+        echo '<p class="description">' . get_field( 'description', $frontpage_ID ) . '</p>';
+    }
     echo '</div></div>';
 }
 
