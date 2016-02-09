@@ -430,7 +430,7 @@ class MemberInfoWidget extends WP_Widget {
                 ' . get_avatar( $current_user->data->ID, 150 ) . '
                 <h3>' . $current_user->data->display_name . '</h3>
                 <p class="alternate">' . str_replace( '@', '@<wbr>', $current_user->user_email ) . '</p>
-                <p><strong><a href="' . home_url( '/my-account/' ) . '">My Account</a></strong></p>
+                <p><strong><a href="' . home_url( '/my-account/' ) . '">My Profile</a></strong></p>
             </div>
         </section>';
     }
