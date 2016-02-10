@@ -2153,25 +2153,25 @@ div.home-header {
     }
 
     .description {
-        padding: 1.36em 1.1em 1.1em 1.36em;
+        padding: 1.2em 1em 1em 1.2em;
         background-color: rgba($color-green-light, 0.8);
         left: 3em;
 
         @media screen and (min-width: 801px) { max-width: 50%; }
         @media screen and (min-width: 1200px) {
-            font-size: 2.2rem;
-            top: 12em;
+            font-size: 2rem;
+            top: 13em;
         }
         @media screen and (min-width: 960px) and (max-width: 1199px) {
-            font-size: 2rem;
-            top: 11.25em;
+            font-size: 1.8rem;
+            top: 13.25em;
         }
         @media screen and (min-width: 801px) and (max-width: 959px) {
             font-size: 1.8rem;
             top: 10.25em;
         }
         @media screen and (min-width: 400px) and (max-width: 800px) {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             width: 90%;
             margin: 0 auto;
             top: 8.5em;
