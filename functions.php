@@ -374,13 +374,23 @@ function ora_add_logged_out_class( $classes ) {
 add_filter( 'body_class', 'ora_add_logged_out_class' );
 
 //* Add function for outputting testimonials
-function ora_show_testimonials( $number_of_posts ) {
+function ora_show_testimonials( $number_of_posts, $home = NULL ) {
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'testimonial' ),
         'pagination'             => false,
         'posts_per_page'         => $number_of_posts,
     );
+
+    // home page sticky posts
+    if ( $home ) {
+        $args['meta_query'] = array(
+            array(
+                'key'           => 'show_on_home',
+                'value'         => 'true',
+            )
+        );
+    }
 
     // The Query
     $testimonial_query = new WP_Query( $args );
