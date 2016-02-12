@@ -1147,9 +1147,10 @@ img.alignright,
 
 .title-area {
     float: left;
-    padding: 22px 0;
     width: 25%;
     max-width: 360px;
+
+    .home & { padding: 22px 0; }
 }
 
 .header-full-width .title-area {
@@ -1167,7 +1168,7 @@ img.alignright,
 .header-image .site-title > a {
     background: url(images/orawellness-logo.png) no-repeat left / contain;
     float: left;
-    min-height: 160px;
+    min-height: 105px;
     width: 100%;
 }
 
@@ -2093,8 +2094,8 @@ div.home-header {
     background:
         linear-gradient(rgba(white,0.6) 7rem, rgba(white,0) 13rem),
         url('images/home.jpg') no-repeat bottom center / cover;
-    margin-top: -20.4rem;
-    padding-top: 20.4rem;
+    margin-top: -14.9rem;
+    padding-top: 12.6rem;
 
     .wrap {
         background: url('images/people.png') no-repeat;
