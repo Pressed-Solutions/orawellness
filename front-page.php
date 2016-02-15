@@ -55,7 +55,7 @@ remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 // add loop for testimonials
 add_action( 'genesis_before_footer', 'ora_testimonial_loop', 5 );
 function ora_testimonial_loop() {
-    ora_show_testimonials( 4 );
+    ora_show_testimonials( 4, true );
 }
 
 // add loop for need help section
