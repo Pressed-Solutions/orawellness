@@ -1599,7 +1599,9 @@ img.alignright,
     }
 
     /* hide my account menu link when logged in */
-    .logged-in & .menu-item-2452 { display: none; }
+    .logged-in & {
+        .menu-item-2452, .menu-item-2852 { display: none; }
+    }
 }
 
 /* ## Mobile Navigation
