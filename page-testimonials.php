@@ -16,9 +16,11 @@ function ora_testimonial_loop() {
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'testimonial' ),
-        'posts_per_page'         => '3',
+        'posts_per_page'         => '10',
         'pagination'             => true,
-        'paged'                  => $paged
+        'paged'                  => $paged,
+        'order'                  => 'ASC',
+        'orderby'                => 'menu_order modified',
     );
 
     // The Query
@@ -47,7 +49,7 @@ function ora_testimonial_loop() {
             echo '</article>';
 
             // add “share” box
-            if ( ( ( $testimonial_query->current_post + 1 ) % 2 ) == 0 ) {
+            if ( ( $testimonial_query->current_post + 1 ) == 4 ) {
                 echo '<article class="testimonial single share">
                     <div class="wrapper">
                         <h3>Do you have an OraWellness success story to share with&nbsp;us?</h3>
