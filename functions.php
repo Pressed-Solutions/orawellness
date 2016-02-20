@@ -538,3 +538,9 @@ function ora_custom_favicons() {
     <meta name="theme-color" content="#6ba26f">
     ';
 }
+
+//* Prevent YouTube Related Content
+add_filter( 'oembed_result', 'ora_fix_oembed' );
+function ora_fix_oembed( $embed ) {
+   return str_replace( '?feature=oembed', '?feature=oembed&rel=0', $embed );
+}
