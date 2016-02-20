@@ -2312,10 +2312,13 @@ h2.home-header {
 
     &.single.share {
         text-align: center;
+        text-shadow: 0 0 2rem rgba(0,0,0,0.8);
 
         .wrapper {
-            background-color: #db6060;
-            padding: 2rem;
+            background: #db6060 url('images/testimonials-cta-bg-40.jpg') repeat;
+
+            @media screen and (min-width: 1201px) { padding: 2rem 15rem; }
+            @media screen and (max-width: 1200px) { padding: 2rem 5rem; }
         }
 
         h3 { color: white; }
