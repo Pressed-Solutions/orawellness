@@ -23,7 +23,7 @@ function ora_show_child_pages() {
             echo '<article class="page type-page page-' . $child_ID . '" itemscope itemtype="http://schema.org/CreativeWork">';
             echo '<header class="entry-title"><h2 class="entry-title" itemprop="headline"><a href="' . get_permalink( $child_ID ) . '">' . get_the_title( $child_ID ) . '</a></h2></header>';
             echo '<div class="entry-content" itemprop="text"><a href="' . get_permalink( $child_ID ) . '" aria-hidden="true">' . get_the_post_thumbnail( $child_ID, 'tagged-content-thumb', array( 'class' => 'alignright post-image' ) ) . '</a>';
-            the_excerpt( $child_ID );
+            echo pippin_excerpt_by_id( $child_ID );
             echo '</div></article>';
         }
         echo '</div>';
