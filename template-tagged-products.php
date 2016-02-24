@@ -18,7 +18,7 @@ function ora_tagged_content_subheading( $title ) {
 add_action( 'genesis_entry_content', 'ora_show_thumbnail', 8 );
 function ora_show_thumbnail() {
     if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'tagged-content', array( 'class' => 'alignright' ) );
+        the_post_thumbnail( 'tagged-content-thumb', array( 'class' => 'alignright' ) );
     }
 }
 
