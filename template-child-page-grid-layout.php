@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Prevent & Reverse/Best Natural Template
+* Template Name: Child Page Grid Layout
 * Description: Used as a page template for the Prevent & Reverse and The Best Natural… pages
 */
 
