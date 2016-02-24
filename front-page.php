@@ -40,7 +40,15 @@ function ora_home_header() {
 // add “Recent Posts” header
 add_action( 'genesis_before_content', 'ora_recent_posts_header' );
 function ora_recent_posts_header() {
-    echo '<h2 class="home-header alternate">Recent Posts</h2>';
+    echo '<h2 class="post-grid-header alternate">Recent Posts</h2>';
+}
+
+// add .post-grid class to posts
+add_filter( 'genesis_attr_content', 'ora_add_post_grid_class' );
+function ora_add_post_grid_class( $attributes ) {
+    $attributes['class'] .= ' post-grid';
+
+    return $attributes;
 }
 
 // hide post info and meta

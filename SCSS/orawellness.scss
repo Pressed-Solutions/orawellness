@@ -2196,18 +2196,16 @@ div.home-header {
     }
 }
 
-h2.home-header {
+h2.post-grid-header {
     font-size: 2.4rem;
     text-align: center;
 }
 
-.home {
-    main.content {
-        display: flex;
-        flex-wrap: wrap;
-    }
+.post-grid {
+    display: flex;
+    flex-wrap: wrap;
 
-    .post {
+    .post, .page {
         padding: 3rem;
 
         @media screen and (min-width: 1001px) { width: 33%; }
@@ -2228,6 +2226,9 @@ h2.home-header {
     .post-image {
         float: right;
 
+        @media screen and (min-width: 1200px) {
+            .page-template-template-prevent-reverse-natural-products & { max-width: 50%; }
+        }
         @media screen and (min-width: 801px) and (max-width: 1199px) { width: 10rem; }
     }
 }
