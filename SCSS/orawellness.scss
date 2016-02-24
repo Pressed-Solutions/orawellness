@@ -233,6 +233,8 @@ i {
 
 .required { color: $color-red; }
 
+.small { font-size: smaller !important; }
+
 /* ## Headings
 --------------------------------------------- */
 
@@ -2429,7 +2431,7 @@ h2.post-grid-header {
     @media screen and (max-width: 800px) { display: none; }
 }
 
-/* # Targeted Landing Pages and Membership Promo pages
+/* # Targeted Landing Pages and Membership pages
 ---------------------------------------------------------------------------------------------------- */
 .page-template-template-targeted-landing-page,
 .page-template-template-membership-promo,
@@ -2478,6 +2480,20 @@ h2.post-grid-header {
             color: $color-green-light;
         }
     }
+}
+
+#membership-signup {
+    @extend %gradient-background;
+}
+
+#membership-signup, .memb_registration_error {
+    @media screen and (min-width: 801px) {
+        float: right;
+        clear: right;
+        margin: 0 0 1.5em 1.5em;
+        max-width: 50%;
+    }
+    @media screen and (min-width: 1201px) { max-width: 33%; }
 }
 
 .page-template-template-ebooks {

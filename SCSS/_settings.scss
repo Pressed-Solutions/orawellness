@@ -43,8 +43,11 @@ $mobile-menu-width:    12em;
 
 %gradient-background {
     background: linear-gradient( 59deg, $color-blue-light 30%, mix($color-blue-light, $color-green-light, 50%) 70% );
-    color: white;
     padding: 1.5em;
+
+    &, & h2 { color: white; }
+
+    h2 { text-align: center; }
 
     .widget-title { color: white; }
 
