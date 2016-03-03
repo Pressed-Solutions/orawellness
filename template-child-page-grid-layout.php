@@ -11,6 +11,8 @@ function ora_show_child_pages() {
         'post_type'         => 'any',
         'post_status'       => 'publish',
         'numberposts'       => -1,
+        'orderby'           => 'menu_order',
+        'order'             => 'ASC',
     );
 
     $page_children = get_children( $child_args );
