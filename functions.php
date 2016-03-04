@@ -440,6 +440,7 @@ class MemberInfoWidget extends WP_Widget {
                 ' . get_avatar( $current_user->data->ID, 150 ) . '
                 <h3>' . $current_user->data->display_name . '</h3>
                 <p class="alternate">' . str_replace( '@', '@<wbr>', $current_user->user_email ) . '</p>
+                <p><strong><a href="' . home_url( '/membership-home/' ) . '">Membership Home</a></strong></p>
                 <p><strong><a href="' . home_url( '/my-account/' ) . '">My Profile</a></strong></p>
                 <p><strong><a href="' . wp_logout_url( home_url() ) . '">Log Out</a></strong></p>
             </div>
