@@ -2,7 +2,7 @@
 /**
  * Description: The page used for the expert interviews archive
  */
-echo '<h1>testing123</h1>';
+
 // add loop for testimonials
 add_action( 'genesis_after_entry', 'ora_expert_interview_loop', 5 );
 function ora_expert_interview_loop() {
