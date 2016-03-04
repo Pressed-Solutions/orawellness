@@ -578,3 +578,6 @@ function pippin_excerpt_by_id( $post, $length = 55, $tags = '<a><em><strong>', $
 
 	return apply_filters( 'the_content', $the_excerpt );
 }
+
+//* Display 12 products per page
+add_filter( 'loop_shop_per_page', function() { return 12; }, 20 );
