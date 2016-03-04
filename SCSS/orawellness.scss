@@ -2487,6 +2487,8 @@ h2.post-grid-header {
 }
 
 #membership-signup, .memb_registration_error {
+    width: 100%;
+
     @media screen and (min-width: 801px) {
         float: right;
         clear: right;
@@ -2494,6 +2496,13 @@ h2.post-grid-header {
         max-width: 50%;
     }
     @media screen and (min-width: 1201px) { max-width: 33%; }
+}
+
+p.memb_registration_error {
+    background-color: lighten($color-red, 25%);
+    color: $color-red;
+    font-weight: 900;
+    padding: 1.5em;
 }
 
 .page-template-template-ebooks {
