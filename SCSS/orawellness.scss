@@ -2576,7 +2576,7 @@ h2.post-grid-header {
         max-width: 27.5rem;
     }
 
-    form.login, form.register {
+    form.login, form.register, form.lost_reset_password {
         padding: 4.5rem;
         border-radius: 2px;
         border: 1px solid #EEEAE2;
@@ -2588,6 +2588,8 @@ h2.post-grid-header {
             text-align: center;
             margin: 0 auto 5.5rem;
         }
+
+        .form-row { width: 100%; }
 
         label {
             font-weight: 700;
