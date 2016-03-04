@@ -178,7 +178,7 @@ function ora_add_sidebars() {
 //* restrict homepage to 6 posts
 add_action( 'pre_get_posts', 'ora_limit_homepage_posts' );
 function ora_limit_homepage_posts( $query ) {
-    if ( $query->is_main_query() && !is_admin() ) {
+    if ( $query->is_main_query() && is_front_page() ) {
         $query->set( 'posts_per_page', '6' );
     }
 }
