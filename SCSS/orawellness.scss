@@ -2609,6 +2609,25 @@ h2.post-grid-header {
     .lost_reset_password .form-row { float: none; }
 }
 
+/* #Misc Woocommerce
+---------------------------------------------------------------------------------------------------- */
+.woocommerce-page .woocommerce {
+    .woocommerce-message {
+        border-top-color: $color-green-light;
+        &:before { color: $color-green-light; }
+    }
+
+    .woocommerce-info {
+        border-top-color: $color-blue-light;
+        &:before { color: $color-blue-light; }
+    }
+
+    .woocommerce-error {
+        border-top-color: $color-red;
+        &:before { color: $color-red; }
+    }
+}
+
 /* # Products
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce .site-inner {
