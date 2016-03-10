@@ -67,18 +67,18 @@
                 ?>
                         <div class="kbe_category">
                             <h2>
-                                <span class="kbe_count">
-                                    <?php
-                                        echo $kbe_taxonomy->count;
-                                        if ($kbe_taxonomy->count == 1) {
-                                            _e(' Article','kbe');
-                                        } else {
-                                            _e(' Articles','kbe');
-                                        }
-                                    ?>
-                                </span>
                                 <a href="<?php echo get_term_link($kbe_term_slug, 'kbe_taxonomy') ?>">
-                                    <?php echo $kbe_term_name; ?>
+                                    <span class="kbe_count">
+                                        <?php
+                                            echo $kbe_taxonomy->count;
+                                            if ($kbe_taxonomy->count == 1) {
+                                                _e(' Article','kbe');
+                                            } else {
+                                                _e(' Articles','kbe');
+                                            }
+                                        ?>
+                                    </span>
+                                    <span class="kbe_title"><?php echo $kbe_term_name; ?></span>
                                 </a>
                             </h2>
 
@@ -102,18 +102,18 @@
                                         $kbe_child_term_name = $kbe_child_term->name;
                                 ?>
                                         <h3>
-                                            <span class="kbe_count">
-                                                <?php
-                                                    echo $kbe_child_term->count;
-                                                    if ($kbe_child_term->count == 1) {
-                                                        _e(' Article','kbe');
-                                                    } else {
-                                                        _e(' Articles','kbe');
-                                                    }
-                                                ?>
-                                            </span>
                                             <a href="<?php echo get_term_link($kbe_child_term_slug, 'kbe_taxonomy') ?>">
-                                                <?php echo $kbe_child_term_name; ?>
+                                                <span class="kbe_count">
+                                                    <?php
+                                                        echo $kbe_child_term->count;
+                                                        if ($kbe_child_term->count == 1) {
+                                                            _e(' Article','kbe');
+                                                        } else {
+                                                            _e(' Articles','kbe');
+                                                        }
+                                                    ?>
+                                                </span>
+                                                <span class="kbe_title"><?php echo $kbe_child_term_name; ?></span>
                                             </a>
                                         </h3>
                                         <ul class="kbe_child_article_list">

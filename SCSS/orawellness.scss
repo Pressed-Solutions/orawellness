@@ -2669,6 +2669,24 @@ p.memb_registration_error {
     .shareaholic-canvas { display: none; }
 }
 
+/* # Knowledge Base
+---------------------------------------------------------------------------------------------------- */
+
+#kbe_container #kbe_content {
+    .kbe_category h2, .kbe_child_category h3 {
+            a {
+            width: 100%;
+
+            span { margin-bottom: 0; }
+
+            .kbe_title {
+                font-size: inherit;
+                width: 70%;
+            }
+        }
+    }
+}
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
