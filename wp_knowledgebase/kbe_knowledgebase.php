@@ -155,7 +155,7 @@
                         ?>
                         </div>
                     <?php
-                        }
+                        } else {
                     ?>
 
                         <ul class="kbe_article_list">
@@ -192,6 +192,7 @@
                         endif;
                     ?>
                         </ul>
+                    <?php } ?>
                     </div>
             <?php
                 } // end check for parent == 0
