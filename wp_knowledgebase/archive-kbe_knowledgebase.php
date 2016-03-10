@@ -53,12 +53,14 @@
                                     'orderby'       => 'terms_order',
                                     'order'         => 'ASC',
                                     'hide_empty'    => true,
-                                    'parent'        => 0
+                                    'pad_counts'    => true,
                                 );
 
                 $kbe_terms = get_terms(KBE_POST_TAXONOMY, $kbe_cat_args);
 
                 foreach($kbe_terms as $kbe_taxonomy){
+                    if ($kbe_taxonomy->parent === 0) {
+
                     $kbe_term_id = $kbe_taxonomy->term_id;
                     $kbe_term_slug = $kbe_taxonomy->slug;
                     $kbe_term_name = $kbe_taxonomy->name;
@@ -188,7 +190,8 @@
                         </ul>
                     </div>
             <?php
-                }
+                    } // end check if parent == 0
+                } // end foreach
              ?>
             </div>
         </div>
