@@ -582,3 +582,10 @@ function pippin_excerpt_by_id( $post, $length = 55, $tags = '<a><em><strong>', $
 
 //* Display 12 products per page
 add_filter( 'loop_shop_per_page', function() { return 12; }, 20 );
+
+//* Default Knowledge Base categories to open, showing subcategories
+function ora_kbe_default_open() {
+    // definitely not the recommended method, but the plugin doesn’t use the enqueue method, so can’t use it as a dependency
+    echo '<script type="text/javascript">jQuery(document).ready(function(){jQuery(\'.switch\').addClass(\'open\')});</script>';
+}
+add_action( 'wp_footer', 'ora_kbe_default_open' );
