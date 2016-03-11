@@ -25,7 +25,7 @@
 
     $kbe_tax_post_args = array(
         'post_type' => KBE_POST_TYPE,
-        'posts_per_page' => 999,
+        'posts_per_page' => -1,
         'orderby' => 'menu_order',
         'order' => 'ASC',
         'tax_query' => array(
@@ -73,11 +73,15 @@
                 if($kbe_tax_post_qry->have_posts()) :
                     while($kbe_tax_post_qry->have_posts()) :
                         $kbe_tax_post_qry->the_post();
+                        $these_categories = array();
+                        foreach ( wp_get_post_terms( get_the_ID(), 'kbe_taxonomy' ) as $category) {
+                            $these_categories[] = '<a href="' . get_bloginfo( 'home' ) . '/knowledgebase_category/' . $category->slug . '">' . $category->name . '</a>';
+                        }
             ?>
                         <li>
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
-                            </a>
+                            </a> <span class="categories"><?php echo rtrim( implode( $these_categories ), ',' ); ?></span>
                         </li>
             <?php
                     endwhile;

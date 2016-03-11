@@ -2685,6 +2685,17 @@ p.memb_registration_error {
             }
         }
     }
+
+    .kbe_articles span.categories {
+        display: inline-block;
+
+        a {
+            font-style: italic;
+            border-left: 1px solid $body-text-color;
+            padding-left: 0.5em;
+            margin-left: 0.5em;
+        }
+    }
 }
 
 /* # Media Queries
