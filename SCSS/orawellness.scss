@@ -289,6 +289,16 @@ h6 {
     &.alternate { font-size: 2rem; }
 }
 
+@media (max-width: 800px) {
+    h1.xl { font-size: 4.8rem; }
+    h1 { font-size: 3.6rem; }
+    h2 { font-size: 3.2rem; }
+    h3 { font-size: 2.8rem; }
+    h4 { font-size: 2.4rem; }
+    h5 { font-size: 2.0rem; }
+    h6 { font-size: 1.6rem; }
+}
+
 /* ## Objects
 --------------------------------------------- */
 
@@ -1562,7 +1572,7 @@ img.alignright,
         input[name="s"] {
             font-size: 1.4rem;
             font-weight: 700;
-            padding: 1rem;
+            padding: 1rem 3rem 1rem 1rem;
             background: transparent url('images/icons/search-white.svg') no-repeat right 1rem center;
             background-size: 1.5rem;
             border: none;
@@ -1972,7 +1982,7 @@ li.comment {
     background-color: $light-beige;
     clear: both;
     padding-top: 4rem;
-    margin-top: 1rem;
+    margin-top: 4rem;
 
     a, a:hover {
         color: $body-text-color;
