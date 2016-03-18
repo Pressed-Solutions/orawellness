@@ -34,7 +34,7 @@ if(!empty($_GET['ajax']) ? $_GET['ajax'] : null) {
 <?php
     } else {
 ?>
-        <span class="kbe_no_result">Search result not found......</span>
+        <span class="kbe_no_result">Search result not found&hellip;</span>
 <?php
     }
 } else {
@@ -88,11 +88,7 @@ if(!empty($_GET['ajax']) ? $_GET['ajax'] : null) {
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                     </a>
-                    <span class="post-meta">
-                        Post By
-                        <?php the_author(); ?>
-                        | Date : <?php the_time('j F Y'); ?>
-                    </span>
+                    <span class="post-meta">Date: <?php the_time('F j, Y'); ?> </span>
                     <p><?php echo kbe_short_content(300); ?></p>
                     <div class="kbe_read_more">
                         <a href="<?php the_permalink(); ?>">
