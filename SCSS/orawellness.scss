@@ -418,8 +418,11 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .site-container .woocommerce a.button,
+.site-container .woocommerce a.button.alt,
+.site-container .woocommerce .wc-proceed-to-cart .checkout-button,
 .site-container .woocommerce button.button,
-.site-container .woocommerce input.button {
+.site-container .woocommerce input.button,
+.site-container .woocommerce input.button.alt {
     background-color: $body-text-color;
     border: 0;
     border-radius: 3rem;
