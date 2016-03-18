@@ -589,3 +589,11 @@ function ora_kbe_default_open() {
     echo '<script type="text/javascript">jQuery(document).ready(function(){jQuery(\'.switch\').addClass(\'open\')});</script>';
 }
 add_action( 'wp_footer', 'ora_kbe_default_open' );
+
+//* Set email logo size
+function tweak_woocommerce_email_header( $email_heading ) {
+    echo '<style type="text/css">
+        #template_header_image img { width: 275px !important; }
+    </style>';
+}
+add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
