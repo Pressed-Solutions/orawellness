@@ -271,6 +271,9 @@
 #kbe_content .kbe_leftcol .kbe_articles .kbe_read_more a{
     font-size: 14px;
 }
+#kbe_content ul > li {
+    list-style-type: disc;
+}
 
 /*===> Search Page <===*/
 #kbe_content .kbe_leftcol .kbe_articles_search ul {
@@ -461,5 +464,3 @@
 .kbe_tags_div ul li:last-child:after{
     content: "";
 }
-
-/*======> responsive layout <======*/

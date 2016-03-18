@@ -1728,6 +1728,8 @@ img.alignright,
 
     ol ol, ul ul { margin-bottom: 0; }
 
+    .wc_payment_method { list-style-type: none; }
+
     code {
         background-color: $body-text-color;
         color: $border-color;
