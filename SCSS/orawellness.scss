@@ -2633,6 +2633,9 @@ p.memb_registration_error {
 /* #Misc Woocommerce
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce-page .woocommerce {
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error { background-color: white; }
     .woocommerce-message {
         border-top-color: $color-green-light;
         &:before { color: $color-green-light; }
