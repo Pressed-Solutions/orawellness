@@ -18,7 +18,8 @@ module.exports = function (grunt) {
             },
             files: {
                 "orawellness.css" : "SCSS/orawellness.scss",
-                "orawellness-login.css" : "SCSS/orawellness-login.scss"
+                "orawellness-login.css" : "SCSS/orawellness-login.scss",
+                "wp_knowledgebase/kbe_style.css" : "SCSS/KBE-styles.scss"
             }
         }
     },
@@ -36,6 +37,8 @@ module.exports = function (grunt) {
         },
         dist: {
             src: 'orawellness.css',
+            src: 'orawellness-login.css',
+            src: 'wp_knowledgebase/kbe_style.css',
         }
     },
     uglify: {
@@ -48,7 +51,7 @@ module.exports = function (grunt) {
     browserSync: {
         dev: {
             bsFiles: {
-                src : ['*.css', '**/*.php', '**/*.js', '!node_modules'],
+                src : ['**/*.css', '**/*.php', '**/*.js', '!node_modules'],
             },
             options: {
                 watchTask: true,

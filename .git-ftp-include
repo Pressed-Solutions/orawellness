@@ -4,4 +4,7 @@ orawellness.css.map:SCSS/orawellness.scss
 orawellness-login.css:SCSS/orawellness-login.scss
 orawellness-login.css.map:SCSS/orawellness-login.scss
 
+wp_knowledgebase/kbe_style.css:SCSS/KBE-styles.scss
+wp_knowledgebase/kbe_style.css.map:SCSS/KBE-styles.scss
+
 js/navigation.min.js:js/navigation.js
