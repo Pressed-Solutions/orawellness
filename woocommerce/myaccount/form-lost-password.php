@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
     // Show Ora Wellness logo
-    echo '<img class="logo" src="' . get_stylesheet_directory_uri() . '/images/logo.svg" alt="Ora Wellness" />';
+    echo '<img class="logo" src="' . get_stylesheet_directory_uri() . '/images/orawellness-logo.png" alt="Ora Wellness" />';
 ?>
 
 <?php wc_print_notices(); ?>
