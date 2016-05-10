@@ -100,7 +100,11 @@ function ora_need_help_loop() {
         <section class="quick-links-inner wrap">';
         while ( $need_help_query->have_posts() ) {
             $need_help_query->the_post();
-            echo '<article class="quick-links-article"><h3 class="title">' . get_the_title() . '</h3>' . get_the_excerpt() . '</article>';
+            echo '<article class="quick-links-article"><h3 class="title">' . get_the_title() . '</h3>' . get_the_excerpt();
+            if ( strpos( get_the_excerpt(), get_permalink() ) === false ) {
+                echo ora_quick_links_read_more_link();
+            }
+            echo '</article>';
         }
         echo '</section>
         </section>';
