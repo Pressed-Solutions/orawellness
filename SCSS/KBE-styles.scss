@@ -229,10 +229,7 @@
     list-style:none;
 }
 .kbe_articles ul li {
-    list-style: none outside none;
-    padding: 2px 0 0px 30px;
-    margin: 0 0 3px;
-    background: url(../images/kbe_icon_search_list.png) no-repeat left top 9px;
+    list-style-type: none;
 }
 #kbe_content .kbe_leftcol .kbe_articles ul li a {
     text-decoration: none;
