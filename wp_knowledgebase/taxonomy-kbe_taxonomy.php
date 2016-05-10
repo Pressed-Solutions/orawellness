@@ -81,7 +81,7 @@
                         <li>
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
-                            </a> <span class="categories"><?php echo rtrim( implode( $these_categories ), ',' ); ?></span>
+                            </a>
                         </li>
             <?php
                     endwhile;
