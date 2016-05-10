@@ -42,7 +42,7 @@ function ora_testimonial_loop() {
 
                 // post thumbnail
                 if ( has_post_thumbnail() ) {
-                    the_post_thumbnail( array( 80, 80 ), array( 'class' => 'testimonial-thumb alignleft' ) );
+                    the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb alignleft' ) );
                 }
 
                 echo get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</p>';

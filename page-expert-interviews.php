@@ -40,7 +40,7 @@ function ora_expert_interview_loop() {
             echo '<article class="expert-interview single clearfix">';
                 // post thumbnail
                 if ( get_field( 'photo' ) ) {
-                    echo '<a href="' . get_permalink() . '">' . wp_get_attachment_image( get_field( 'photo' ), array( 80, 80 ), true, array( 'class' => 'alignright avatar' ) ) . '</a>';
+                    echo '<a href="' . get_permalink() . '">' . wp_get_attachment_image( get_field( 'photo' ), 'testimonial-thumb', true, array( 'class' => 'alignright avatar' ) ) . '</a>';
                 }
 
                 // title

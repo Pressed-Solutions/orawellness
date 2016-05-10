@@ -409,7 +409,7 @@ function ora_show_testimonials( $number_of_posts, $home = NULL ) {
             echo '<article class="testimonial single">';
             // post thumbnail
             if ( has_post_thumbnail() ) {
-                the_post_thumbnail( array( 80, 80 ), array( 'class' => 'testimonial-thumb' ) );
+                the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb' ) );
             }
 
             // content

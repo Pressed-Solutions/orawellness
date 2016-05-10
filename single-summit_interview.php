@@ -8,7 +8,7 @@ add_action( 'genesis_entry_content', 'ora_expert_interviews_content', 8 );
 function ora_expert_interviews_content() {
     // author info
     echo '<section class="author-info">';
-        echo wp_get_attachment_image( get_field( 'photo' ), array( 80, 80 ), true, array( 'class' => 'avatar' ) );
+        echo wp_get_attachment_image( get_field( 'photo' ), 'testimonial-thumb', true, array( 'class' => 'avatar' ) );
         if ( get_field( 'expert_title' ) ) {
             echo '<h3 class="alternate">' . get_field( 'expert_title' ) . '</h3>';
         }
