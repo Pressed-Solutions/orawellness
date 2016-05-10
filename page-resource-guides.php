@@ -1,11 +1,11 @@
 <?php
 /**
- * Description: The page used for the ebooks archive
+ * Description: The page used for the resource guides archive
  */
 
 // add loop for testimonials
-add_action( 'genesis_after_entry', 'ora_ebook_loop', 5 );
-function ora_ebook_loop() {
+add_action( 'genesis_after_entry', 'ora_resource_guide_loop', 5 );
+function ora_resource_guide_loop() {
     if ( get_query_var( 'paged' ) ) {
         $paged = get_query_var( 'paged' );
     } else {
@@ -23,23 +23,23 @@ function ora_ebook_loop() {
     );
 
     // The Query
-    $ebook_query = new WP_Query( $args );
+    $resource_guide_query = new WP_Query( $args );
 
     // Search form
     echo '<form method="get" action="' . get_option( 'home' ) . '/" class="search-form" >
-        <input type="search" value="'. $search_text .'" name="s" placeholder="Search the eBooks" />
-        <input type="hidden" name="post_type" value="ebook" />
-        <input type="submit" value="Search ebooks" />
+        <input type="search" value="'. $search_text .'" name="s" placeholder="Search the Resource Guides" />
+        <input type="hidden" name="post_type" value="resource_guide" />
+        <input type="submit" value="Search resource guides" />
     </form>
     ';
 
     // The Loop
-    if ( $ebook_query->have_posts() ) {
-        echo '<section class="custom-archive ebook">';
-        while ( $ebook_query->have_posts() ) {
-            $ebook_query->the_post();
+    if ( $resource_guide_query->have_posts() ) {
+        echo '<section class="custom-archive resource-guide">';
+        while ( $resource_guide_query->have_posts() ) {
+            $resource_guide_query->the_post();
 
-            echo '<article class="ebook single clearfix">';
+            echo '<article class="resource-guide single clearfix">';
                 // post thumbnail
                 if ( has_post_thumbnail() ) {
                     echo '<a href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), array( 196, 160 ), array( 'class' => 'alignright' ) ) . '</a>';
@@ -48,11 +48,11 @@ function ora_ebook_loop() {
                 // title
                 echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
                 // content
-                echo '<p class="ebook-content">' . get_the_excerpt() . '</p>';
+                echo '<p class="resource-guide-content">' . get_the_excerpt() . '</p>';
             echo '</article>';
         }
-        custom_pagination( $ebook_query->max_num_pages, "", $paged );
-        echo '</section><!-- .custom-archive.ebook -->';
+        custom_pagination( $resource_guide_query->max_num_pages, "", $paged );
+        echo '</section><!-- .custom-archive.resource-guide -->';
     }
 
     // Restore original Post Data
