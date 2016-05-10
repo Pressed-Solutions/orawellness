@@ -46,7 +46,13 @@ function ora_expert_interview_loop() {
                 // title
                 echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
                 // content
-                echo '<p class="expert-interview-content">' . get_the_excerpt() . '</p>';
+                echo '<p class="expert-interview-content">';
+                if ( get_field( 'introduction' ) ) {
+                    the_field( 'introduction' );
+                } else {
+                    the_excerpt();
+                }
+                echo '</p>';
             echo '</article>';
         }
         custom_pagination( $expert_interview_query->max_num_pages, "", $paged );
