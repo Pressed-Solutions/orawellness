@@ -210,7 +210,8 @@ i {
 .entry-content blockquote,
 #content blockquote {
     margin: 40px;
-    color: $color-green-light;
+
+    &, & p { color: $color-green-light; }
 
     p {
         font-family: $serif-font-stack;
@@ -2366,6 +2367,14 @@ h2.post-grid-header {
 
             &:hover { color: inherit; }
         }
+    }
+}
+
+/* blockquote testimonials */
+blockquote.testimonial {
+    .testimonial-thumb {
+        display: block;
+        margin: 0 auto;
     }
 }
 
