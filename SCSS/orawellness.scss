@@ -2400,7 +2400,12 @@ blockquote.testimonial {
             url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
     }
 
-    .home-header.alternate { color: white; }
+    .home-header.alternate {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 0;
+        color: white;
+    }
 
     &-inner {
         padding: 3rem;
