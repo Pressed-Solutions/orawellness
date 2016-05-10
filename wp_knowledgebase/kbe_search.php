@@ -34,7 +34,7 @@ if(!empty($_GET['ajax']) ? $_GET['ajax'] : null) {
 <?php
     } else {
 ?>
-        <span class="kbe_no_result">Search result not found&hellip;</span>
+        <span class="kbe_no_result">No results found&hellip;</span>
 <?php
     }
 } else {
