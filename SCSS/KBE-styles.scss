@@ -1,3 +1,4 @@
+@import 'settings';
 
 #kbe_container {
     width: 100%;
@@ -130,14 +131,16 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-
-    @media (min-width: 801px) { width: 44%; }
+}
+.kbe_categories h2,
+.kbe_child_category h3 {
+    background-color: $light-tan;
+    padding: 10px;
 }
 .kbe_category span.switch {
     display: none !important;
 }
 #kbe_content h2, .kbe_aside h2 {
-    padding-bottom: 15px;
     margin: 0;
     color: #000;
 }
@@ -184,7 +187,6 @@
     margin-bottom: 30px;
 }
 #kbe_content .kbe_child_category h3 {
-    padding-top: 10px;
     margin-left: 15px;
     color: #000;
     overflow: hidden;
@@ -370,17 +372,14 @@ ul.kbe_child_article_list > li {
 #kbe_content .kbe_leftcol h2 {
     font-size: 22px;
     font-weight: normal;
-    padding-bottom: 12px;
     margin: 18px 0 12px;
 }
 #kbe_content .kbe_leftcol h3 {
     font-size: 18px;
-    padding-bottom: 0px;
     margin: 18px 0 12px;
 }
 #kbe_content .kbe_leftcol h4 {
     font-size: 16px;
-    padding-bottom: 0px;
     margin-bottom: 10px;
 }
 #kbe_content .kbe_leftcol ul {
