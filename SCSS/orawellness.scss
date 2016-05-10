@@ -1709,7 +1709,8 @@ img.alignright,
 
 .entry { margin-bottom: 40px; }
 
-.entry-content {
+.entry-content,
+.kbe_content_full {
     p {
         font-family: $sans-serif-font-stack;
         font-weight: 300;
