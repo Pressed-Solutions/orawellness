@@ -36,14 +36,6 @@ function ora_expert_interviews_content() {
     // media
     echo '<h2>Listen</h2>';
     echo wp_oembed_get( esc_url( get_field( 'media_url' ) ) );
-
-    // transcript
-    echo '<h2>Transcript</h2>';
-
-    // transcript PDF
-    if ( get_field( 'transcript_pdf_link' ) ) {
-        echo '<a class="transcript-link alignright" href=' . esc_url( get_field( 'transcript_pdf_link' ) ) . '" target="_blank">Download Transcript PDF</a>';
-    }
 }
 
 // Add membership sidebar
