@@ -2029,7 +2029,8 @@ li.comment {
     }
 
     &-4 {
-        width: 310px;
+        width: 25%;
+        min-width: 310px;
         float: right;
         background: linear-gradient(to bottom, #57A747, $color-green-light);
         padding: 2em;
