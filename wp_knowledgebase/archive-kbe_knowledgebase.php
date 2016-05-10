@@ -15,15 +15,6 @@
     } elseif(KBE_SIDEBAR_HOME == 2) {
         $kbe_content_class = 'class="kbe_content_left"';
     }
-
-    // Classes For sidebar div
-    if(KBE_SIDEBAR_HOME == 0) {
-        $kbe_sidebar_class = 'kbe_aside_none';
-    } elseif(KBE_SIDEBAR_HOME == 1) {
-        $kbe_sidebar_class = 'kbe_aside_left';
-    } elseif(KBE_SIDEBAR_HOME == 2) {
-        $kbe_sidebar_class = 'kbe_aside_right';
-    }
 ?>
 <div id="kbe_container">
 
@@ -208,13 +199,9 @@
     <!--content-->
 
     <!--aside-->
-    <div class="kbe_aside <?php echo $kbe_sidebar_class; ?>">
-    <?php
-        if((KBE_SIDEBAR_HOME == 2) || (KBE_SIDEBAR_HOME == 1)){
-            dynamic_sidebar('kbe_cat_widget');
-        }
-    ?>
-    </div>
+    <aside class="sidebar sidebar-kbe widget-area" role="complementary" aria-label="Membership Pages Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="kbe-sidebar">';
+    <?php genesis_widget_area( 'kbe_cat_widget' ); ?>
+    </aside>
     <!--/aside-->
 
 </div>

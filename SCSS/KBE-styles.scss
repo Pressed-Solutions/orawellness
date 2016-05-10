@@ -1,7 +1,6 @@
 
 #kbe_container {
     width: 100%;
-    max-width: 960px;
     margin: 0 auto;
     background: #fff;
     overflow: hidden;
@@ -300,17 +299,8 @@ ul.kbe_child_article_list > li {
 
 /*===> aside <===*/
 .kbe_aside {
-    width: 30%;
+    max-width: 30%;
     float: right;
-}
-.kbe_aside.kbe_aside_none{
-    display: none !important;
-}
-.kbe_aside.kbe_aside_left{
-    float: left !important;
-}
-.kbe_aside.kbe_aside_right{
-    float: right !important;
 }
 .kbe_widget {
     margin-bottom: 40px;

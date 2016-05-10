@@ -1044,6 +1044,20 @@ img.alignright,
             }
         }
     }
+
+    /* support staff */
+    &.ora-support-staff {
+        background-color: $light-tan;
+        padding: 2rem;
+        text-align: center;
+
+        figure.staff-member {
+            box-sizing: border-box;
+            width: 33%;
+            margin: 0 2rem 2rem;
+            display: inline-block;
+        }
+    }
 }
 
 .post-footer .widget {
