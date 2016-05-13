@@ -46,10 +46,7 @@
 
     &:last-child:after { display: none; }
 
-    &:first-child {
-        padding-left: 0;
-        margin-left: 0;
-    }
+    &:first-child { display: none; }
 }
 
 /*===> search field <===*/
