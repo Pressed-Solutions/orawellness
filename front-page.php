@@ -91,7 +91,7 @@ function ora_need_help_loop() {
         // change “read more” text to buttons
         add_filter( 'excerpt_more', 'ora_quick_links_read_more_link' );
         function ora_quick_links_read_more_link() {
-            return '&hellip;<a class="more-link button bordered white-color" href="' . get_permalink() . '">Read More</a>';
+            return '&hellip;<a class="more-link button bordered white-color" href="' . get_permalink() . '">Learn More</a>';
         }
 
         // output content
