@@ -187,6 +187,7 @@
         </div>
         <!--/leftcol-->
 
+        <p>Not finding your question answered? <a href="http://orawellness.pressedsolutions.com/contact/">Contact us here</a>.</p>
     </div>
     <!--content-->
 
