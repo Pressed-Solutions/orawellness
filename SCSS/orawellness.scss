@@ -50,6 +50,7 @@
 - Targeted Landing Pages and Membership Promo
 - Login page
 - Products
+- Support Staff
 - Media Queries
     - Retina Display
     - Max-width: 1200px
@@ -2743,6 +2744,17 @@ p.memb_registration_error {
             margin-left: 0.5em;
         }
     }
+}
+
+/* # Support Staff
+---------------------------------------------------------------------------------------------------- */
+.post-type-archive-support_staff {
+    .entry-meta { display: none; }
+    .post-image { border-radius: 50%; }
+}
+
+.support_staff {
+    .wp-post-image { border-radius: 50%; }
 }
 
 /* # Media Queries
