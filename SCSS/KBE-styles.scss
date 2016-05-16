@@ -156,11 +156,8 @@
     line-height: normal;
     margin-bottom: .5em;
 }
-#kbe_content .kbe_leftcol .kbe_child_article_list li a {
-    font-size: 14px;
-}
 #kbe_content a.see-all {
-    font-size: small;
+    font-size: smaller;
     font-weight: 300;
 }
 #kbe_content .kbe_category .kbe_child_category {
@@ -185,7 +182,6 @@
 }
 #kbe_content .kbe_leftcol .kbe_article_list li a {
     text-decoration: none;
-    font-size: 14px;
 }
 
 /*===> Articles <===*/
@@ -331,16 +327,13 @@ ul.kbe_child_article_list > li {
 
 /*===> Details <===*/
 #kbe_content .kbe_leftcol h2 {
-    font-size: 22px;
     font-weight: normal;
     margin: 18px 0 12px;
 }
 #kbe_content .kbe_leftcol h3 {
-    font-size: 18px;
     margin: 18px 0 12px;
 }
 #kbe_content .kbe_leftcol h4 {
-    font-size: 16px;
     margin-bottom: 10px;
 }
 #kbe_content .kbe_leftcol ul {
