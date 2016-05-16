@@ -67,16 +67,6 @@
                     <div class="kbe_category">
                         <h2>
                             <a href="<?php echo get_term_link($kbe_term_slug, 'kbe_taxonomy') ?>">
-                                <span class="kbe_count">
-                                    <?php
-                                        echo $kbe_taxonomy->count;
-                                        if ($kbe_taxonomy->count == 1) {
-                                            _e(' Article','kbe');
-                                        } else {
-                                            _e(' Articles','kbe');
-                                        }
-                                    ?>
-                                </span>
                                 <span class="kbe_title"><?php echo $kbe_term_name; ?></span>
                             </a>
                         </h2>
@@ -102,16 +92,6 @@
                         ?>
                                 <h3>
                                     <a href="<?php echo get_term_link($kbe_child_term_slug, 'kbe_taxonomy') ?>">
-                                        <span class="kbe_count">
-                                            <?php
-                                                echo $kbe_child_term->count;
-                                                if ($kbe_child_term->count == 1) {
-                                                    _e(' Article','kbe');
-                                                } else {
-                                                    _e(' Articles','kbe');
-                                                }
-                                            ?>
-                                        </span>
                                         <span class="kbe_title"><?php echo $kbe_child_term_name; ?></span>
                                     </a>
                                 </h3>
@@ -141,7 +121,11 @@
                                             </a>
                                         </li>
                             <?php
-                                    endwhile;
+                                    endwhile; ?>
+                                        <li>
+                                            <a href="<?php echo get_term_link($kbe_child_term_slug, 'kbe_taxonomy') ?>" class="see-all">See all &ldquo;<?php echo $kbe_child_term_name; ?>&rdquo; questions &rarr;</a>
+                                        </li>
+                            <?php
                                 else :
                                     echo "No posts";
                                 endif;
@@ -183,7 +167,11 @@
                                     </a>
                                 </li>
                     <?php
-                            endwhile;
+                            endwhile; ?>
+                                <li>
+                                    <a href="<?php echo get_term_link($kbe_term_slug, 'kbe_taxonomy') ?>" class="see-all">See all &ldquo;<?php echo $kbe_term_name; ?>&rdquo; questions &rarr;</a>
+                                </li>
+                    <?php
                         else :
                             echo "No posts";
                         endif;

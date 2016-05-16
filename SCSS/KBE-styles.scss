@@ -128,29 +128,12 @@
     vertical-align: top;
     position: relative;
 }
-.kbe_categories h2,
-.kbe_child_category h3 {
-    background-color: $light-tan;
-    padding: 10px;
-}
 .kbe_category span.switch {
     display: none !important;
 }
 #kbe_content h2, .kbe_aside h2 {
     margin: 0;
     color: #000;
-}
-#kbe_content h2 span.kbe_count {
-    color: #fff;
-    font-size: 14px;
-    padding: .25em .75em;
-    margin-left: .5em;
-    line-height: 26px;
-    text-align: center;
-    font-weight: 400;
-    float: right;
-    display: block;
-    background: #166c94;
 }
 #kbe_content .kbe_category h2 a {
     display: inline-block;
@@ -174,8 +157,11 @@
     margin-bottom: .5em;
 }
 #kbe_content .kbe_leftcol .kbe_child_article_list li a {
-    text-decoration: none;
     font-size: 14px;
+}
+#kbe_content a.see-all {
+    font-size: small;
+    font-weight: 300;
 }
 #kbe_content .kbe_category .kbe_child_category {
     width: 100%;
@@ -187,19 +173,6 @@
     color: #000;
     overflow: hidden;
     font-weight: 600;
-}
-#kbe_content .kbe_child_category h3 span.kbe_count {
-    color: #fff;
-    font-size: 13px;
-    padding: .25em .75em;
-    margin-left: .5em;
-    line-height: 25px;
-    text-align: center;
-    font-weight: 400;
-    float: right;
-    display: block;
-    background: #166c94;
-    margin-bottom: 0px !important;
 }
 #kbe_content .kbe_child_category h3 a {
     display: inline-block;
@@ -422,4 +395,7 @@ ul.kbe_child_article_list > li {
 }
 .kbe_tags_div ul li:last-child:after{
     content: "";
+}
+.page-template-wp_knowledgebase .kbe_breadcrum {
+    display: none;
 }
