@@ -2354,7 +2354,7 @@ h2.post-grid-header {
     }
 
     &.single:not(blockquote) + &.single:not(blockquote) {
-        border-top: 1px solid $light-tan;
+        border-top: 1px solid $border-color;
     }
 
     &.single.share {
@@ -2606,7 +2606,8 @@ p.memb_registration_error {
 .custom-archive {
     .single {
         padding: 3rem 0;
-        border-bottom: 1px solid $border-color;
+
+        &:not(.testimonial) { border-bottom: 1px solid $border-color; }
 
         + .custom-pagination { margin-top: 3rem; }
     }
