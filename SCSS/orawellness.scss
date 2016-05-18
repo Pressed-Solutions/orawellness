@@ -2301,6 +2301,8 @@ h2.post-grid-header {
         @media screen and (min-width: 801px) { margin-left: 100px; }
         @media screen and (max-width: 800px) { text-align: center; }
     }
+
+    .testimonial.single + .testimonial.single { margin-top: none; }
 }
 
 /* generic styles also used in widget */
