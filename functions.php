@@ -651,3 +651,10 @@ function tweak_woocommerce_email_header( $email_heading ) {
     </style>';
 }
 add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
+
+//* Disable Woocommerce product reviews
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
