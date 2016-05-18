@@ -514,8 +514,8 @@ function ora_show_custom_widget() {
     <?php }
 
     // customized testimonial category
-    if ( get_field( 'show_categorized_testimonials' ) && get_field( 'testimonial_category' ) ) {
-        $taxonomy_id = get_field( 'testimonial_category' );
+    if ( get_field( 'show_categorized_testimonials' ) && get_field( 'testimonials_category' ) ) {
+        $taxonomy_id = get_field( 'testimonials_category' );
         $posts_per_page = get_field( 'number_of_testimonials' );
 
         // WP_Query arguments
