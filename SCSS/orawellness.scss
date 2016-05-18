@@ -2724,7 +2724,7 @@ p.memb_registration_error {
         @extend .button.cta;
     }
 
-    .shareaholic-canvas { display: none; }
+    .shareaholic-canvas { display: none !important; }
 }
 
 /* # Knowledge Base
