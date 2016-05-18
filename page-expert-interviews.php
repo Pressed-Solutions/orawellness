@@ -27,7 +27,7 @@ function ora_expert_interview_loop() {
     echo '<form method="get" action="' . get_option( 'home' ) . '/" class="search-form" >
         <input type="search" value="'. $search_text .'" name="s" placeholder="Search expert interviews" />
         <input type="hidden" name="post_type" value="expert_interview" />
-        <input type="submit" value="Search expert interviews" />
+        <input type="submit" value="Search expert interviews" class="button cta" />
     </form>
     ';
 
