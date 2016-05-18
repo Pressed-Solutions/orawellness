@@ -25,14 +25,6 @@ function ora_resource_guide_loop() {
     // The Query
     $resource_guide_query = new WP_Query( $args );
 
-    // Search form
-    echo '<form method="get" action="' . get_option( 'home' ) . '/" class="search-form" >
-        <input type="search" value="'. $search_text .'" name="s" placeholder="Search the Resource Guides" />
-        <input type="hidden" name="post_type" value="resource_guide" />
-        <input type="submit" value="Search resource guides" />
-    </form>
-    ';
-
     // The Loop
     if ( $resource_guide_query->have_posts() ) {
         echo '<section class="custom-archive resource-guide">';
