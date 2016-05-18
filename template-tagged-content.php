@@ -40,6 +40,22 @@ function ora_tagged_posts_loop() {
             'pagination'             => true,
             'posts_per_page'         => '3',
             'paged'                  => $paged,
+            'orderby'                => array(
+                'meta_value_num' => 'DESC',
+                'date' => 'DESC',
+            ),
+            'meta_query'             => array(
+                'relation'  => 'OR',
+                array(
+                    'key'       => 'pin_to_top',
+                    'value'     => array( '0', '1', ),
+                    'compare'   => 'IN',
+                ),
+                array(
+                    'key'       => 'pin_to_top',
+                    'compare'   => 'NOT EXISTS',
+                ),
+            ),
         );
 
         // The Query
