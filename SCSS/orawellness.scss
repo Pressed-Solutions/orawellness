@@ -998,6 +998,8 @@ img.alignright,
         }
     }
 
+    &.page-customized-product .wp-post-image { max-width: 50%; }
+
     /* random testimonial */
     .testimonial {
         &-thumb {
