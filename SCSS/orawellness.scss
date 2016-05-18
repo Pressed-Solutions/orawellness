@@ -2351,6 +2351,9 @@ h2.post-grid-header {
     &.single + &.single {
         margin-top: 2.8rem;
         padding-top: 2.8rem;
+    }
+
+    &.single:not(blockquote) + &.single:not(blockquote) {
         border-top: 1px solid $light-tan;
     }
 
