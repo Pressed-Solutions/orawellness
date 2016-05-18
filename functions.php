@@ -512,6 +512,60 @@ function ora_show_custom_widget() {
             </div>
         </section>
     <?php }
+
+    // customized testimonial category
+    if ( get_field( 'show_categorized_testimonials' ) && get_field( 'testimonial_category' ) ) {
+        $taxonomy_id = get_field( 'testimonial_category' );
+        $posts_per_page = get_field( 'number_of_testimonials' );
+
+        // WP_Query arguments
+        $testimonial_category_args = array (
+            'post_type'              => array( 'testimonial' ),
+            'posts_per_page'         => $posts_per_page,
+            'orderby'                => 'rand',
+            'tax_query'              => array(
+                array (
+                    'taxonomy'  => 'testimonial',
+                    'field'     => 'term_id',
+                    'terms'     => $taxonomy_id,
+                )),
+            );
+
+        // The Query
+        $testimonial_category_query = new WP_Query( $testimonial_category_args );
+
+        if ( $testimonial_category_query->have_posts() ) { ?>
+            <section class="widget testimonial">
+                <div class="widget-wrap">
+                    <div class="textwidget">
+            <?php
+            while ( $testimonial_category_query->have_posts() ) {
+                $testimonial_category_query->the_post();
+                ob_start();
+                the_content();
+                $content = ob_get_clean();
+
+                echo '<article class="testimonial single">';
+                // post thumbnail
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb' ) );
+                }
+
+                // content
+                echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
+                <p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</div>';
+
+                echo '</article>';
+            } ?>
+                    </div>
+                </div>
+            </section>
+        <?php
+        }
+
+        // Restore original Post Data
+        wp_reset_postdata();
+    }
 }
 add_action( 'genesis_before_sidebar_widget_area', 'ora_show_custom_widget' );
 
