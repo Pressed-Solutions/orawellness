@@ -562,6 +562,13 @@ function ora_show_custom_widget() {
                 }
 
                 echo '</article>';
+            }
+            // CTA
+            if ( $taxonomy_id ) {
+                $related_product = get_term_meta( $taxonomy_id, 'related-product', true );
+                if ( $related_product ) {
+                    echo '<p><a class="button primary center" href="' . get_permalink( $related_product ) . '">Learn More</a></p>';
+                }
             } ?>
                     </div>
                 </div>
