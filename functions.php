@@ -414,7 +414,10 @@ function ora_show_testimonials( $number_of_posts, $home = NULL ) {
 
             // content
             echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
-            <p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</p></div>';
+            <p class="testimonial-title alternate">' . get_the_title();
+            if ( get_field( 'personal_info_location' ) ) {
+                echo ', ' . get_field( 'personal_info_location' );
+            }
 
             echo '</article>';
         }
@@ -553,7 +556,10 @@ function ora_show_custom_widget() {
 
                 // content
                 echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
-                <p class="testimonial-title alternate">' . get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</div>';
+                <p class="testimonial-title alternate">' . get_the_title();
+                if ( get_field( 'personal_info_location' ) ) {
+                    echo ', ' . get_field( 'personal_info_location' );
+                }
 
                 echo '</article>';
             } ?>
