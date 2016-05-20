@@ -2597,6 +2597,7 @@ p.memb_registration_error {
 
     .downloads {
         display: flex;
+        line-height: 1.3;
 
         @media screen and (max-width: 767px) { flex-wrap: wrap; }
 
@@ -2619,7 +2620,7 @@ p.memb_registration_error {
                 font-size: 5rem;
                 width: 5rem;
                 color: $color-light-gray;
-                margin: -5rem 0 -5rem -5rem;
+                margin: -3rem 0 -5rem -5rem;
                 vertical-align: middle;
                 font-weight: 400;
                 -webkit-font-smoothing: antialiased;
