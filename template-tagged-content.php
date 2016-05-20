@@ -27,6 +27,7 @@ add_action( 'genesis_after_loop', 'ora_tagged_posts_loop', 7 );
 function ora_tagged_posts_loop() {
     if ( get_field( 'post_tag' ) ) {
         $post_tag = esc_attr( get_field( 'post_tag' )->slug );
+        // handle paging
         if ( get_query_var( 'paged' ) ) {
             $paged = get_query_var( 'paged' );
         } else {

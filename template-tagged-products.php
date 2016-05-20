@@ -25,18 +25,24 @@ function ora_show_thumbnail() {
 // Add loop for tagged posts
 add_action( 'genesis_after_loop', 'ora_tagged_posts_loop', 7 );
 function ora_tagged_posts_loop() {
-    if ( get_field( 'post_tag' ) ) {
-        $post_tag = esc_attr( get_field( 'post_tag' )->slug );
+    if ( get_field( 'specific_product' ) ) {
+        // handle paging
         if ( get_query_var( 'paged' ) ) {
             $paged = get_query_var( 'paged' );
         } else {
             $paged = 1;
         }
 
+        // build array of products
+        $product_array = array();
+        foreach( get_field( 'specific_product' ) as $this_product ) {
+            $product_array[] = $this_product->ID;
+        }
+
         // WP_Query arguments
         $tagged_posts_args = array (
             'post_type'              => array( 'product' ),
-            'product_tag'            => $post_tag,
+            'post__in'               => $product_array,
             'pagination'             => true,
             'posts_per_page'         => '3',
             'paged'                  => $paged,
@@ -50,7 +56,7 @@ function ora_tagged_posts_loop() {
 
             // output content
             echo '<section class="tagged-content">
-            <h2 class="alternate">Products <em>related to</em> ' . esc_attr( get_field( 'post_tag' )->name ) . '</h2>';
+            <h2 class="alternate" id="related-products">Related Products</h2>';
 
             while ( $tagged_posts_query->have_posts() ) {
                 $tagged_posts_query->the_post();
