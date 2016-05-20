@@ -45,8 +45,11 @@ function ora_testimonial_loop() {
                     the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb alignleft' ) );
                 }
 
-                echo get_the_title() . ', ' . get_post_meta( get_the_ID(), 'personal_info_location', true ) . '</p>';
-            echo '</article>';
+                echo get_the_title();
+                if ( get_field( 'personal_info_location' ) ) {
+                    echo ', ' . get_field( 'personal_info_location' );
+                }
+            echo '</p></article>';
 
             // add “share” box
             if ( ( $testimonial_query->current_post + 1 ) == 4 ) {
