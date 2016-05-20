@@ -41,6 +41,10 @@ function ora_expert_interviews_content() {
         echo '<h2>Listen</h2>';
         echo do_shortcode( '[audio src="' . esc_url( get_field( 'audio_url' ) ) . '"]' );
     }
+    if ( get_field( 'qa_audio_url' ) ) {
+        echo '<h2>Listen to the Q&amp;A</h2>';
+        echo wp_oembed_get( esc_url( get_field( 'qa_audio_url' ) ) );
+    }
 
     // download links
     if ( get_field( 'download_video_url' ) OR get_field( 'download_audio_url' ) OR get_field( 'download_transcript_url' ) ) {
@@ -51,6 +55,9 @@ function ora_expert_interviews_content() {
         }
         if ( get_field( 'download_audio_url' ) ) {
             echo '<a class="audio" target="_blank" href="' . esc_url( get_field( 'download_audio_url' ) ) . '">Download Audio</a>';
+        }
+        if ( get_field( 'download_qa_audio_url' ) ) {
+            echo '<a class="audio" target="_blank" href="' . esc_url( get_field( 'download_qa_audio_url' ) ) . '">Download Q&amp;A Audio</a>';
         }
         if ( get_field( 'download_transcript_url' ) ) {
             echo '<a class="pdf" target="_blank" href="' . esc_url( get_field( 'download_transcript_url' ) ) . '">Download Transcript</a>';
