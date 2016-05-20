@@ -63,7 +63,7 @@ function ora_tagged_posts_loop() {
                 echo '<article class="tagged-content-article"><h3 class="title"><a href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), array( 160, 160 ), array( 'class' => 'alignright' ) ) . get_the_title() . '</a></h3>' . get_the_excerpt() . '</article>';
             }
 
-            custom_pagination( $tagged_posts_query->max_num_pages, "", $paged );
+            custom_pagination( $tagged_posts_query->max_num_pages, "", $paged, '#related-products' );
             echo '</section>';
         }
 

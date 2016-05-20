@@ -199,7 +199,7 @@ function ora_custom_image_sizes() {
 
 //* Add custom pagination function for tagged-content pages
 //* Adapted from http://callmenick.com/post/custom-wordpress-loop-with-pagination
-function custom_pagination( $numpages = '', $pagerange = '', $paged = '' ) {
+function custom_pagination( $numpages = '', $pagerange = '', $paged = '', $fragment = '' ) {
 
     if ( empty( $pagerange ) ) {
         $pagerange = 2;
@@ -244,6 +244,7 @@ function custom_pagination( $numpages = '', $pagerange = '', $paged = '' ) {
         'next_text'             => __( 'Next page' ),
         'type'                  => 'plain',
         'add_args'              => false,
+        'add_fragment'          => $fragment,
     );
 
     $paginate_links = paginate_links( $pagination_args );
