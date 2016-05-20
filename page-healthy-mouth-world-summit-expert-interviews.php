@@ -18,6 +18,10 @@ function ora_summit_interview_loop() {
         'posts_per_page'         => '5',
         'pagination'             => true,
         'paged'                  => $paged,
+        'orderby'                => array(
+            'menu_order'    => 'ASC',
+            'date'          => 'DESC',
+        ),
     );
 
     // The Query
