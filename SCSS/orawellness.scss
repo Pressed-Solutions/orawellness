@@ -2573,6 +2573,7 @@ p.memb_registration_error {
 
 .expert_interview, .summit_interview {
     .author-info {
+        border: 1px solid $border-color;
         background-color: $light-beige;
         padding: 2rem;
         text-align: center;
