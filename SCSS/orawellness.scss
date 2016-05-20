@@ -2595,11 +2595,39 @@ p.memb_registration_error {
         p { margin-bottom: 0; }
     }
 
-    .transcript-link {
-        @media screen and (min-width: 500px) { margin: -4.5rem 0 0; }
-        @media screen and (max-width: 499px) {
-            float: none;
-            margin-left: 0;
+    .downloads {
+        display: flex;
+
+        @media screen and (max-width: 767px) { flex-wrap: wrap; }
+
+        a {
+            padding: 2rem 2rem 2rem 5rem;
+            background-color: $light-tan;
+            border: 1px solid $border-color;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+
+            @media screen and (min-width: 768px) {
+                width: 33%;
+                &:not(:last-child) { margin-right: 1rem; }
+            }
+
+            &:before {
+                display: inline-block;
+                font-family: 'dashicons';
+                font-size: 5rem;
+                width: 5rem;
+                color: $color-light-gray;
+                margin: -5rem 0 -5rem -5rem;
+                vertical-align: middle;
+                font-weight: 400;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            &.video:before { content: '\f490'; }
+            &.audio:before { content: '\f500'; }
+            &.pdf:before { content: '\f497'; }
         }
     }
 }

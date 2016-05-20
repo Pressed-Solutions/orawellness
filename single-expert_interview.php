@@ -23,7 +23,6 @@ function ora_expert_interviews_content() {
 
     // episode summary
     if ( get_field( 'episode_summary' ) ) {
-        echo '<p>In this episode, we cover:</p>';
         the_field( 'episode_summary' );
     }
 
@@ -34,8 +33,30 @@ function ora_expert_interviews_content() {
     }
 
     // media
-    echo '<h2>Listen</h2>';
-    echo wp_oembed_get( esc_url( get_field( 'media_url' ) ) );
+    if ( get_field( 'video_url' ) ) {
+        echo '<h2>Watch</h2>';
+        echo wp_oembed_get( esc_url( get_field( 'video_url' ) ) );
+    }
+    if ( get_field( 'audio_url' ) ) {
+        echo '<h2>Listen</h2>';
+        echo wp_oembed_get( esc_url( get_field( 'audio_url' ) ) );
+    }
+
+    // download links
+    if ( get_field( 'download_video_url' ) OR get_field( 'download_audio_url' ) OR get_field( 'download_transcript_url' ) ) {
+        echo '<h2>Downloads</h2>
+        <section class="downloads">';
+        if ( get_field( 'download_video_url' ) ) {
+            echo '<a class="video" target="_blank" href="' . esc_url( get_field( 'download_video_url' ) ) . '">Download Video</a>';
+        }
+        if ( get_field( 'download_audio_url' ) ) {
+            echo '<a class="audio" target="_blank" href="' . esc_url( get_field( 'download_audio_url' ) ) . '">Download Audio</a>';
+        }
+        if ( get_field( 'download_transcript_url' ) ) {
+            echo '<a class="pdf" target="_blank" href="' . esc_url( get_field( 'download_transcript_url' ) ) . '">Download Transcript</a>';
+        }
+        echo '</section>';
+    }
 }
 
 // Add membership sidebar
