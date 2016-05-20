@@ -43,7 +43,7 @@ function ora_expert_interviews_content() {
     }
     if ( get_field( 'qa_audio_url' ) ) {
         echo '<h2>Listen to the Q&amp;A</h2>';
-        echo wp_oembed_get( esc_url( get_field( 'qa_audio_url' ) ) );
+        echo do_shortcode( '[audio src="' . esc_url( get_field( 'qa_audio_url' ) ) . '"]' );
     }
 
     // download links
