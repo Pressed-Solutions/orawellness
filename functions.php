@@ -175,6 +175,12 @@ function ora_add_sidebars() {
     ));
 }
 
+//* Add floating CTA JS
+add_action( 'wp_enqueue_scripts', 'ora_enqueue_floating_cta_js' );
+function ora_enqueue_floating_cta_js() {
+    wp_register_script( 'floating-cta', get_stylesheet_directory_uri() . '/js/floating-cta.min.js', array( 'jquery', 'jquery-cookie' ) );
+}
+
 //* restrict homepage to 6 posts
 add_action( 'pre_get_posts', 'ora_limit_homepage_posts' );
 function ora_limit_homepage_posts( $query ) {

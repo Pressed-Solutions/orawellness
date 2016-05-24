@@ -5,5 +5,5 @@
 /node_modules/
 .sass-cache/
 *.css*
-/js/navigation.min.js
+/js/*.min.js
 *.xz

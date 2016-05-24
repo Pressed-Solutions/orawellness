@@ -2462,6 +2462,31 @@ blockquote.testimonial {
     bottom: 0;
     width: 100%;
     z-index: 1000;
+    transition: all .3s ease;
+
+    body.floating-cta-declined & {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+    }
+
+    .close {
+        font-size: 2rem;
+        background-color: $color-red;
+        padding: 0 1.1rem;
+        border: .2rem solid $color-red;
+        border-radius: 50%;
+        position: absolute;
+        top: -1.75rem;
+        right: 1.75rem;
+        cursor: pointer;
+
+        &:hover, &:active {
+            color: $color-red;
+            background-color: white;
+            text-decoration: none;
+        }
+    }
 
     a { color: white; }
 

@@ -45,6 +45,7 @@ module.exports = function (grunt) {
         custom: {
             files: {
                 'js/navigation.min.js': ['js/navigation.js'],
+                'js/floating-cta.min.js': ['js/floating-cta.js'],
             },
         },
     },
