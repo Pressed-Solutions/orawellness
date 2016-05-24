@@ -672,3 +672,6 @@ function wcs_woo_remove_reviews_tab($tabs) {
     unset($tabs['reviews']);
     return $tabs;
 }
+
+//* Enable “create an account” on purchase by default
+add_filter( 'woocommerce_create_account_default_checked', '__return_true' );
