@@ -198,7 +198,7 @@ function ora_read_more_link() {
 //* Add custom thumbnail sizes
 add_action( 'after_setup_theme', 'ora_custom_image_sizes' );
 function ora_custom_image_sizes() {
-    add_image_size( 'tagged-content-thumb', 180, 180, true );
+    add_image_size( 'tagged-content-thumb', 360, 360, true );
     add_image_size( 'targeted-landing-page-banner', 1400, 350, true );
     add_image_size( 'targeted-landing-page-featured', 339, 226, true );
 }
