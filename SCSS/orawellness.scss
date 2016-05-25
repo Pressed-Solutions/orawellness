@@ -2349,11 +2349,14 @@ h2.post-grid-header {
     }
 
     &.single + &.single {
-        margin-top: 2.8rem;
-        padding-top: 2.8rem;
+        &:before {
+            display: none;
+        }
     }
 
     &.single:not(blockquote) + &.single:not(blockquote) {
+        margin-top: 2.8rem;
+        padding-top: 2.8rem;
         border-top: 1px solid $border-color;
     }
 
