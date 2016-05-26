@@ -2515,7 +2515,7 @@ blockquote.testimonial {
     @media screen and (max-width: 800px) { display: none; }
 }
 
-/* # Targeted Landing Pages and Membership pages
+/* # Targeted Landing Pages and Membership Promo
 ---------------------------------------------------------------------------------------------------- */
 .page-template-template-targeted-landing-page,
 .page-template-template-membership-promo,
@@ -2589,6 +2589,10 @@ p.memb_registration_error {
     color: $color-red;
     font-weight: 900;
     padding: 1.5em;
+}
+
+.page-id-2595.logged-in .page-customized-offer {
+    display: none;
 }
 
 .page-template-template-resource-guides {
