@@ -2573,13 +2573,15 @@ blockquote.testimonial {
 #membership-signup, .memb_registration_error {
     width: 100%;
 
-    @media screen and (min-width: 801px) {
-        float: right;
-        clear: right;
-        margin: 0 0 1.5em 1.5em;
-        max-width: 50%;
+    .entry-content > & {
+        @media screen and (min-width: 801px) {
+            float: right;
+            clear: right;
+            margin: 0 0 1.5em 1.5em;
+            max-width: 50%;
+        }
+        @media screen and (min-width: 1201px) { max-width: 33%; }
     }
-    @media screen and (min-width: 1201px) { max-width: 33%; }
 }
 
 p.memb_registration_error {
