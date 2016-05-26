@@ -471,7 +471,7 @@ function ora_show_custom_widget() {
                 <h3 class="widgettitle widget-title"><?php the_field( 'optin_title' ); ?></h3>
                 <div class="textwidget">
                     <?php if ( get_field( 'optin_subtitle' ) ) { the_field( 'optin_subtitle' ); } ?>
-                    <?php the_field( 'optin_form_html' ); ?>
+                    <?php echo do_shortcode( get_field( 'optin_form_html' ) ); ?>
                 </div>
             </div>
         </section>
