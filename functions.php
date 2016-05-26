@@ -465,12 +465,12 @@ add_action( 'widgets_init', 'ora_member_info_widget' );
 //* Show custom page widgets
 function ora_show_custom_widget() {
     // customized opt-in form
-    if ( get_field( 'optin_title' ) && get_field( 'optin_subtitle' ) && get_field( 'optin_form_html' ) ) { ?>
+    if ( get_field( 'optin_title' ) && get_field( 'optin_form_html' ) ) { ?>
         <section class="widget page-customized-offer">
             <div class="widget-wrap">
                 <h3 class="widgettitle widget-title"><?php the_field( 'optin_title' ); ?></h3>
                 <div class="textwidget">
-                    <?php the_field( 'optin_subtitle' ); ?>
+                    <?php if ( get_field( 'optin_subtitle' ) ) { the_field( 'optin_subtitle' ); } ?>
                     <?php the_field( 'optin_form_html' ); ?>
                 </div>
             </div>
