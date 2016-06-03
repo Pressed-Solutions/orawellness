@@ -677,6 +677,7 @@ add_filter( 'woocommerce_product_tabs', 'edit_woocommerce_tabs', 98 );
 function edit_woocommerce_tabs( $tabs ) {
     // change description
     $tabs['description']['title'] = 'More Information';
+    $tabs['additional_information']['title'] = 'Detailed Product Information';
 
     // add FAQs
     $tabs['faq'] = array(
@@ -691,11 +692,8 @@ function edit_woocommerce_tabs( $tabs ) {
 }
 function woocommerce_product_faqs_tab_content() {
     if ( get_field('related_kb_articles') ) {
-        echo '<ul class="product-FAQs no-bullet">';
         foreach( get_field('related_kb_articles') as $this_faq ) {
-            echo '<li><strong><a href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></strong><br/>
-            ' . $this_faq->post_content . '
-            </li>';
+            echo '<h4><a href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></h4>' . apply_filters( 'the_content', $this_faq->post_content );
         }
         echo '</ul>';
     } else {
