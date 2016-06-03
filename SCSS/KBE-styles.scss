@@ -37,16 +37,7 @@
     padding: 0 .75rem 0 0;
     line-height: 22px;
 
-    &:after {
-        display: inline-block;
-        content: '/';
-        padding-left: .75rem;
-        font-size: 82.5%;
-    }
-
-    &:last-child:after { display: none; }
-
-    &:first-child { display: none; }
+    &:nth-child(1), &:nth-child(2) { display: none; }
 }
 
 /*===> search field <===*/
