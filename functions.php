@@ -672,11 +672,35 @@ function tweak_woocommerce_email_header( $email_heading ) {
 }
 add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
 
-//* Disable Woocommerce product reviews
-add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
-function wcs_woo_remove_reviews_tab($tabs) {
+//* Change Woocommerce product tabs
+add_filter( 'woocommerce_product_tabs', 'edit_woocommerce_tabs', 98 );
+function edit_woocommerce_tabs( $tabs ) {
+    // change description
+    $tabs['description']['title'] = 'More Information';
+
+    // add FAQs
+    $tabs['faq'] = array(
+        'title'     => 'FAQs',
+        'priority'  => 50,
+        'callback'  => 'woocommerce_product_faqs_tab_content',
+    );
+
+    // disable reviews
     unset($tabs['reviews']);
     return $tabs;
+}
+function woocommerce_product_faqs_tab_content() {
+    if ( get_field('related_kb_articles') ) {
+        echo '<ul class="product-FAQs no-bullet">';
+        foreach( get_field('related_kb_articles') as $this_faq ) {
+            echo '<li><strong><a href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></strong><br/>
+            ' . $this_faq->post_content . '
+            </li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>Sorry, no FAQs were found. Feel free to <a href="' . home_url() . '/contact-us/">contact us</a> with any questions.</p>';
+    }
 }
 
 //* Enable “create an account” on purchase by default
