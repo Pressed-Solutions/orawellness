@@ -2791,6 +2791,37 @@ p.memb_registration_error {
     .shareaholic-canvas { display: none !important; }
 }
 
+.sidebar.products {
+    margin: 2rem 0 4rem;
+
+    @media (min-width: 801px) {
+        background:
+            url('images/quick-links-cinnamon.png') no-repeat bottom -15rem left -7rem,
+            url('images/quick-links-nutmeg.png') no-repeat bottom -28rem right -15rem,
+            url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
+    }
+    @media (max-width: 800px) {
+        background:
+            url('images/quick-links-cinnamon.png') no-repeat bottom -8rem left -5rem / 50%,
+            url('images/quick-links-nutmeg.png') no-repeat bottom -10rem right -8rem / 50%,
+            url('images/quick-links-background-wood.jpg') no-repeat top center / cover;
+    }
+
+    .widget {
+        display: block;
+        margin: -1rem auto;
+        padding: 5rem 3rem;
+        background: rgba($link-color, 0.8);
+        color: white;
+        border: none;
+        text-align: center;
+
+        @media screen and (min-width: 960px) { max-width: 50%; }
+
+        .widget-title { color: white; }
+    }
+}
+
 /* # Knowledge Base
 ---------------------------------------------------------------------------------------------------- */
 

@@ -173,6 +173,13 @@ function ora_add_sidebars() {
         'name'          => __( 'Membership Pages', 'genesischild' ),
         'description'   => __( 'This is a sidebar for membership pages', 'genesischild' ),
     ));
+
+    // Products
+    genesis_register_sidebar( array(
+        'id'            => 'products',
+        'name'          => __( 'Products', 'genesischild' ),
+        'description'   => __( 'This is a sidebar for the guarantee on products', 'genesischild' ),
+    ));
 }
 
 //* Add floating CTA JS
@@ -713,4 +720,12 @@ function ora_testimonial_image_class_filter( $attr ) {
     }
 
     return $attr;
+}
+
+//* Add products sidebar
+add_action( 'woocommerce_after_single_product_summary', 'output_products_sidebar', 18 );
+function output_products_sidebar() {
+    echo '<section id="products" class="sidebar products"><section class="wrap">';
+    dynamic_sidebar( 'products' );
+    echo '</section></section>';
 }
