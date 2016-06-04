@@ -737,3 +737,12 @@ function output_products_sidebar() {
     dynamic_sidebar( 'products' );
     echo '</section></section>';
 }
+
+//* Hide author on testimonials
+add_filter( 'genesis_post_info', 'testimonial_post_info_filter' );
+function testimonial_post_info_filter( $post_info ) {
+    if ( !is_page() && 'testimonial' == get_post_type() ) {
+        $post_info = '[post_date]';
+        return $post_info;
+    }
+}
