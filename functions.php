@@ -683,8 +683,7 @@ add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
 add_filter( 'woocommerce_product_tabs', 'edit_woocommerce_tabs', 98 );
 function edit_woocommerce_tabs( $tabs ) {
     // change description
-    $tabs['description']['title'] = 'More Information';
-    $tabs['additional_information']['title'] = 'Detailed Product Information';
+    $tabs['additional_information']['title'] = 'Product Information';
 
     // add FAQs
     $tabs['faq'] = array(
