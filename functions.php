@@ -679,7 +679,7 @@ function tweak_woocommerce_email_header( $email_heading ) {
 }
 add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
 
-//* Change Woocommerce product tabs
+//* Change Woocommerce product tabs and add KB articles
 add_filter( 'woocommerce_product_tabs', 'edit_woocommerce_tabs', 98 );
 function edit_woocommerce_tabs( $tabs ) {
     // change description
@@ -698,15 +698,24 @@ function edit_woocommerce_tabs( $tabs ) {
     return $tabs;
 }
 function woocommerce_product_faqs_tab_content() {
+    wp_enqueue_script( 'product-faq' );
+
     if ( get_field('related_kb_articles') ) {
         foreach( get_field('related_kb_articles') as $this_faq ) {
-            echo '<h4><a href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></h4>' . apply_filters( 'the_content', $this_faq->post_content );
+            echo '<h4><a class="kb-header" href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></h4>
+            <article class="kb-content">' . apply_filters( 'the_content', $this_faq->post_content ) . '</article>';
         }
         echo '</ul>';
     } else {
         echo '<p>Sorry, no FAQs were found. Feel free to <a href="' . home_url() . '/contact-us/">contact us</a> with any questions.</p>';
     }
 }
+
+//* Add JS to handle product FAQs
+function add_product_faq_js() {
+    wp_register_script( 'product-faq', get_stylesheet_directory_uri() . '/js/product-faq.min.js', array( 'jquery' ) );
+}
+add_action( 'wp_enqueue_scripts', 'add_product_faq_js' );
 
 //* Enable “create an account” on purchase by default
 add_filter( 'woocommerce_create_account_default_checked', '__return_true' );
