@@ -2768,7 +2768,7 @@ p.memb_registration_error {
         #content div.product div.images { width: 30%; }
         #content div.product div.summary { width: 65%; }
 
-        .woocommerce-tabs .entry-content {
+        .woocommerce-tabs .entry-content#tab-description {
             columns: 2;
 
             p, ol, ul { break-inside: avoid; }
