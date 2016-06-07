@@ -2378,7 +2378,11 @@ h2.post-grid-header {
         .button {
             background-color: transparent;
 
-            &:hover { color: inherit; }
+            &:hover {
+                color: $body-text-color;
+                background-color: white;
+                text-shadow: none;
+            }
         }
     }
 }
