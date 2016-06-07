@@ -101,11 +101,15 @@ function ora_add_tertiary_menu() {
     ) );
 }
 
-//* Add search form to tertiary menu
+//* Add search form and cart to tertiary menu
 add_filter( 'wp_nav_menu_items','ora_add_search_box_to_menu', 10, 2 );
 function ora_add_search_box_to_menu( $menu, $args ) {
     if( 'tertiary-menu' == $args->theme_location ) {
-        $menu .= sprintf( '<li id="search-form" class="menu-item">%s</li>', __( genesis_search_form() ) );
+        $menu .= sprintf( '<li class="menu-item" id="search-form">%s</li>', __( genesis_search_form() ) );
+        // if cart is not empty, show icon in header
+        if ( 0 != WC()->cart->get_cart_contents_count() ) {
+            $menu .= sprintf( '<li class="menu-item cart" id="cart"><a href="%s"><span class="screen-reader-text">Cart</span>&nbsp;</a></li>', WC()->cart->get_cart_url() );
+        }
     }
     return $menu;
 }

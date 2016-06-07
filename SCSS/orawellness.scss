@@ -1632,6 +1632,23 @@ img.alignright,
         input[type="submit"] { @extend .screen-reader-text; }
     }
 
+    .cart a {
+        background: url('images/icons/cart-white.svg') no-repeat center center;
+
+        @media (max-width: 800px) {
+            background-position: left 1rem center;
+
+            .screen-reader-text {
+                display: block;
+                position: relative;
+                clip: initial;
+                height: auto;
+                width: auto;
+                padding-left: 2rem;
+            }
+        }
+    }
+
     /* hide my account menu link when logged in */
     .logged-in & {
         .menu-item-2452, .menu-item-2852 { display: none; }
