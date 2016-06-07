@@ -668,6 +668,12 @@ function pippin_excerpt_by_id( $post, $length = 55, $tags = '<a><em><strong>', $
 //* Display 12 products per page
 add_filter( 'loop_shop_per_page', function() { return 12; }, 20 );
 
+//* Set “continue shopping” link
+add_filter( 'woocommerce_continue_shopping_redirect', 'ora_get_wc_shop_page' );
+function ora_get_wc_shop_page() {
+    return get_permalink( woocommerce_get_page_id( 'shop' ) );
+}
+
 //* Default Knowledge Base categories to open, showing subcategories
 function ora_kbe_default_open() {
     // definitely not the recommended method, but the plugin doesn’t use the enqueue method, so can’t use it as a dependency
