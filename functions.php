@@ -746,3 +746,7 @@ function testimonial_post_info_filter( $post_info ) {
         return $post_info;
     }
 }
+
+//* Add wrappers to KBE sidebar widgets
+add_filter( 'kbe_sidebar_before_widget', function(){ return '<section id="%1$s" class="widget %2$s">'; } );
+add_filter( 'kbe_sidebar_after_widget', function() { return '</section>'; }  );
