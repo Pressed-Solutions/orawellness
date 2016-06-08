@@ -2545,7 +2545,7 @@ blockquote.testimonial {
 .membership-home {
     .site-inner { padding-top: 0; }
 
-    .entry-header {
+    .entry-header, .membership-promo-footer {
         text-align: center;
         width: 100%;
         display: block;
@@ -2556,7 +2556,7 @@ blockquote.testimonial {
         padding: 10rem;
         margin-bottom: 5rem;
 
-        h1, h2 { color: white; }
+        h1, h2, p { color: white; }
 
         @media screen and (min-width: 600px) and (max-width: 1200px) { padding: 8rem; }
         @media screen and (max-width: 599px) { padding: 5rem; }
@@ -2593,10 +2593,10 @@ blockquote.testimonial {
     @extend %gradient-background;
 }
 
-#membership-signup, .memb_registration_error {
+.membership-signup-form {
     width: 100%;
 
-    .entry-content > & {
+    form, & > p {
         @media screen and (min-width: 801px) {
             float: right;
             clear: right;
@@ -2607,15 +2607,15 @@ blockquote.testimonial {
     }
 }
 
+.post-2444 .entry-content > *:not(.membership-signup-form):not(.membership-promo-footer) {
+    @media screen and (min-width: 1201px) { max-width: 66%; }
+}
+
 p.memb_registration_error {
     background-color: lighten($color-red, 25%);
     color: $color-red;
     font-weight: 900;
     padding: 1.5em;
-}
-
-.page-id-2595.logged-in .page-customized-offer {
-    display: none;
 }
 
 .page-template-template-resource-guides {

@@ -16,6 +16,28 @@ function ora_tagged_content_subheading( $title ) {
     return $title;
 }
 
+// Add signup form
+add_action( 'genesis_entry_content', 'ora_membership_form', 5 );
+function ora_membership_form() {
+    if ( get_field( 'form_content' ) ) { ?>
+    <div class="membership-signup-form">
+    <?php echo do_shortcode( get_field( 'form_content' ) ) ?>
+        <p class="note"><?php echo do_shortcode( get_field( 'form_note' ) ) ?></p>
+    </div>
+    <?php }
+}
+
+// Add footer
+add_action( 'genesis_entry_content', 'ora_membership_footer', 15 );
+function ora_membership_footer() {
+    if ( get_field( 'footer_content' ) ) {
+        echo '<div class="membership-promo-footer">' . do_shortcode( get_field( 'footer_content' ) ) . '</div>';
+    }
+    if ( get_field( 'footer_image' ) ) {
+        echo '<style>.membership-promo-footer { background-image: url(\'' . get_field( 'footer_image' ) . '\'); } </style>';
+    }
+}
+
 // Add testimonials
 add_action( 'genesis_before_footer', 'ora_membership_footer_testimonials', 5 );
 function ora_membership_footer_testimonials() {
