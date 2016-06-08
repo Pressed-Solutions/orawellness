@@ -990,6 +990,8 @@ img.alignright,
         @extend %gradient-background;
         border: none;
 
+        a { color: white; }
+
         .widget-title, p { text-align: center; }
 
         input[type="submit"] {
