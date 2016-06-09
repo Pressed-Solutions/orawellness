@@ -768,3 +768,12 @@ function testimonial_post_info_filter( $post_info ) {
 //* Add wrappers to KBE sidebar widgets
 add_filter( 'kbe_sidebar_before_widget', function(){ return '<section id="%1$s" class="widget %2$s">'; } );
 add_filter( 'kbe_sidebar_after_widget', function() { return '</section>'; }  );
+
+//* Add hero image to product archive
+add_action( 'woocommerce_before_main_content', 'ora_shop_hero_image', 15 );
+function ora_shop_hero_image() {
+    $shop_page_ID = get_option( 'woocommerce_shop_page_id' );
+    if ( is_archive() && get_field( 'hero_image', $shop_page_ID ) ) {
+        echo wp_get_attachment_image( get_field( 'hero_image', $shop_page_ID )['id'], 'targeted-landing-page-banner' );
+    }
+}
