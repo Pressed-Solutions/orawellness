@@ -777,3 +777,7 @@ function ora_shop_hero_image() {
         echo wp_get_attachment_image( get_field( 'hero_image', $shop_page_ID )['id'], 'targeted-landing-page-banner' );
     }
 }
+
+//* Remove product count and sorting dropdown
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
