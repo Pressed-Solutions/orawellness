@@ -719,7 +719,7 @@ function woocommerce_product_faqs_tab_content() {
 
     if ( get_field('related_kb_articles') ) {
         foreach( get_field('related_kb_articles') as $this_faq ) {
-            echo '<h4><a class="kb-header" href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></h4>
+            echo '<p><a class="kb-header" href="' . get_permalink( $this_faq->ID ) . '">' . $this_faq->post_title . '</a></p>
             <article class="kb-content">' . apply_filters( 'the_content', $this_faq->post_content ) . '</article>';
         }
         echo '</ul>';
