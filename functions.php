@@ -781,3 +781,32 @@ function ora_shop_hero_image() {
 //* Remove product count and sorting dropdown
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+//* Set video archive thumbnail size
+add_filter( 'genesis_pre_get_image', 'ora_video_tutorial_thumbnail', 10, 3 );
+function ora_video_tutorial_thumbnail( $false, $args, $post ) {
+    if ( 'video_tutorial' == $post->post_type ) {
+        if ( has_post_thumbnail( $args['post_id'] ) && ( 0 === $args['num'] ) ) {
+            $id = get_post_thumbnail_id( $args['post_id'] );
+        }
+        //* Else if the first (default) image attachment is the fallback, use its id
+        elseif ( 'first-attached' === $args['fallback'] ) {
+            $id = genesis_get_image_id( $args['num'], $args['post_id'] );
+        }
+        //* Else if fallback id is supplied, use it
+        elseif ( is_int( $args['fallback'] ) ) {
+            $id = $args['fallback'];
+        }
+
+        //* If we have an id, get the html and url
+        if ( isset( $id ) ) {
+            $html = wp_get_attachment_image( $id, array( 250, 250 ), false, $args['attr'] );
+            list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false, $args['attr'] );
+            return $html;
+        }
+        //* Else, return false (no image)
+        else {
+            return false;
+        }
+    }
+}
