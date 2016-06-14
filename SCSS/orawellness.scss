@@ -2607,6 +2607,8 @@ blockquote.testimonial {
     }
 }
 
+.membership-promo-footer { clear: both; }
+
 .post-2444 .entry-content > *:not(.membership-signup-form):not(.membership-promo-footer) {
     @media screen and (min-width: 1201px) { max-width: 66%; }
 }
