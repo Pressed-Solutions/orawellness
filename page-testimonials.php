@@ -46,8 +46,11 @@ function ora_testimonial_loop() {
                 }
 
                 echo get_the_title();
-                if ( get_field( 'personal_info_location' ) ) {
-                    echo ', ' . get_field( 'personal_info_location' );
+                if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
+                    echo ', ';
+                    if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
+                    if ( get_field( 'state' ) ) echo get_field( 'state' );
+                    if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
                 }
             echo '</p></article>';
 
