@@ -36,23 +36,9 @@ function ora_testimonial_loop() {
             the_content();
             $content = ob_get_clean();
 
-            echo '<article class="testimonial single clearfix">';
-                // content
-                echo '<p class="testimonial-content">' . $content . '</p><p class="testimonial-title alternate">';
-
-                // post thumbnail
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb alignleft' ) );
-                }
-
-                echo get_the_title();
-                if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                    echo ' from ';
-                    if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
-                    if ( get_field( 'state' ) ) echo get_field( 'state' );
-                    if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
-                }
-            echo '</p></article>';
+            echo '<article class="testimonial single clearfix">
+                <p class="testimonial-content">' . $content . '</p>
+            </article>';
 
             // add “share” box
             if ( ( $testimonial_query->current_post + 1 ) == 4 ) {
