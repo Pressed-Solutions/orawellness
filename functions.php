@@ -434,7 +434,7 @@ function ora_show_testimonials( $number_of_posts, $home = NULL ) {
             echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
             <p class="testimonial-title alternate">' . get_the_title();
             if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                echo ', ';
+                echo ' from ';
                 if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
                 if ( get_field( 'state' ) ) echo get_field( 'state' );
                 if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
@@ -587,7 +587,7 @@ function ora_show_custom_widget() {
                 echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
                 <p class="testimonial-title alternate">' . get_the_title();
                 if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                    echo ', ';
+                    echo ' from ';
                     if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
                     if ( get_field( 'state' ) ) echo get_field( 'state' );
                     if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );

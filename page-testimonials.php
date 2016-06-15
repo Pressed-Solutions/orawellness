@@ -47,7 +47,7 @@ function ora_testimonial_loop() {
 
                 echo get_the_title();
                 if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                    echo ', ';
+                    echo ' from ';
                     if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
                     if ( get_field( 'state' ) ) echo get_field( 'state' );
                     if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
