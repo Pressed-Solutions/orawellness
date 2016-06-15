@@ -1761,6 +1761,8 @@ img.alignright,
         line-height: 3.5rem;
     }
 
+    &#tab-faq > p:first-child { font-size: inherit; }
+
     ol, ul { margin: 0 0 2.8rem 4rem; }
 
     ol > li { list-style-type: decimal; }
