@@ -2362,13 +2362,16 @@ h2.post-grid-header {
         font-weight: 300;
     }
 
-    &.custom-archive, .tax-testimonial-category & {
+    &.custom-archive, .tax-testimonial-category &, .single-testimonial & {
         .testimonial-title {
             display: flex;
             align-items: center;
-            margin-bottom: 0;
+        }
+    }
 
-            .alignleft { margin-bottom: 0; }
+    &.custom-archive, .tax-testimonial-category & {
+        .testimonial-title {
+            &, .alignleft { margin-bottom: 0; }
         }
     }
 
