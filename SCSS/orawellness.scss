@@ -825,11 +825,8 @@ th {
 }
 
 .entry-title {
-    font-size: 6rem;
     font-family: $serif-font-stack;
     font-weight: 200;
-
-    @media screen and (max-width: 800px) { font-size: 4rem; }
 }
 
 .entry-title a,
