@@ -2325,7 +2325,7 @@ h2.post-grid-header {
         @media screen and (max-width: 800px) { text-align: center; }
     }
 
-    .testimonial.single + .testimonial.single { margin-top: none; }
+    .testimonial.single + .testimonial.single { margin-top: 0; }
 }
 
 /* generic styles also used in widget */
@@ -2382,6 +2382,11 @@ h2.post-grid-header {
         margin-top: 2.8rem;
         padding-top: 2.8rem;
         border-top: 1px solid $border-color;
+    }
+
+    .home &.single + &.single {
+        border-top: none;
+        padding-top: 1rem;
     }
 
     &.single.share {

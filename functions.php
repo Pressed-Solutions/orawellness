@@ -393,19 +393,24 @@ add_filter( 'body_class', 'ora_add_logged_out_class' );
 
 //* Add function for outputting testimonials
 function ora_show_testimonials( $number_of_posts, $home = NULL ) {
+    // don’t show user photo at bottom
+    add_filter( 'ora_testimonial_image', '__return_false' );
+
     // WP_Query arguments
     $args = array (
         'post_type'              => array( 'testimonial' ),
         'pagination'             => false,
         'posts_per_page'         => $number_of_posts,
+        'orderby'                => 'menu_order',
+        'order'                  => 'ASC',
     );
 
     // home page sticky posts
-    if ( $home ) {
+    if ( 'true' == $home ) {
         $args['meta_query'] = array(
             array(
                 'key'           => 'show_on_home',
-                'value'         => 'true',
+                'value'         => '1',
             )
         );
     }
@@ -431,14 +436,7 @@ function ora_show_testimonials( $number_of_posts, $home = NULL ) {
             }
 
             // content
-            echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
-            <p class="testimonial-title alternate">' . get_the_title();
-            if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                echo ' from ';
-                if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
-                if ( get_field( 'state' ) ) echo get_field( 'state' );
-                if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
-            }
+            echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>';
 
             echo '</article>';
         }
