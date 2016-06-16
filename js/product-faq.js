@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
     $('.woocommerce-tabs #tab-faq .kb-content').slideUp();
 
     // on click
-    $('.woocommerce-tabs #tab-faq').on('click', '.kb-header', function(){
+    $('.woocommerce-tabs #tab-faq').on('click', '.kb-header', function(event){
         event.preventDefault();
         $(this).parent().next('.kb-content').slideToggle();
     });
