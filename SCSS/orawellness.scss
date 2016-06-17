@@ -2384,7 +2384,7 @@ h2.post-grid-header {
         border-top: 1px solid $border-color;
     }
 
-    .home &.single + &.single {
+    section.testimonials &.single + &.single {
         border-top: none;
         padding-top: 1rem;
     }
