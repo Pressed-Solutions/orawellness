@@ -392,7 +392,7 @@ function ora_add_logged_out_class( $classes ) {
 add_filter( 'body_class', 'ora_add_logged_out_class' );
 
 //* Add function for outputting testimonials
-function ora_show_testimonials( $number_of_posts, $home = NULL ) {
+function ora_show_testimonials( $number_of_posts, $home = NULL, $additional_query_args = array() ) {
     // don’t show user photo at bottom
     add_filter( 'ora_testimonial_image', '__return_false' );
 
@@ -413,6 +413,11 @@ function ora_show_testimonials( $number_of_posts, $home = NULL ) {
                 'value'         => '1',
             )
         );
+    }
+
+    // merge input args
+    if ( $additional_query_args ) {
+        $args = array_merge( $args, $additional_query_args );
     }
 
     // The Query
