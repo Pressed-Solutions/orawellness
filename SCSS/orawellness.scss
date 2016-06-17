@@ -2806,7 +2806,8 @@ p.memb_registration_error {
         .woocommerce-tabs .entry-content#tab-description {
             columns: 2;
 
-            p, ol, ul { break-inside: avoid; }
+            h1, h2, h3, h4, h5, h6, p, ol, ul { break-inside: avoid; }
+            h1, h2, h3, h4, h5, h6 { break-after: avoid; }
         }
     }
 
