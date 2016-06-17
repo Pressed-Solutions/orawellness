@@ -706,18 +706,29 @@ function tweak_woocommerce_email_header( $email_heading ) {
 }
 add_action( 'woocommerce_email_header', 'tweak_woocommerce_email_header' );
 
-//* Change Woocommerce product tabs and add KB articles
+//* Change Woocommerce product tabs and add KB articles and testimonials
 add_filter( 'woocommerce_product_tabs', 'edit_woocommerce_tabs', 98 );
 function edit_woocommerce_tabs( $tabs ) {
     // change description
     $tabs['additional_information']['title'] = 'Product Information';
 
-    // add FAQs
-    $tabs['faq'] = array(
-        'title'     => 'FAQs',
-        'priority'  => 50,
-        'callback'  => 'woocommerce_product_faqs_tab_content',
-    );
+    if ( get_field('related_kb_articles') ) {
+        // add FAQs
+        $tabs['faq'] = array(
+            'title'     => 'FAQs',
+            'priority'  => 50,
+            'callback'  => 'woocommerce_product_faqs_tab_content',
+        );
+    }
+
+    if ( get_field('testimonials_category') ) {
+        // add testmionials
+        $tabs['testimnoial'] = array(
+            'title'     => 'Testimonials',
+            'priority'  => 40,
+            'callback'  => 'woocommerce_product_testimonials_tab_content',
+        );
+    }
 
     // disable reviews
     unset($tabs['reviews']);
@@ -726,15 +737,26 @@ function edit_woocommerce_tabs( $tabs ) {
 function woocommerce_product_faqs_tab_content() {
     wp_enqueue_script( 'product-faq' );
 
-    if ( get_field('related_kb_articles') ) {
-        foreach( get_field('related_kb_articles') as $this_faq ) {
-            echo '<p><a class="kb-header" href="' . get_permalink( $this_faq->ID ) . '" target="_blank">' . $this_faq->post_title . '</a></p>
-            <article class="kb-content">' . apply_filters( 'the_content', $this_faq->post_content ) . '</article>';
-        }
-        echo '</ul>';
-    } else {
-        echo '<p>Sorry, no FAQs were found. Feel free to <a href="' . home_url() . '/contact-us/">contact us</a> with any questions.</p>';
+    echo '<h2>FAQs</h2>';
+    foreach( get_field('related_kb_articles') as $this_faq ) {
+        echo '<p><a class="kb-header" href="' . get_permalink( $this_faq->ID ) . '" target="_blank">' . $this_faq->post_title . '</a></p>
+        <article class="kb-content">' . apply_filters( 'the_content', $this_faq->post_content ) . '</article>';
     }
+    echo '</ul>';
+}
+function woocommerce_product_testimonials_tab_content() {
+    $product_testimonial_args = array(
+        'tax_query' => array(
+            array(
+                'taxonomy'  => 'testimonial-category',
+                'field'     => 'term_id',
+                'terms'     => get_field( 'testimonials_category' ),
+            ),
+        ),
+    );
+
+    echo '<h2>Testimonials</h2>';
+    ora_show_testimonials( -1, false, $product_testimonial_args );
 }
 
 //* Add JS to handle product FAQs
