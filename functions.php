@@ -435,11 +435,6 @@ function ora_show_testimonials( $number_of_posts, $home = NULL, $additional_quer
             $content = ob_get_clean();
 
             echo '<article class="testimonial single">';
-            // post thumbnail
-            if ( has_post_thumbnail() ) {
-                the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb' ) );
-            }
-
             // content
             echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>';
 
@@ -576,18 +571,10 @@ function ora_show_custom_widget() {
             <?php
             while ( $testimonial_category_query->have_posts() ) {
                 $testimonial_category_query->the_post();
-                ob_start();
-                the_content();
-                $content = ob_get_clean();
 
                 echo '<article class="testimonial single">';
-                // post thumbnail
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail( 'testimonial-thumb', array( 'class' => 'testimonial-thumb' ) );
-                }
-
                 // content
-                echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>
+                echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . apply_filters( 'the_content', get_the_content() ) . '</div>
                 <p class="testimonial-title alternate">' . get_the_title();
                 if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
                     echo ' from ';

@@ -14,14 +14,6 @@ function ora_tagged_content_subheading( $title ) {
     return $title;
 }
 
-// Add featured image
-add_action( 'genesis_entry_content', 'ora_show_thumbnail', 8 );
-function ora_show_thumbnail() {
-    if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'tagged-content-thumb', array( 'class' => 'alignright', '' ) );
-    }
-}
-
 // Add loop for tagged posts
 add_action( 'genesis_after_loop', 'ora_tagged_posts_loop', 7 );
 function ora_tagged_posts_loop() {
