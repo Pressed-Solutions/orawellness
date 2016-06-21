@@ -2358,10 +2358,12 @@ h2.post-grid-header {
         font-weight: 300;
     }
 
-    &.custom-archive, .tax-testimonial-category &, .single-testimonial & {
+    &.custom-archive, .tax-testimonial-category &, .single-testimonial &, #tab-testimonial & {
         .testimonial-title {
             display: flex;
             align-items: center;
+
+            .alignleft { margin-bottom: 0; }
         }
     }
 
