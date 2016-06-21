@@ -430,13 +430,10 @@ function ora_show_testimonials( $number_of_posts, $home = NULL, $additional_quer
 
         while ( $testimonial_query->have_posts() ) {
             $testimonial_query->the_post();
-            ob_start();
-            the_content();
-            $content = ob_get_clean();
 
             echo '<article class="testimonial single">';
             // content
-            echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . $content . '</div>';
+            echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . apply_filters( 'the_content', get_the_content() ) . '</div>';
 
             echo '</article>';
         }

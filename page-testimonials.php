@@ -32,12 +32,8 @@ function ora_testimonial_loop() {
         while ( $testimonial_query->have_posts() ) {
             $testimonial_query->the_post();
 
-            ob_start();
-            the_content();
-            $content = ob_get_clean();
-
             echo '<article class="testimonial single clearfix">
-                <p class="testimonial-content">' . $content . '</p>
+                <p class="testimonial-content">' . apply_filters( 'the_content', get_the_content() ) . '</p>
             </article>';
 
             // add “share” box
