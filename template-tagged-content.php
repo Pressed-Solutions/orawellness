@@ -75,5 +75,12 @@ function ora_tagged_posts_loop() {
     }
 }
 
+// Add featured image
+add_action( 'genesis_entry_content', 'ora_show_featured_image', 9 );
+function ora_show_featured_image() {
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail( 'tagged-content-thumb', array( 'class' => 'alignright' ) );
+    }
+}
 
 genesis();
