@@ -710,7 +710,7 @@ function edit_woocommerce_tabs( $tabs ) {
 
     if ( get_field('testimonials_category') ) {
         // add testmionials
-        $tabs['testimnoial'] = array(
+        $tabs['testimonial'] = array(
             'title'     => 'Testimonials',
             'priority'  => 40,
             'callback'  => 'woocommerce_product_testimonials_tab_content',
