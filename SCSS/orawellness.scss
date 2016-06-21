@@ -1006,13 +1006,15 @@ img.alignright,
     .testimonial {
         &-thumb {
             display: block;
-            margin: 0 auto;
+            margin: 0 3rem 0 0;
         }
 
         &-content, &-title {
             font-size: 2rem;
             text-align: center;
         }
+
+        &-title.has-thumb { text-align: left; }
     }
 
     /* member info */

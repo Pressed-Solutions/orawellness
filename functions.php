@@ -549,7 +549,7 @@ function ora_show_custom_widget() {
             'orderby'                => 'rand',
             'tax_query'              => array(
                 array (
-                    'taxonomy'  => 'testimonial',
+                    'taxonomy'  => 'testimonial-category',
                     'field'     => 'term_id',
                     'terms'     => $taxonomy_id,
                 )),
@@ -566,18 +566,9 @@ function ora_show_custom_widget() {
             while ( $testimonial_category_query->have_posts() ) {
                 $testimonial_category_query->the_post();
 
-                echo '<article class="testimonial single">';
-                // content
-                echo '<div class="testimonial-content-wrapper"><div class="testimonial-content">' . apply_filters( 'the_content', get_the_content() ) . '</div>
-                <p class="testimonial-title alternate">' . get_the_title();
-                if ( get_field( 'city' ) || get_field( 'state' ) || get_field( 'country' ) ) {
-                    echo ' from ';
-                    if ( get_field( 'city' ) ) echo get_field( 'city' ) . ', ';
-                    if ( get_field( 'state' ) ) echo get_field( 'state' );
-                    if ( 'United States' !== get_field( 'country' ) ) echo ', ' . get_field( 'country' );
-                }
-
-                echo '</article>';
+                echo '<article class="testimonial single">
+                    <div class="testimonial-content-wrapper"><div class="testimonial-content">' . apply_filters( 'the_content', get_the_content() ) . '</div>
+                </article>';
             }
             // CTA
             if ( $taxonomy_id ) {
