@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php if ( $checkout->enable_guest_checkout ) : ?>
 
 			<p class="form-row form-row-wide create-account">
-				<input class="input-checkbox" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true) ?> type="checkbox" name="createaccount" value="1" /> <label for="createaccount" class="checkbox">Create an account and sign me up for my <a href="<?php echo home_url(); ?>/membership-promo/">free OraWellness membership</a>!</label>
+				<input class="input-checkbox" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true) ?> type="checkbox" name="createaccount" value="1" /> <label for="createaccount" class="checkbox">Please send me access to the Free OraWellness ebook and expert interview library!</label>
 			</p>
 
 		<?php endif; ?>
