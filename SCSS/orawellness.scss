@@ -1805,6 +1805,8 @@ p.entry-meta {
         .tags, .categories { width: 50%; }
 
         h3 { font-size: 1.6rem; }
+
+        .blog & { display: none; }
     }
 }
 
