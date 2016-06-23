@@ -823,3 +823,8 @@ function ora_video_tutorial_thumbnail( $false, $args, $post ) {
         return false;
     }
 }
+
+//* Remove Blog header from archive page
+remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+remove_action( 'genesis_before_loop', 'genesis_do_blog_template_heading' );
+remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
