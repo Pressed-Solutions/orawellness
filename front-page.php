@@ -43,6 +43,41 @@ function ora_recent_posts_header() {
     echo '<h2 class="post-grid-header alternate">Recent Posts</h2>';
 }
 
+remove_action( 'genesis_loop', 'genesis_do_loop' );
+add_action( 'genesis_loop', 'ora_frontpage_grid_helper' );
+function ora_frontpage_grid_helper() {
+
+    // WP_Query arguments
+    $recent_posts_args = array (
+        'pagination'        => false,
+        'posts_per_page'    => 6,
+    );
+
+    // The Query
+    $recent_posts_query = new WP_Query( $recent_posts_args );
+
+    // The Loop
+    if ( $recent_posts_query->have_posts() ) {
+        echo '<main class="content post-grid" id="genesis-content">';
+        while ( $recent_posts_query->have_posts() ) {
+            $recent_posts_query->the_post();
+            echo '<article class="post-' . get_the_ID() . ' ' . get_post_type() . ' type-' . get_post_type() . ' status-publish format-standard ' . ( has_post_thumbnail() ? 'has-post-thumbnail' : '' ) . ' entry" itemscope="" itemtype="http://schema.org/CreativeWork">';
+            echo '<header class="entry-header"><h2 class="entry-title" itemprep="headline"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h2></header>';
+            echo '<div class="entry-content" itemprop="text">';
+            if ( has_post_thumbnail() ) {
+                echo '<a class="entry-image-link" href="' . get_permalink() . '" aria-hidden="true">' . wp_get_attachment_image( get_post_thumbnail_id(), 'thumbnail', false, array( 'class' => 'alignright post-image entry-image' ) ) . '</a>';
+            }
+            echo get_the_excerpt();
+            echo '</div>';
+            echo '</article>';
+        }
+        echo '</main>';
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+}
+
 // add .post-grid class to posts
 add_filter( 'genesis_attr_content', 'ora_add_post_grid_class' );
 function ora_add_post_grid_class( $attributes ) {
