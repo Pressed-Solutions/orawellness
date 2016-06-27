@@ -2607,14 +2607,17 @@ blockquote.testimonial {
     }
 }
 
-#membership-signup {
+#membership-signup,
+.access-membership {
     @extend %gradient-background;
+
+    a { color: white; }
 }
 
 .membership-signup-form {
     width: 100%;
 
-    form, & > p {
+    form, section.access-membership, & > p {
         @media screen and (min-width: 801px) {
             float: right;
             clear: right;
