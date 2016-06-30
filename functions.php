@@ -845,3 +845,9 @@ function ora_thankyou_text( $content ) {
     <p class="woocommerce-thankyou-order-received">We look forward to hearing how you benefit from using our products.</p>
     <p class="woocommerce-thankyou-order-received">In the meantime, feel free to gather more info from our free videos, articles, or expert interviews in our free &ldquo;Aloha Club.&rdquo; <a href="' . home_url( '/membership-home/' ) . '">Check out all the goodness</a> available to you for free at the OraWellness Aloha Club!';
 }
+
+//* Add “continue shopping” button next to “Update cart”
+add_action( 'woocommerce_cart_actions', 'ora_continue_shopping_button' );
+function ora_continue_shopping_button() {
+    echo '<a class="button continue-shopping" href="' . get_permalink( woocommerce_get_page_id( 'shop' ) ) . '">Continue Shopping</a>';
+}

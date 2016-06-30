@@ -2804,6 +2804,10 @@ p.memb_registration_error {
     }
 }
 
+.continue-shopping {
+    @media (min-width: 768px) { top: -0.8rem; }
+}
+
 /* # Products
 ---------------------------------------------------------------------------------------------------- */
 .woocommerce .site-inner {
