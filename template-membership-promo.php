@@ -8,7 +8,7 @@
 add_filter( 'genesis_post_title_text', 'ora_tagged_content_subheading' );
 function ora_tagged_content_subheading( $title ) {
     if ( get_field( 'page_subtitle' ) ) {
-        $title = '<h1 class="entry-title">' . get_field( 'page_subtitle' ) . '</h1>';
+        $title = '<h1 class="entry-title">' . wptexturize( get_field( 'page_subtitle' ) ) . '</h1>';
     }
 
     $title .= '<style>.entry-header { background-image: url(\'' . get_field( 'header_image' ) . '\'); } </style>';

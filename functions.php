@@ -483,9 +483,9 @@ function ora_show_custom_widget() {
     if ( 'custom' == get_field( 'show_opt-in' ) && get_field( 'optin_title' ) && get_field( 'optin_form_html' ) ) { ?>
         <section class="widget page-customized-offer">
             <div class="widget-wrap">
-                <h3 class="widgettitle widget-title"><?php the_field( 'optin_title' ); ?></h3>
+                <h3 class="widgettitle widget-title"><?php echo wptexturize( get_field( 'optin_title' ) ); ?></h3>
                 <div class="textwidget">
-                    <?php if ( get_field( 'optin_subtitle' ) ) { the_field( 'optin_subtitle' ); } ?>
+                    <?php if ( get_field( 'optin_subtitle' ) ) { echo wptexturize( get_field( 'optin_subtitle' ) ); } ?>
                     <?php echo do_shortcode( get_field( 'optin_form_html' ) ); ?>
                 </div>
             </div>
