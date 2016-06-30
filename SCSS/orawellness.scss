@@ -2517,19 +2517,14 @@ blockquote.testimonial {
     }
 
     .close {
-        font-size: 2rem;
-        background-color: $color-red;
-        padding: 0 1.1rem;
-        border: .2rem solid $color-red;
-        border-radius: 50%;
+        font-size: 3rem;
         position: absolute;
-        top: -1.75rem;
+        top: 0;
         right: 1.75rem;
         cursor: pointer;
 
         &:hover, &:active {
-            color: $color-red;
-            background-color: white;
+            color: $color-orange-faded;
             text-decoration: none;
         }
     }
