@@ -2429,6 +2429,8 @@ blockquote.testimonial {
     .testimonial-thumb {
         display: block;
         margin: 0 auto;
+
+        &.alignleft, &.alignright { float: none; }
     }
 }
 
