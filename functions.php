@@ -843,7 +843,7 @@ add_filter( 'woocommerce_thankyou_order_received_text', 'ora_thankyou_text' );
 function ora_thankyou_text( $content ) {
     return 'Thank you for your order! In a moment, you will receive an email confirming your order success as well as an email within the next day or two alerting you that your order has shipped and is on its way to you!</p>
     <p class="woocommerce-thankyou-order-received">We look forward to hearing how you benefit from using our products.</p>
-    <p class="woocommerce-thankyou-order-received">In the meantime, feel free to gather more info from our free videos, articles, or expert interviews in our free &ldquo;Aloha Club.&rdquo; <a href="' . home_url( '/membership-home/' ) . '">Check out all the goodness</a> available to you for free at the OraWellness Aloha Club!';
+    <p class="woocommerce-thankyou-order-received">In the meantime, feel free to gather more info from our free videos, articles, or expert interviews in our free &ldquo;Aloha Club.&rdquo; <a href="' . home_url( '/membership-home/' ) . '">Check out all the goodness</a> available to you for free at the OraWellness Aloha Club!' . do_shortcode( '[memb_set_tag tag_id="191"]' );
 }
 
 //* Add “continue shopping” button next to “Update cart”
