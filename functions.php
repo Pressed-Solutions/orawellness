@@ -851,3 +851,10 @@ add_action( 'woocommerce_cart_actions', 'ora_continue_shopping_button' );
 function ora_continue_shopping_button() {
     echo '<a class="button continue-shopping" href="' . get_permalink( woocommerce_get_page_id( 'shop' ) ) . '">Continue Shopping</a>';
 }
+
+//* Modify lost password reset page
+add_action( 'woocommerce_lost_password_message', 'ora_lost_password_message' );
+function ora_lost_password_message( $message ) {
+    return 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset. If you don&rsquo;t see it in your inbox, please check your spam folder.</p>
+    <p><a href="/my-account/">Login to Aloha Club here</a>';
+}
