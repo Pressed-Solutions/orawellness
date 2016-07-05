@@ -2134,6 +2134,14 @@ li.comment {
         }
     }
 
+    .pressed {
+        width: 40px;
+        height: initial;
+        margin-top: -10px;
+        position: relative;
+        top: 10px;
+    }
+
     a {
         font-weight: inherit;
         color: inherit;
