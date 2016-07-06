@@ -20,6 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+    // Show Ora Wellness logo
+    echo '<img class="logo" src="' . get_stylesheet_directory_uri() . '/images/orawellness-logo.png" alt="Ora Wellness" />';
+
 wc_print_notices(); ?>
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
