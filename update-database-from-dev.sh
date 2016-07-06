@@ -3,4 +3,4 @@ if [ ! -f "database-latest.sql.xz" ]; then
 fi
 
 # import
-xzcat -c database-latest.sql.xz | mysql --defaults-file=~/.mysql_credentials orawelln_wp && mysql --defaults-file=~/.mysql_credentials --execute="USE orawelln_wp; UPDATE wpora_options SET option_value = 'http://orawellness.dev' WHERE option_value = 'http://dev.orawellness.com';" && mv database-latest.sql.xz ~/.Trash/
+xzcat -c database-latest.sql.xz | mysql --defaults-file=~/.mysql_credentials orawelln_wp && cd ~/Sites/orawellness/ && wp search-replace 'https://dev.orawellness.com' 'https://orawellness.dev' && cd - && mv database-latest.sql.xz ~/.Trash/
