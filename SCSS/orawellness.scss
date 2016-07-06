@@ -2736,7 +2736,7 @@ p.memb_registration_error {
     background-color: #f6f4f0;
     color: #2c2c2c;
 
-    .shareaholic-canvas { display: none !important; }
+    .shareaholic-canvas, .sidebar-primary { display: none !important; }
 
     .content {
         width: 100% !important;
@@ -2756,7 +2756,7 @@ p.memb_registration_error {
         max-width: 27.5rem;
     }
 
-    form.login, form.register, form.lost_reset_password {
+    form#loginform, form.register, section.reset-password {
         padding: 4.5rem;
         border-radius: 2px;
         border: 1px solid $light-tan;
@@ -2769,14 +2769,17 @@ p.memb_registration_error {
             margin: 0 auto 5.5rem;
         }
 
+        p, #memb_password_send-1-block1, .password_send_message { margin-bottom: 1.4rem; }
+
         .form-row { width: 100%; }
 
         label {
             font-weight: 700;
             color: #2c2c2c;
-
-            &[for="rememberme"] { font-weight: 300; }
         }
+        .login-remember label { font-weight: 300; }
+
+        input[type="submit"] { background-color: $cta-color; }
     }
 
     .woocommerce .site-inner {

@@ -35,38 +35,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="u-column1 col-1">
 
-<?php endif; ?>
+<?php endif;
 
-        <form method="post" class="login" action="<?php echo wp_login_url(); ?>">
-            <h2>Login</h2>
+    // tweak form content
+    add_filter( 'login_form_top', function() {return '<h2>Login</h2>';} );
+    add_filter( 'login_form_bottom', 'ora_reset_password_link', 10, 3 );
+    function ora_reset_password_link( $input, $args ) {
+        return '<a href="' . esc_url( wp_lostpassword_url() ) . '">Lost your password?</a>';
+    }
 
-            <?php do_action( 'woocommerce_login_form_start' ); ?>
-
-            <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                <label for="log"><?php _e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
-            </p>
-            <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                <label for="pwd"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="pwd" id="password" />
-            </p>
-
-            <?php do_action( 'woocommerce_login_form' ); ?>
-
-            <p class="form-row">
-                <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-                <input type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
-                <label for="rememberme">
-                    <input class="woocommerce-Input woocommerce-Input--checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
-                </label>
-            </p>
-            <p class="woocommerce-LostPassword lost_password">
-                <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
-            </p>
-
-            <?php do_action( 'woocommerce_login_form_end' ); ?>
-
-        </form>
+    // use Memberium form
+    echo do_shortcode( '[memb_loginform]' );
+    ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
