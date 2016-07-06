@@ -57,7 +57,11 @@ module.exports = function (grunt) {
             },
             options: {
                 watchTask: true,
-                proxy: "http://orawellness.dev",
+                proxy: "https://orawellness.dev",
+                https: {
+                    key: "/Users/andrew/github/dotfiles/local-dev.key",
+                    cert: "/Users/andrew/github/dotfiles/local-dev.crt",
+                }
             },
         },
     },
