@@ -2882,6 +2882,15 @@ p.memb_registration_error {
     }
 }
 
+
+/* # Account
+---------------------------------------------------------------------------------------------------- */
+
+form#memb_password_change-1 {
+    div { margin-bottom: 6px; }
+    input[type="submit"] { background-color: $cta-color; }
+}
+
 /* # Knowledge Base
 ---------------------------------------------------------------------------------------------------- */
 
