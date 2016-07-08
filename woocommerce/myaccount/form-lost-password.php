@@ -28,5 +28,6 @@ wc_print_notices(); ?>
 <section class="reset-password">
     <h2>Reset Password</h2>
     <p>Lost your password? Please enter your username or email address. You will receive a reminder via email.</p>
+    <p><a href="<?php echo home_url( '/my-account/' ); ?>">Log in here</a>.</p>
     <?php echo do_shortcode( '[memb_send_password]' ); ?>
 </section>
