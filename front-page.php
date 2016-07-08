@@ -150,7 +150,7 @@ function ora_need_help_loop() {
 }
 
 // add floating CTA bar
-add_action( 'genesis_before_footer', 'ora_add_cta', 9 );
+//add_action( 'genesis_before_footer', 'ora_add_cta', 9 );
 function ora_add_cta() {
     echo '<section id="floating-cta" class="floating-cta"><section class="wrap">';
     dynamic_sidebar( 'floating-cta' );
