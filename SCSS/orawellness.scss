@@ -657,26 +657,27 @@ th {
 
 .sidebar-primary,
 .sidebar-membership {
-    float: right;
-    width: 25%;
+    @media (min-width: 801px) { float: right; }
 }
 
 .sidebar-content .sidebar-primary,
 .sidebar-sidebar-content .sidebar-primary,
 .sidebar-content .sidebar-membership,
 .sidebar-sidebar-content .sidebar-membership {
-    float: left;
+    @media (min-width: 801px) { float: left; }
 }
 
 /* ### Secondary Sidebar */
 
 .sidebar-secondary {
-    float: left;
-    width: 180px;
+    @media (min-width: 801px) {
+        float: left;
+        width: 180px;
+    }
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
-    float: right;
+    @media (min-width: 801px) { float: right; }
 }
 
 /* ## Column Classes
@@ -2820,6 +2821,14 @@ p.memb_registration_error {
         border-top-color: $color-red;
         &:before { color: $color-red; }
     }
+
+    .woocommerce-MyAccount-navigation,
+    .woocommerce-MyAccount-content {
+        @media (max-width: 800px) {
+            width: 100%;
+            float: none;
+        }
+    }
 }
 
 .continue-shopping {
@@ -3049,7 +3058,7 @@ p.memb_registration_error {
         width: 65%;
     }
 
-    .sidebar-primary { width: 30%; }
+    .sidebar-primary, .sidebar-membership { width: 30%; }
 }
 
 @media only screen and (max-width: 800px) {
@@ -3069,6 +3078,7 @@ p.memb_registration_error {
     .sidebar-primary,
     .sidebar-secondary {
         width: 100%;
+        clear: both;
     }
 
     .archive-description,
