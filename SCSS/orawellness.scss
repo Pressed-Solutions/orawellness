@@ -658,6 +658,7 @@ th {
 .sidebar-primary,
 .sidebar-membership {
     @media (min-width: 801px) { float: right; }
+    @media (min-width: 961px) { width: 28%; }
 }
 
 .sidebar-content .sidebar-primary,
