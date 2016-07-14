@@ -40,18 +40,31 @@ function ora_home_header() {
 // add “Recent Posts” header
 add_action( 'genesis_before_content', 'ora_recent_posts_header' );
 function ora_recent_posts_header() {
-    echo '<h2 class="post-grid-header alternate">Recent Posts</h2>';
+    echo '<h2 class="post-grid-header alternate">Top Posts</h2>';
 }
 
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'ora_frontpage_grid_helper' );
 function ora_frontpage_grid_helper() {
 
+    // get featured posts from ACF
+    if ( get_field( 'featured_posts' ) ) {
+        $featured_posts_array = array();
+        foreach( get_field( 'featured_posts' ) as $this_post ) {
+            $featured_posts_array[] = $this_post->ID;
+        }
+    }
+
     // WP_Query arguments
     $recent_posts_args = array (
         'pagination'        => false,
         'posts_per_page'    => 6,
     );
+
+    // add featured posts
+    if ( ! empty( $featured_posts_array ) ) {
+        $recent_posts_args['post__in'] = $featured_posts_array;
+    }
 
     // The Query
     $recent_posts_query = new WP_Query( $recent_posts_args );
