@@ -195,10 +195,17 @@ function ora_add_sidebars() {
     ));
 }
 
-//* Add floating CTA JS
-add_action( 'wp_enqueue_scripts', 'ora_enqueue_floating_cta_js' );
-function ora_enqueue_floating_cta_js() {
+//* Add JS
+add_action( 'wp_enqueue_scripts', 'ora_enqueue_js' );
+function ora_enqueue_js() {
+    //* Add floating CTA JS
     wp_register_script( 'floating-cta', get_stylesheet_directory_uri() . '/js/floating-cta.min.js', array( 'jquery', 'jquery-cookie' ) );
+
+    //* Add JS to handle product FAQs
+    wp_register_script( 'product-faq', get_stylesheet_directory_uri() . '/js/product-faq.min.js', array( 'jquery' ) );
+
+    //* Add JS to handle saved card CVV field
+    wp_register_script( 'wc-saved-card-cvv', get_stylesheet_directory_uri() . '/js/saved-card-CVV.min.js', array( 'jquery' ) );
 }
 
 //* restrict homepage to 6 posts
@@ -740,12 +747,6 @@ function woocommerce_product_testimonials_tab_content() {
     ora_show_testimonials( -1, false, $product_testimonial_args );
 }
 
-//* Add JS to handle product FAQs
-function add_product_faq_js() {
-    wp_register_script( 'product-faq', get_stylesheet_directory_uri() . '/js/product-faq.min.js', array( 'jquery' ) );
-}
-add_action( 'wp_enqueue_scripts', 'add_product_faq_js' );
-
 //* Enable “create an account” on purchase by default
 add_filter( 'woocommerce_create_account_default_checked', '__return_true' );
 
@@ -862,4 +863,16 @@ function ora_lost_password_message( $message ) {
         $message = 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.';
     }
     return $message;
+}
+
+//* Add CVV code to checkout if there’s a saved card
+add_filter( 'woocommerce_payment_gateway_get_new_payment_method_option_html', 'ora_add_cvv_field' );
+function ora_add_cvv_field( $html ) {
+    $cvv_field = '<p class="form-row saved-card-CVV">
+        <label for="infusionsoft-card-cvc">Card Code <span class="required">*</span></label>
+        <input id="infusionsoft-card-cvc" class="input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="CVC" name="infusionsoft-card-cvc" style="width:100px" required>
+    </p>';
+    wp_enqueue_script( 'wc-saved-card-cvv' );
+
+    return $cvv_field . $html;
 }

@@ -47,6 +47,7 @@ module.exports = function (grunt) {
                 'js/navigation.min.js': ['js/navigation.js'],
                 'js/floating-cta.min.js': ['js/floating-cta.js'],
                 'js/product-faq.min.js': ['js/product-faq.js'],
+                'js/saved-card-CVV.min.js': ['js/saved-card-CVV.js'],
             },
         },
     },
