@@ -870,7 +870,7 @@ add_filter( 'woocommerce_payment_gateway_get_new_payment_method_option_html', 'o
 function ora_add_cvv_field( $html ) {
     $cvv_field = '<p class="form-row saved-card-CVV">
         <label for="infusionsoft-card-cvc">Card Code <span class="required">*</span></label>
-        <input id="infusionsoft-card-cvc" class="input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="CVC" name="infusionsoft-card-cvc" style="width:100px" required>
+        <input id="infusionsoft-card-cvc" class="input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="CVC" name="infusionsoft-card-cvc" style="width:100px">
     </p>';
     wp_enqueue_script( 'wc-saved-card-cvv' );
 
