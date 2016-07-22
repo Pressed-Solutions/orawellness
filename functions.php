@@ -863,3 +863,20 @@ function ora_lost_password_message( $message ) {
     }
     return $message;
 }
+
+
+add_action( 'woocommerce_payment_complete', 'ora_add_customer_note_prefix' );
+function ora_add_customer_note_prefix( $id ) {
+    global $woocommerce;
+    $order = new WC_Order( $id );
+
+    // if not already added, prefix customer message
+    if ( $order->customer_message &&  strpos( $order->customer_message, 'Customer note: ' ) === false ) {
+        $updated_note = array(
+            'ID'            => $id,
+            'post_excerpt'  => 'Customer note: ' . $order->customer_message,
+        );
+
+        $updated_post = wp_update_post( $updated_note );
+    }
+}
