@@ -132,15 +132,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<tr>
 			<td colspan="6" class="actions">
 
-				<?php if ( wc_coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
-						<?php do_action( 'woocommerce_cart_coupon' ); ?>
-					</div>
-				<?php } ?>
-
 				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
@@ -154,6 +145,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 </table>
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+<?php if ( wc_coupons_enabled() ) { ?>
+    <div class="coupon">
+        <h2><label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label></h2>
+        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+
+        <?php do_action( 'woocommerce_cart_coupon' ); ?>
+    </div>
+<?php } ?>
 
 </form>
 
