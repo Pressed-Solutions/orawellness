@@ -2831,19 +2831,7 @@ p.memb_registration_error {
         }
     }
 
-    .coupon {
-        input {
-            max-width: 15rem;
-            margin: 0 2rem 2rem 0;
-        }
-
-        @media (min-width: 769px) {
-            width: 48%;
-            float: right;
-        }
-    }
-
-    .cart-collaterals { clear: both; }
+    .coupon input { margin: 0 2rem 2rem 0; }
 }
 
 .continue-shopping {

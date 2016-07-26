@@ -34,6 +34,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
+        <?php if ( wc_coupons_enabled() ) { ?>
+            <tr class="cart-discount coupon">
+                <th><label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label></th>
+                <td>
+                    <form method="post">
+                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
+                        <?php do_action( 'woocommerce_cart_coupon' ); ?>
+                    </form>
+                </td>
+            </tr>
+        <?php } ?>
+
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
 				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>

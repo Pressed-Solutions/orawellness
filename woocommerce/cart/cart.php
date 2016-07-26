@@ -146,15 +146,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 
-<?php if ( wc_coupons_enabled() ) { ?>
-    <div class="coupon">
-        <h2><label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?></label></h2>
-        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
-        <?php do_action( 'woocommerce_cart_coupon' ); ?>
-    </div>
-<?php } ?>
-
 </form>
 
 <div class="cart-collaterals">
