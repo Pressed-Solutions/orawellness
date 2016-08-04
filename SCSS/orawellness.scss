@@ -2572,6 +2572,10 @@ blockquote.testimonial {
 
 /* # Targeted Landing Pages and Membership Promo
 ---------------------------------------------------------------------------------------------------- */
+.page-template-template-targeted-landing-page {
+    .sidebar-secondary { display: none; }
+}
+
 .page-template-template-targeted-landing-page,
 .page-template-template-membership-promo,
 .membership-home {
