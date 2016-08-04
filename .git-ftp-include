@@ -1,5 +1,7 @@
 orawellness.css:SCSS/orawellness.scss
 orawellness.css.map:SCSS/orawellness.scss
+orawellness.css:SCSS/_settings.scss
+orawellness.css.map:SCSS/_settings.scss
 
 orawellness-login.css:SCSS/orawellness-login.scss
 orawellness-login.css.map:SCSS/orawellness-login.scss
