@@ -37,7 +37,17 @@ $buttons:   (primary, $primary-color),
             (cta, $cta-color),
             (dark, $dark-color),
             (subtle, $subtle-color),
-            (white-color, #ffffff);
+            (white-color, #ffffff),
+            (color-red, $color-red),
+            (color-orange-bright, $color-orange-bright),
+            (color-orange-faded, $color-orange-faded),
+            (color-yellow, $color-yellow),
+            (color-blue-light, $color-blue-light),
+            (color-blue-dark, $color-blue-dark),
+            (color-green-light, $color-green-light),
+            (color-green-dark, $color-green-dark),
+            (color-dark, $color-dark),
+            (color-light-gray, $color-light-gray);
 
 $mobile-menu-width:    12em;
 
