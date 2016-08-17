@@ -28,19 +28,19 @@ jQuery(document).ready(function($) {
 
     // move secondary-menu overflow items to a separate dropdown
     jQuery( '#menu-secondary-menu .menu-item.more' ).append( '<ul class="dropdown"></ul>' );
-    jQuery( '#menu-secondary-menu .sub-menu li' ).each( function() {
+    jQuery( '#menu-secondary-menu .sub-menu li:visible' ).each( function() {
         // get info about this element
-        var $this = jQuery( this );
-        var $parent = $this.parent();
-        var elPosition = $this.position();
-        var elWidth = $this.width();
-        var elHeight = $this.height();
+        var $this = jQuery( this ),
+            $parent = $this.parent(),
+            elPosition = $this.position(),
+            elWidth = $this.width(),
+            elHeight = $this.height();
 
         // get info about the parent element
-        var parentPosition = $parent.position();
-        var parentWidth = $parent.width();
-        var parentHeight = $parent.height();
-        var moreDropdown = $parent.find( '.more .dropdown' );
+        var parentPosition = $parent.position(),
+            parentWidth = $parent.width(),
+            parentHeight = $parent.height(),
+            moreDropdown = $parent.find( '.more .dropdown' );
 
         // if top of this is greater than or equal to the parent’s height, it needs to be moved
         if ( elPosition.top >= parentHeight ) {
