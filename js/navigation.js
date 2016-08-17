@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
     // move secondary-menu overflow items to a separate dropdown
     jQuery( '#menu-secondary-menu .menu-item.more' ).append( '<ul class="dropdown"></ul>' );
-    jQuery( '#menu-secondary-menu .sub-menu li' ).each( function() {
+    jQuery( '#menu-secondary-menu .sub-menu li:visible' ).each( function() {
         // get info about this element
         var $this = jQuery( this );
         var $parent = $this.parent();
