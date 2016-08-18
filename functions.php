@@ -746,9 +746,6 @@ function add_product_faq_js() {
 }
 add_action( 'wp_enqueue_scripts', 'add_product_faq_js' );
 
-//* Enable “create an account” on purchase by default
-add_filter( 'woocommerce_create_account_default_checked', '__return_true' );
-
 //* Add .testimonial-thumb to all testimonial images
 add_filter('wp_get_attachment_image_attributes', 'ora_testimonial_image_class_filter');
 function ora_testimonial_image_class_filter( $attr ) {
