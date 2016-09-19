@@ -29,7 +29,7 @@ function ora_add_stylesheet() {
 }
 
 //* Add Typekit fonts
-add_action( 'genesis_after', 'ora_add_web_font_loader' );
+add_action( 'genesis_after_footer', 'ora_add_web_font_loader' );
 function ora_add_web_font_loader() {
     echo '<script>
        WebFontConfig = {
