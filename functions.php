@@ -31,8 +31,10 @@ function ora_add_stylesheet() {
 //* Add Typekit fonts
 add_action( 'genesis_after_footer', 'ora_add_web_font_loader' );
 function ora_add_web_font_loader() {
-    echo '<script>
-       WebFontConfig = {
+    if ( ! wp_script_is( 'jquery', 'done' ) ) {
+        wp_enqueue_script( 'jquery' );
+    }
+    $font_loader = 'WebFontConfig = {
           typekit: { id: \'agy8tbj\' }
        };
 
@@ -40,8 +42,8 @@ function ora_add_web_font_loader() {
           var wf = d.createElement(\'script\'), s = d.scripts[0];
           wf.src = \'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js\';
           s.parentNode.insertBefore(wf, s);
-       })(document);
-    </script>' . "\n";
+       })(document);';
+    wp_add_inline_script( 'jquery-migrate', $font_loader );
 }
 
 //* Add Brad Frost-inspired mobile menu JS
