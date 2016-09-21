@@ -45,6 +45,7 @@ module.exports = function (grunt) {
         custom: {
             files: {
                 'js/floating-cta.min.js': ['js/floating-cta.js'],
+                'js/membership.min.js': ['js/membership.js'],
                 'js/navigation.min.js': ['js/navigation.js'],
                 'js/product-faq.min.js': ['js/product-faq.js'],
                 'js/webfonts.min.js': ['js/webfonts.js'],

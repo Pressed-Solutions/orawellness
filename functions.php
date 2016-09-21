@@ -28,17 +28,19 @@ function ora_add_stylesheet() {
     return get_stylesheet_directory_uri() . '/orawellness.css';
 }
 
-//* Add Typekit fonts
+//* Add JS
 add_action( 'wp_enqueue_scripts', 'ora_add_web_font_loader' );
 function ora_add_web_font_loader() {
+    // webfont loader
     wp_enqueue_script( 'webfonts', get_stylesheet_directory_uri() . '/js/webfonts.min.js' );
-}
 
-//* Add Brad Frost-inspired mobile menu JS
-add_action( 'wp_enqueue_scripts', 'ora_add_mobile_menu_js' );
-function ora_add_mobile_menu_js() {
+    // membership
+    wp_enqueue_script( 'membership', get_stylesheet_directory_uri() . '/js/membership.min.js', array( 'jquery' ) );
+
+    // Add Brad Frost-inspired mobile menu JS
     wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/navigation.min.js', array( 'jquery' ) );
     wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr-flexbox.min.js' );
+
 }
 
 //* Add link for menu on mobile
