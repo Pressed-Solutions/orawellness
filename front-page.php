@@ -139,7 +139,14 @@ function ora_need_help_loop() {
         // change “read more” text to buttons
         add_filter( 'excerpt_more', 'ora_quick_links_read_more_link' );
         function ora_quick_links_read_more_link() {
-            return '&hellip;<a class="more-link button bordered white-color" href="' . get_permalink() . '">Learn More</a>';
+            $onclick = NULL;
+            $eventAction = get_field( 'eventaction' );
+            $eventValue = get_field( 'eventvalue' );
+            if ( $eventAction && $eventValue ) {
+                $onclick = " onclick=\"__gaTracker('send', 'event', {eventCategory: 'Home - Funnel', eventAction: '$eventAction', eventValue: '$eventValue'});\"";
+            }
+
+            return '&hellip;<a class="more-link button bordered white-color" href="' . get_permalink() . '" ' . $onclick . '>Learn More</a>';
         }
 
         // output content
