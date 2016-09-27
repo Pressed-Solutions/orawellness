@@ -40,7 +40,23 @@ function ora_add_web_font_loader() {
     // Add Brad Frost-inspired mobile menu JS
     wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/navigation.min.js', array( 'jquery' ) );
     wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr-flexbox.min.js' );
+}
 
+//* Add Hotjar script
+add_action( 'wp_head', 'ora_print_hotjar_scripts' );
+function ora_print_hotjar_scripts() {
+    echo "<!-- Hotjar Tracking Code for https://www.orawellness.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:294151,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+";
 }
 
 //* Add link for menu on mobile
