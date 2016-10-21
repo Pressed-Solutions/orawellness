@@ -680,12 +680,12 @@ function ora_get_wc_shop_page() {
     return get_permalink( woocommerce_get_page_id( 'shop' ) );
 }
 
-//* Default Knowledge Base categories to open, showing subcategories
-function ora_kbe_default_open() {
+//* inline JS
+function ora_add_inline_js() {
     // definitely not the recommended method, but the plugin doesn’t use the enqueue method, so can’t use it as a dependency
-    echo '<script type="text/javascript">jQuery(document).ready(function(){jQuery(\'.switch\').addClass(\'open\')});</script>';
+    echo '<script type="text/javascript">jQuery(document).ready(function(){jQuery(\'.switch\').addClass(\'open\');jQuery(\'form.woocommerce-checkout\').off(\'submit\');});</script>';
 }
-add_action( 'wp_footer', 'ora_kbe_default_open' );
+add_action( 'wp_footer', 'ora_add_inline_js', 25 );
 
 //* Set email logo size
 function tweak_woocommerce_email_header( $email_heading ) {
