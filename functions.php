@@ -380,7 +380,7 @@ add_filter( 'woocommerce_product_description_heading', function() { return false
 //* Add Ora Wellness logo to login page
 function ora_login_page_styles() {
     echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/orawellness-login.css"/>';
-    ora_add_web_font_loader();
+    ora_theme_JS();
 }
 add_action( 'login_enqueue_scripts', 'ora_login_page_styles' );
 
@@ -400,7 +400,7 @@ add_action( 'login_footer', 'ora_add_login_page_footer' );
 //* Remove default login page CSS and include custom fonts
 function login_remove_scripts() {
     add_filter( 'style_loader_tag', '__return_null' );
-    ora_add_web_font_loader();
+    ora_theme_JS();
 }
 add_action( 'login_init', 'login_remove_scripts', 15 );
 
