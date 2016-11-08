@@ -48,6 +48,7 @@ module.exports = function (grunt) {
                 'js/membership.min.js': ['js/membership.js'],
                 'js/navigation.min.js': ['js/navigation.js'],
                 'js/product-faq.min.js': ['js/product-faq.js'],
+                'js/shipping-address.min.js': ['js/shipping-address.js'],
                 'js/webfonts.min.js': ['js/webfonts.js'],
             },
         },

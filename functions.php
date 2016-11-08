@@ -29,8 +29,8 @@ function ora_add_stylesheet() {
 }
 
 //* Add JS
-add_action( 'wp_enqueue_scripts', 'ora_add_web_font_loader' );
-function ora_add_web_font_loader() {
+add_action( 'wp_enqueue_scripts', 'ora_theme_JS' );
+function ora_theme_JS() {
     // webfont loader
     wp_enqueue_script( 'webfonts', get_stylesheet_directory_uri() . '/js/webfonts.min.js', array(), filemtime( get_stylesheet_directory() . '/js/webfonts.min.js' ) );
 
@@ -40,6 +40,9 @@ function ora_add_web_font_loader() {
     // Add Brad Frost-inspired mobile menu JS
     wp_enqueue_script( 'mobile-menu-js', get_stylesheet_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/navigation.min.js' ) );
     wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr-flexbox.min.js', array(), filemtime( get_stylesheet_directory() . '/js/modernizr-flexbox.min.js' ) );
+
+    // checkout
+    wp_register_script( 'ora-shipping-address', get_stylesheet_directory_uri() . '/js/shipping-address.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/shipping-address.min.js' ) );
 }
 
 //* Add Hotjar script
