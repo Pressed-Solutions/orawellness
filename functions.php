@@ -890,3 +890,17 @@ function ora_add_customer_note_prefix( $id ) {
         $updated_post = wp_update_post( $updated_note );
     }
 }
+
+//* Remove order notes
+add_filter( 'woocommerce_checkout_fields', 'ora_order_notes', $checkout_fields );
+function ora_order_notes( $checkout_fields ) {
+    unset($checkout_fields['order']['order_comments']);
+    return $checkout_fields;
+}
+
+//* Replace order notes with message
+add_action( 'woocommerce_before_order_notes', 'ora_order_notes_message' );
+function ora_order_notes_message() {
+    echo '<h2>Order Notes</h2>
+    <p>Do you have a special request for this order? Please <a target="_blank" href="https://www.orawellness.com/contact/">contact us</a> before placing your order so we can help.</p>';
+}
