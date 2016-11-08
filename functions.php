@@ -869,7 +869,7 @@ function ora_lost_password_message( $message ) {
     return $message;
 }
 
-
+//* Add customer note prefix for Insfusionsoft’s sake
 add_action( 'woocommerce_payment_complete', 'ora_add_customer_note_prefix' );
 function ora_add_customer_note_prefix( $id ) {
     global $woocommerce;
