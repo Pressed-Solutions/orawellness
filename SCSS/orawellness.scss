@@ -2337,6 +2337,7 @@ h2.post-grid-header {
     }
 
     .testimonial-content-wrapper {
+        .testimonial-grid & { margin-left: 0; }
         @media screen and (min-width: 801px) { margin-left: 100px; }
         @media screen and (max-width: 800px) { text-align: center; }
     }
@@ -2346,10 +2347,22 @@ h2.post-grid-header {
 
 /* generic styles also used in widget */
 .testimonial {
+    &-grid {
+        @media (min-width: 801px) { columns: 2; }
+    }
+
     &.shortcode {
         width: 40%;
         float: right;
         margin-left: 2em;
+
+        .testimonial-grid & {
+            width: 90%;
+            float: none;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            box-sizing: border-box;
+        }
     }
 
     &.shortcode &-content {
@@ -2396,7 +2409,7 @@ h2.post-grid-header {
         }
     }
 
-    &.single:not(blockquote) + &.single:not(blockquote), .tax-testimonial-category & {
+    &.single:not(blockquote) + &.single:not(blockquote), .tax-testimonial-category &, .testimonial-grid & {
         margin-top: 2.8rem;
         padding-top: 2.8rem;
         border-top: 1px solid $border-color;
