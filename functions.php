@@ -127,8 +127,10 @@ function ora_add_search_box_to_menu( $menu, $args ) {
         // add search form
         $menu .= sprintf( '<li class="menu-item" id="search-form">%s</li>', __( genesis_search_form() ) );
         // if cart is not empty, show icon in header
-        if ( 0 != WC()->cart->get_cart_contents_count() ) {
-            $menu .= sprintf( '<li class="menu-item cart" id="cart"><a href="%s"><span class="screen-reader-text">Cart</span>&nbsp;</a></li>', WC()->cart->get_cart_url() );
+        if ( WC()->cart ) {
+            if ( 0 != WC()->cart->get_cart_contents_count() ) {
+                $menu .= sprintf( '<li class="menu-item cart" id="cart"><a href="%s"><span class="screen-reader-text">Cart</span>&nbsp;</a></li>', WC()->cart->get_cart_url() );
+            }
         }
     }
     return $menu;
