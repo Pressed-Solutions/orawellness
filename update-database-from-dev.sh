@@ -1,5 +1,5 @@
 if [ ! -f "database-latest.sql.xz" ]; then
-    ssh PressedSolutions 'cd /home/orawellness/ && DATE=$(date +"%Y-%m-%d-%H%M") && mysqldump --defaults-file=/home/orawellness/.mysqldump.conf orawelln_wp | xz > /home/orawellness/database-backups/database-$DATE.sql.xz && ln -f -s /home/orawellness/database-backups/database-$DATE.sql.xz /home/orawellness/database-latest.sql.xz' && scp PressedSolutions:/home/orawellness/database-latest.sql.xz ./
+    ssh OraWellness 'DATE=$(date +"%Y-%m-%d-%H%M") && mysqldump --defaults-file=/home/wwwcus/.mysqldump.conf orawellnesscom | xz > /home/wwwcus/database-backups/database-$DATE.sql.xz && ln -f -s /home/wwwcus/database-backups/database-$DATE.sql.xz /home/wwwcus/database-latest.sql.xz' && scp OraWellness:/home/wwwcus/database-latest.sql.xz ./
 fi
 
 # import
