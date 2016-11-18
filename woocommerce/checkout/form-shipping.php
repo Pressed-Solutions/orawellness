@@ -27,8 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<h3 id="ship-to-different-address">Shipping Details</h3>
 		<p style="clear: left;">
-			<label for="shipping-billing-addresses-checkbox" class="checkbox">Same as billing address:</label>
-			<input id="shipping-billing-addresses-checkbox" class="input-checkbox" type="checkbox" />
+		    <button type="button" id="copy-billing-to-shipping">Copy Billing Details to Shipping Details</button>
 
 			<input value="<?php echo apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ); ?>" type="hidden" name="ship_to_different_address" />
 		</p>
