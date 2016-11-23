@@ -1,5 +1,8 @@
 (function($){
     $(document).ready(function(){
+        // show button since JS is active
+        $('p.copy-billing-to-shipping').removeClass('screen-reader-text');
+
         // copy billing info to shipping info
         $('#copy-billing-to-shipping').on('click', function(){
             // uncheck checkbox

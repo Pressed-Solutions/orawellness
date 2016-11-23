@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             Shipping Details
             <input id="ship-to-different-address-checkbox" class="input-checkbox screen-reader-text" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />
         </h3>
-		<p style="clear: left;">
+		<p style="clear: left;" class="copy-billing-to-shipping screen-reader-text">
 		    <button type="button" id="copy-billing-to-shipping" class="button">Copy Billing Details to Shipping Details</button>
 		</p>
 
