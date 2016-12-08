@@ -2833,6 +2833,9 @@ p.memb_registration_error {
     .woocommerce-info {
         border-top-color: $color-blue-light;
         &:before { color: $color-blue-light; }
+
+        margin: 0 0 .5em !important;
+        padding: .75em 1em .75em 3.5em !important;
     }
 
     .woocommerce-error {
