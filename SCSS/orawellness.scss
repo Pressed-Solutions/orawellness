@@ -1779,10 +1779,11 @@ img.alignright,
     .order_details li,
     .wc_payment_method { list-style-type: none; }
 
-    code {
+    pre, code {
         background-color: $body-text-color;
         color: $border-color;
     }
+    pre { padding: 1em; }
 }
 
 /* ## Entry Meta
