@@ -892,7 +892,7 @@ function ora_add_customer_note_prefix( $id ) {
 }
 
 //* Remove order notes
-add_filter( 'woocommerce_checkout_fields', 'ora_order_notes', $checkout_fields );
+add_filter( 'woocommerce_checkout_fields', 'ora_order_notes' );
 function ora_order_notes( $checkout_fields ) {
     unset($checkout_fields['order']['order_comments']);
     return $checkout_fields;
