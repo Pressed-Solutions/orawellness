@@ -7,7 +7,7 @@
 add_action( 'genesis_entry_content', 'ora_expert_interviews_content', 8 );
 function ora_expert_interviews_content() {
     // author info
-    echo '<section class="author-info">';
+    echo '<section class="author-info interview-author-info">';
         echo wp_get_attachment_image( get_field( 'photo' ), 'testimonial-thumb', true, array( 'class' => 'avatar' ) );
         if ( get_field( 'expert_title' ) ) {
             echo '<h3 class="alternate">' . get_field( 'expert_title' ) . '</h3>';
@@ -49,7 +49,7 @@ function ora_expert_interviews_content() {
     // download links
     if ( get_field( 'download_video_url' ) OR get_field( 'download_audio_url' ) OR get_field( 'download_transcript_url' ) ) {
         echo '<h2>Downloads</h2>
-        <section class="downloads">';
+        <section class="downloads interview-downloads">';
         if ( get_field( 'download_video_url' ) ) {
             echo '<a class="video" target="_blank" href="' . esc_url( get_field( 'download_video_url' ) ) . '">Download Video</a>';
         }
