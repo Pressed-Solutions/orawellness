@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -19,7 +19,6 @@
             "placeholder": "Anytown",
             "prepend": "",
             "append": "",
-            "formatting": "html",
             "maxlength": ""
         },
         {
@@ -31,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -39,7 +38,6 @@
             "placeholder": "NY",
             "prepend": "",
             "append": "",
-            "formatting": "html",
             "maxlength": ""
         },
         {
@@ -51,7 +49,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -59,7 +57,6 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "formatting": "html",
             "maxlength": ""
         },
         {
@@ -71,7 +68,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -95,28 +92,8 @@
                 "id": ""
             },
             "message": "Add a photo using “Featured Image” to the right.",
-            "esc_html": 0,
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_57606e104893f",
-            "label": "Location (deprecated—use city\/state\/country instead)",
-            "name": "personal_info_location",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "Michigan",
-            "prepend": "",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -136,5 +113,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496429142
+    "modified": 1496430007
 }
