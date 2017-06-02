@@ -146,13 +146,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -185,7 +185,7 @@
         },
         {
             "key": "field_56b5233ec5d5c",
-            "label": "Featured Product",
+            "label": "Featured Product URL",
             "name": "featured_product_url",
             "type": "url",
             "instructions": "URL of Shopify product",
@@ -208,6 +208,38 @@
             "placeholder": ""
         },
         {
+            "key": "field_5931bdb9b43c6",
+            "label": "Featured Product Image",
+            "name": "featured_product_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_56b90ed16ee70",
             "label": "Featured Product Description",
             "name": "featured_product_description",
@@ -224,7 +256,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "66",
                 "class": "",
                 "id": ""
             },
@@ -235,6 +267,36 @@
             "delay": 0
         },
         {
+            "key": "field_5931bcff078d7",
+            "label": "Featured Product ID (deprecated since switch to Shopify)",
+            "name": "featured_product_id",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_56b9170972944",
             "label": "Show Featured Testimonial",
             "name": "show_featured_testimonial",
@@ -243,13 +305,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -292,13 +354,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -386,5 +448,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496430211
+    "modified": 1496432377
 }

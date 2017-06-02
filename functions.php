@@ -514,12 +514,10 @@ function ora_show_custom_widget() {
     <?php }
 
     // customized product
-    if ( get_field( 'show_featured_product' ) && get_field( 'featured_product_id' ) ) {
+    if ( get_field( 'show_featured_product' ) && get_field( 'featured_product_url' ) ) {
         $custom_title = get_field( 'featured_product_title' );
-        $featured_product = get_field( 'featured_product_id' );
-        setup_postdata( $featured_product );
-        $product_factory = new WC_Product_Factory();
-        $this_product = $product_factory->get_product( $featured_product->ID );
+        $featured_product = get_field( 'featured_product_url' );
+        $featured_image = get_field( 'featured_product_image' );
     ?>
         <section class="widget page-customized-product">
             <div class="widget-wrap">
@@ -527,18 +525,18 @@ function ora_show_custom_widget() {
                     if ( $custom_title ) {
                        echo $custom_title;
                     } else {
-                        echo $this_product->get_title();
+                        echo 'Featured Product';
                     }
                     ?></h3>
                 <div class="textwidget">
                     <?php
-                        echo $this_product->get_image( 'shop_thumbnail', array( 'class' => 'alignright' ) );
+                        if ( $featured_image ) {
+                            echo wp_get_attachment_image( $featured_image, 'shop_thumbnail', false, array( 'class' => 'alignright' ) );
+                        }
                         if ( get_field( 'featured_product_description' ) ) {
                             the_field( 'featured_product_description' );
-                        } else {
-                            the_excerpt( $featured_product->ID );
                         }
-                        echo '<a href="' . $this_product->get_permalink() . '" class="clear button bordered cta center">Learn More</a>';
+                        echo '<a href="' . get_field( 'featured_product_url' ) . '" class="clear button bordered cta center">Learn More</a>';
                     ?>
                 </div>
             </div>
