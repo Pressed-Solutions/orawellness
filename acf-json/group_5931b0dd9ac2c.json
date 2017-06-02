@@ -17,14 +17,14 @@
             },
             "choices": {
                 "none": "None",
-                "generic": "Generic Membership Opt-in",
-                "custom": "Custom Offer"
+                "generic": "Opt-in (including shortcodes)",
+                "custom": "Custom content (custom HTML)"
             },
+            "allow_null": 0,
             "other_choice": 0,
             "save_other_choice": 0,
             "default_value": "generic",
             "layout": "vertical",
-            "allow_null": 0,
             "return_format": "value"
         },
         {
@@ -48,7 +48,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "[memb_is_logged_in]\r\n<h3 class=\"widgettitle widget-title\">Membership Home<\/h3>\r\n<p><a href=\"\/membership-home\/\">Access Aloha Club<\/a><\/p>\r\n[else_memb_is_logged_in]\r\n[memb_registration_form success_url=\"\/membership-home\/\" tagids=\"Free Membership\" autologin=\"yes\" form_id=\"membership-signup\"]\r\n\r\n<h3 class=\"widgettitle widget-title\">Ready for massive improvement?<\/h3>\r\n<h6>Access <em>free<\/em> eBooks and expert interviews today.<\/h6>\r\n<label for=\"FirstName\">First Name<\/label>\r\n<input name=\"FirstName\" required=\"required\" type=\"text\" placeholder=\"Trish\" \/>\r\n\r\n<label for=\"Email\">Email Address<\/label>\r\n<input name=\"Email\" required=\"required\" type=\"email\" placeholder=\"trish@example.com\" \/>\r\n\r\n<input class=\"center\" type=\"submit\" value=\"Sign me up :)\" \/>\r\n<p class=\"small\">We respect your privacy and will never spam you.<\/p>\r\n[\/memb_registration_form]\r\n[\/memb_is_logged_in]",
+            "default_value": "[infusionsoft_on_click_intent optin_id=optin_*] [\/infusionsoft_on_click_intent]",
             "placeholder": "",
             "maxlength": "",
             "rows": "",
@@ -146,7 +146,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -161,7 +161,7 @@
             "label": "Featured Product Title",
             "name": "featured_product_title",
             "type": "text",
-            "instructions": "Optional; the product’s name will be shown if this is not filled out.",
+            "instructions": "Required since switch to Shopify",
             "required": 0,
             "conditional_logic": [
                 [
@@ -173,7 +173,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -181,15 +181,38 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "formatting": "html",
             "maxlength": ""
+        },
+        {
+            "key": "field_56b5233ec5d5c",
+            "label": "Featured Product",
+            "name": "featured_product_url",
+            "type": "url",
+            "instructions": "URL of Shopify product",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_56b90ed16ee70",
             "label": "Featured Product Description",
             "name": "featured_product_description",
             "type": "wysiwyg",
-            "instructions": "Optional custom description for this product; if blank, the product description will be used.\r\nThe product’s image will be displayed alongside this description.",
+            "instructions": "Strongly suggested",
             "required": 0,
             "conditional_logic": [
                 [
@@ -206,40 +229,10 @@
                 "id": ""
             },
             "default_value": "",
+            "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "tabs": "all",
             "delay": 0
-        },
-        {
-            "key": "field_56b5233ec5d5c",
-            "label": "Featured Product",
-            "name": "featured_product_id",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_56b916fc72943",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "product"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
         },
         {
             "key": "field_56b9170972944",
@@ -250,7 +243,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -299,7 +292,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -326,19 +319,18 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "80",
                 "class": "",
                 "id": ""
             },
             "taxonomy": "testimonial-category",
             "field_type": "select",
             "allow_null": 0,
-            "load_save_terms": 0,
-            "return_format": "id",
-            "multiple": 0,
             "add_term": 1,
+            "save_terms": 0,
             "load_terms": 0,
-            "save_terms": 0
+            "return_format": "id",
+            "multiple": 0
         },
         {
             "key": "field_573cb8dbba12b",
@@ -357,7 +349,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
@@ -394,5 +386,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496429136
+    "modified": 1496430211
 }
