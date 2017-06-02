@@ -904,3 +904,24 @@ function ora_order_notes_message() {
     echo '<h2>Order Notes</h2>
     <p>Do you have a special request for this order? Please <a target="_blank" href="https://www.orawellness.com/contact/">contact us</a> before placing your order so we can help.</p>';
 }
+
+/**
+ * Set ACF local JSON save directory
+ * @param  string $path ACF local JSON save directory
+ * @return string ACF local JSON save directory
+ */
+add_filter( 'acf/settings/save_json', 'ora_acf_json_save_point' );
+function ora_acf_json_save_point( $path ) {
+    return get_stylesheet_directory() . '/acf-json';
+}
+
+/**
+ * Set ACF local JSON open directory
+ * @param  array $path ACF local JSON open directory
+ * @return array ACF local JSON open directory
+ */
+add_filter( 'acf/settings/load_json', 'ora_acf_json_load_point' );
+function ora_acf_json_load_point( $path ) {
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+}

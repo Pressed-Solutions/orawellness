@@ -1,0 +1,398 @@
+{
+    "key": "group_5931b0dd9ac2c",
+    "title": "Page-Specific Widgets",
+    "fields": [
+        {
+            "key": "field_57573b66cc381",
+            "label": "Show Opt-in?",
+            "name": "show_opt-in",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "generic": "Generic Membership Opt-in",
+                "custom": "Custom Offer"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "generic",
+            "layout": "vertical",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57573b9dcc382",
+            "label": "Generic Membership Opt-in",
+            "name": "generic_membership_opt-in",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57573b66cc381",
+                        "operator": "==",
+                        "value": "generic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "[memb_is_logged_in]\r\n<h3 class=\"widgettitle widget-title\">Membership Home<\/h3>\r\n<p><a href=\"\/membership-home\/\">Access Aloha Club<\/a><\/p>\r\n[else_memb_is_logged_in]\r\n[memb_registration_form success_url=\"\/membership-home\/\" tagids=\"Free Membership\" autologin=\"yes\" form_id=\"membership-signup\"]\r\n\r\n<h3 class=\"widgettitle widget-title\">Ready for massive improvement?<\/h3>\r\n<h6>Access <em>free<\/em> eBooks and expert interviews today.<\/h6>\r\n<label for=\"FirstName\">First Name<\/label>\r\n<input name=\"FirstName\" required=\"required\" type=\"text\" placeholder=\"Trish\" \/>\r\n\r\n<label for=\"Email\">Email Address<\/label>\r\n<input name=\"Email\" required=\"required\" type=\"email\" placeholder=\"trish@example.com\" \/>\r\n\r\n<input class=\"center\" type=\"submit\" value=\"Sign me up :)\" \/>\r\n<p class=\"small\">We respect your privacy and will never spam you.<\/p>\r\n[\/memb_registration_form]\r\n[\/memb_is_logged_in]",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_569452c98a107",
+            "label": "Optin Title",
+            "name": "optin_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57573b66cc381",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "<h3 class=\"widgettitle widget-title\">",
+            "append": "<\/h3>",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_569453dc8a108",
+            "label": "Optin Subtitle",
+            "name": "optin_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57573b66cc381",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_569453eb8a109",
+            "label": "Optin Form HTML",
+            "name": "optin_form_html",
+            "type": "textarea",
+            "instructions": "Be sure to include everything from <code>&lt;form …&gt;<\/code> through <code>&lt;\/form&gt;<\/code>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57573b66cc381",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_56b916fc72943",
+            "label": "Show Featured Product",
+            "name": "show_featured_product",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_56b5233fc5d5e",
+            "label": "Featured Product Title",
+            "name": "featured_product_title",
+            "type": "text",
+            "instructions": "Optional; the product’s name will be shown if this is not filled out.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_56b90ed16ee70",
+            "label": "Featured Product Description",
+            "name": "featured_product_description",
+            "type": "wysiwyg",
+            "instructions": "Optional custom description for this product; if blank, the product description will be used.\r\nThe product’s image will be displayed alongside this description.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 0,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_56b5233ec5d5c",
+            "label": "Featured Product",
+            "name": "featured_product_id",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b916fc72943",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_56b9170972944",
+            "label": "Show Featured Testimonial",
+            "name": "show_featured_testimonial",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_56b9040772e2c",
+            "label": "Featured Testimonial",
+            "name": "featured_testimonial",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b9170972944",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonial"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_573cb76474dee",
+            "label": "Show Categorized Testimonials",
+            "name": "show_categorized_testimonials",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_573cb77874def",
+            "label": "Testimonials Category",
+            "name": "testimonials_category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_573cb76474dee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "testimonial-category",
+            "field_type": "select",
+            "allow_null": 0,
+            "load_save_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "add_term": 1,
+            "load_terms": 0,
+            "save_terms": 0
+        },
+        {
+            "key": "field_573cb8dbba12b",
+            "label": "Number of Testimonials to Show",
+            "name": "number_of_testimonials",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_573cb76474dee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 10,
+            "step": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1496429136
+}

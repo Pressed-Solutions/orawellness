@@ -1,0 +1,156 @@
+{
+    "key": "group_5931b0d09e6fa",
+    "title": "Membership Pages",
+    "fields": [
+        {
+            "key": "field_5683f3f85d4e7",
+            "label": "Page subtitle",
+            "name": "page_subtitle",
+            "type": "text",
+            "instructions": "Enter 8–10 words",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5683f42b5d4e8",
+            "label": "Header Image",
+            "name": "header_image",
+            "type": "image",
+            "instructions": "Choose a large image for the page header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "targeted-landing-page-banner",
+            "library": "all",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_57576ff3972f2",
+            "label": "Form Content",
+            "name": "form_content",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "[memb_is_logged_in]\r\n<h3 class=\"widgettitle widget-title\">Membership Home<\/h3>\r\n<a href=\"\/membership-home\/\">Access My Membership<\/a>\r\n[else_memb_is_logged_in]\r\n[memb_registration_form success_url=\"\/membership-home\/\" tagids=\"Free Membership\" autologin=\"yes\" form_id=\"membership-signup\"]\r\n<h2>Start your <em>free<\/em> membership now!<\/h2>\r\n<label for=\"FirstName\">First Name<\/label>\r\n<input name=\"FirstName\" required=\"required\" type=\"text\" placeholder=\"Trish\" \/>\r\n\r\n<label for=\"Email\">Email Address<\/label>\r\n<input name=\"Email\" required=\"required\" type=\"email\" placeholder=\"trish@example.com\" \/>\r\n\r\n\r\n\r\n\r\n<input class=\"center\" type=\"submit\" value=\"Create Account\" \/>\r\n<p class=\"small\">We respect your privacy and will never spam you.<\/p>\r\n[\/memb_registration_form]\r\n[\/memb_is_logged_in]",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5757701c972f3",
+            "label": "Form Note",
+            "name": "form_note",
+            "type": "wysiwyg",
+            "instructions": "Shown below the form",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_57576fdb972f1",
+            "label": "Footer Content",
+            "name": "footer_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_57576fcb972f0",
+            "label": "Footer Image",
+            "name": "footer_image",
+            "type": "image",
+            "instructions": "Choose a large image for the page footer",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "targeted-landing-page-banner",
+            "library": "all",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-membership-promo.php"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2448"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1496429133
+}
