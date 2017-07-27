@@ -2182,15 +2182,15 @@ div.home-header {
         @media screen and (min-width: 801px) {
             min-height: 45rem;
             background-position: bottom right;
-            background-size: 45%;
+            background-size: 50%;
         }
         @media screen and (max-width: 800px) {
             min-height: 55rem;
             background-position: bottom center;
-            background-size: 20em;
+            background-size: 30em;
         }
         @media screen and (max-width: 479px) {
-            background-size: 15em;
+            background-size: 20em;
         }
     }
 
