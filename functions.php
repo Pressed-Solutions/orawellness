@@ -151,7 +151,7 @@ function ora_custom_footer() { ?>
         'theme_location' => 'footer-menu',
         'menu_class' => 'menu genesis-nav-menu menu-footer js-superfish sf-js-enabled sf-arrows'
     ) ); ?></span>
-    <span class="designer"><a href="http://pautlerdesign.com/" target="_blank">Designed by Pautler Design</a> | <a target="_blank" href="https://www.pressedsolutions.com/?ref=fai">Powered by <span class="screen-reader-text">Pressed</span><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/pressed.png" alt="Powered by Pressed logo" class="pressed" /></a></span>
+    <span class="designer"><a href="http://pautlerdesign.com/" target="_blank">Designed by Pautler Design</a></span>
     <?php
 }
 
