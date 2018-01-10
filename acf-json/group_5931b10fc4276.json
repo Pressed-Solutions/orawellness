@@ -16,11 +16,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5654c3c58bca7",
@@ -83,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496429142
+    "modified": 1513649518
 }
