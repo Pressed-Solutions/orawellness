@@ -121,7 +121,7 @@ function ora_add_search_box_to_menu( $menu, $args ) {
         // add search form
         $menu .= sprintf( '<li class="menu-item" id="search-form">%s</li>', __( genesis_search_form() ) );
         // if cart is not empty, show icon in header
-        if ( WC()->cart ) {
+        if ( defined( 'WC' ) && WC()->cart ) {
             if ( 0 != WC()->cart->get_cart_contents_count() ) {
                 $menu .= sprintf( '<li class="menu-item cart" id="cart"><a href="%s"><span class="screen-reader-text">Cart</span>&nbsp;</a></li>', WC()->cart->get_cart_url() );
             }
@@ -359,7 +359,7 @@ function woocommerce_support() {
 //* Remove sidebars from product pages
 add_filter( 'genesis_site_layout', 'ora_remove_sidebars_woocommerce' );
 function ora_remove_sidebars_woocommerce() {
-    if( is_page ( array( 'cart', 'checkout' )) || is_shop() || 'product' == get_post_type() ) {
+    if( function_exists( 'is_shop' ) && ( is_page( array( 'cart', 'checkout' )) || is_shop() || 'product' == get_post_type() ) ) {
         remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
         unregister_sidebar( 'sidebar-alt' );
         genesis_unregister_layout( 'content-sidebar' );
@@ -834,7 +834,7 @@ remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
 //* Tweak thank-you page title
 add_filter( 'the_title', 'ora_thankyou_title', 10, 2 );
 function ora_thankyou_title( $title, $id ) {
-    if ( is_order_received_page() && get_the_ID() === $id ) {
+    if ( function_exists( 'is_order_received_page' ) && is_order_received_page() && get_the_ID() === $id ) {
         $title = 'Order Success!';
     }
     return $title;
